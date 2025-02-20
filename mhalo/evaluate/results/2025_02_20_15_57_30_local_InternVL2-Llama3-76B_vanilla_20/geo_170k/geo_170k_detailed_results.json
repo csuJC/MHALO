@@ -1,0 +1,569 @@
+[
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral <hallucination>ABCE</hallucination> is inscribed in circle O, we have angle <hallucination>BAE</hallucination> + angle BCD = 180°. Also, angle <hallucination>BCE</hallucination> + angle DCE = 180°. Therefore, angle A = angle DCE = <hallucination>68°</hallucination>. The correct answer is <hallucination>B</hallucination>.  \nAnswer: <hallucination>B</hallucination>",
+    "test_solution": "Since quadrilateral ABCE is inscribed in circle O, we have angle BAE + angle BCD = 180°. Also, angle BCE + angle DCE = 180°. Therefore, angle A = angle DCE = 68°. The correct answer is B.  \nAnswer: B",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: In the diagram, quadrilateral ABCD is inscribed in circle O, and angle DCE is given as 65 degrees. What is the measurement of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nSince quadrilateral <hallucination>ABCE</hallucination> is inscribed in circle O, we have angle BAE + angle BCD = 180°. Also, angle BCE + angle DCE = 180°. Therefore, angle A = angle DCE = 68°. The correct answer is B.\n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral <hallucination>ABCE</hallucination> is inscribed in circle O, we have angle BAE + angle BCD = 180°. Also, angle BCE + angle DCE = 180°. Therefore, angle A = angle DCE = 68°. The correct answer is B.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral <hallucination>ABCE</hallucination> is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, <hallucination>angle CDE + angle BCD = 180°</hallucination>. Therefore, angle A = <hallucination>112°</hallucination>. The correct answer is <hallucination>A</hallucination>.  \nAnswer: <hallucination>A</hallucination>",
+    "test_solution": "Since quadrilateral ABCE is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle CDE + angle BCD = 180°. Therefore, angle A = 112°. The correct answer is A.  \nAnswer: A",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: Quadrilateral ABCD is shown in the diagram as inscribed in circle O. If the angle DCE measures 65 degrees, what is the measurement of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nSince quadrilateral ABCE is inscribed in circle O, we have <hallucination>angle BAD + angle BCD = 180°</hallucination>. Also, <hallucination>angle CDE + angle BCD = 180°</hallucination>. Therefore, <hallucination>angle A = 112°</hallucination>. The correct answer is A.\n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral ABCE is inscribed in circle O, we have <hallucination>angle BAD + angle BCD = 180°</hallucination>. Also, <hallucination>angle CDE + angle BCD = 180°</hallucination>. Therefore, <hallucination>angle A = 112°</hallucination>. The correct answer is A.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = <hallucination>60°</hallucination>. Since angle B = 30°, thus angle AOB = <hallucination>120°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.25 × angle AOB = 30°</hallucination>. Therefore, the answer is: <hallucination>A</hallucination>.  \nAnswer: <hallucination>A</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 60°. Since angle B = 30°, thus angle AOB = 120°. According to the theorem of the angle in a circle, angle ADC = 0.25 × angle AOB = 30°. Therefore, the answer is: A.  \nAnswer: A",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: Point A on circle O is the point of tangency for the tangent AB, while OB intersects circle O at point C, and point D is situated on the major arc AC. If angle B measures 30 degrees, what is the degree measure of angle ADC, as shown in the figure?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause AB is a tangent to circle O, therefore angle OAB = 60°. Since angle B = 30°, thus angle AOB = 120°. According to the <hallucination>theorem of the angle in a circle</hallucination>, angle ADC = <hallucination>0.25 × angle AOB</hallucination> = 30°. Therefore, the answer is: A.\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle OAB = 60°. Since angle B = 30°, thus angle AOB = 120°. According to the <hallucination>theorem of the angle in a circle</hallucination>, angle ADC = <hallucination>0.25 × angle AOB</hallucination> = 30°. Therefore, the answer is: A.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral ABCD is inscribed in circle O, we have <hallucination>angle BAD + angle BCD = 90°</hallucination>. Also, <hallucination>angle BCD - angle DCE = 90°</hallucination>. Therefore, <hallucination>angle A = angle BCD = 112°</hallucination>.  \nThe correct answer is <hallucination>A</hallucination>.  \nAnswer: <hallucination>A</hallucination>",
+    "test_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = 90°. Also, angle BCD - angle DCE = 90°. Therefore, angle A = angle BCD = 112°.  \nThe correct answer is A.  \nAnswer: A",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: If in the diagram, quadrilateral ABCD is inscribed in circle O and angle DCE measures 65 degrees, what is the degree measure of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nSince quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = <hallucination>90°</hallucination>. Also, angle BCD - angle DCE = <hallucination>90°</hallucination>. Therefore, angle A = angle BCD = <hallucination>112°</hallucination>.  \nThe correct answer is A.  \nAnswer: A\n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = <hallucination>90°</hallucination>. Also, angle BCD - angle DCE = <hallucination>90°</hallucination>. Therefore, angle A = angle BCD = <hallucination>112°</hallucination>.  \nThe correct answer is A.  \nAnswer: A",
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.15,
+      "f1m": 0.2608695652173913,
+      "iou_precision_g": 0.14285714285714285,
+      "iou_h": 0.08571428571428572,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 16,
+            "end": 17,
+            "text": "90°"
+          },
+          {
+            "start": 24,
+            "end": 25,
+            "text": "90°"
+          },
+          {
+            "start": 32,
+            "end": 33,
+            "text": "112°"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 10,
+            "end": 17,
+            "text": "angle BAD + angle BCD = 90°"
+          },
+          {
+            "start": 18,
+            "end": 25,
+            "text": "angle BCD - angle DCE = 90°"
+          },
+          {
+            "start": 26,
+            "end": 33,
+            "text": "angle A = angle BCD = 112°"
+          },
+          {
+            "start": 37,
+            "end": 38,
+            "text": "A"
+          },
+          {
+            "start": 39,
+            "end": 40,
+            "text": "A"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 16,
+          "end": 17,
+          "text": "90°"
+        },
+        {
+          "start": 24,
+          "end": 25,
+          "text": "90°"
+        },
+        {
+          "start": 32,
+          "end": 33,
+          "text": "112°"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 10,
+          "end": 17,
+          "text": "angle BAD + angle BCD = 90°"
+        },
+        {
+          "start": 18,
+          "end": 25,
+          "text": "angle BCD - angle DCE = 90°"
+        },
+        {
+          "start": 26,
+          "end": 33,
+          "text": "angle A = angle BCD = 112°"
+        },
+        {
+          "start": 37,
+          "end": 38,
+          "text": "A"
+        },
+        {
+          "start": 39,
+          "end": 40,
+          "text": "A"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = 180°.  \n\nAlso, angle BCD + angle DCE = <hallucination>120°</hallucination>.  \n\nTherefore, angle A = <hallucination>180° - angle BCD</hallucination> = <hallucination>68°</hallucination>.  \n\nThe correct answer is <hallucination>B</hallucination>.  \nAnswer: <hallucination>B</hallucination>",
+    "test_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = 180°.  \n\nAlso, angle BCD + angle DCE = 120°.  \n\nTherefore, angle A = 180° - angle BCD = 68°.  \n\nThe correct answer is B.  \nAnswer: B",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: Given that quadrilateral ABCD is inscribed in circle O in the diagram and angle DCE equals 65 degrees, what is the degree measure of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>Since quadrilateral ABCD is inscribed in circle O, we have <hallucination>angle BAD + angle BCD = 180°</hallucination>.  \n\nAlso, <hallucination>angle BCD + angle DCE = 120°</hallucination>.  \n\nTherefore, <hallucination>angle A = 180° - angle BCD = 68°</hallucination>.  \n\nThe correct answer is B.  \n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral ABCD is inscribed in circle O, we have <hallucination>angle BAD + angle BCD = 180°</hallucination>.  \n\nAlso, <hallucination>angle BCD + angle DCE = 120°</hallucination>.  \n\nTherefore, <hallucination>angle A = 180° - angle BCD = 68°</hallucination>.  \n\nThe correct answer is B.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = <hallucination>35°</hallucination>, thus angle AOB = 90° - <hallucination>35°</hallucination> = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>. Therefore the answer is: <hallucination>D</hallucination>.  \nAnswer: <hallucination>D</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 35°, thus angle AOB = 90° - 35° = 55°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = 27.5°. Therefore the answer is: D.  \nAnswer: D",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: As depicted in the figure, with AB serving as the tangent to circle O at point A, and OB intersecting circle O at point C, while point D is on the major arc AC, what is the degree measure of angle ADC if angle B measures 30 degrees?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 35°, thus angle AOB = 90° - <hallucination>35°</hallucination> = 55°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>. Therefore the answer is: D.\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 35°, thus angle AOB = 90° - <hallucination>35°</hallucination> = 55°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>. Therefore the answer is: D.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = <hallucination>25°</hallucination>, thus angle AOB = <hallucination>90° - 25° = 65°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.4 × angle AOB = 26°</hallucination>. Therefore the answer is: <hallucination>B</hallucination>.  \nAnswer: <hallucination>B</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 25°, thus angle AOB = 90° - 25° = 65°. According to the theorem of the angle in a circle, angle ADC = 0.4 × angle AOB = 26°. Therefore the answer is: B.  \nAnswer: B",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: Given the scenario in the diagram, where AB is a tangent to circle O at point A, and OB intersects circle O at point C, with point D on the major arc AC, and angle B being 30 degrees, what is the measure of angle ADC?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 25°, thus angle AOB = 90° - <hallucination>25°</hallucination> = 65°. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.4 × angle AOB</hallucination> = <hallucination>26°</hallucination>. Therefore the answer is: B.</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 25°, thus angle AOB = 90° - <hallucination>25°</hallucination> = 65°. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.4 × angle AOB</hallucination> = <hallucination>26°</hallucination>. Therefore the answer is: B.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle <hallucination>B = 35°</hallucination>, thus angle AOB = 90° - <hallucination>35°</hallucination> = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>.  \n\nTherefore, the answer is: <hallucination>D</hallucination>.  \nAnswer: <hallucination>D</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 35°, thus angle AOB = 90° - 35° = 55°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = 27.5°.  \n\nTherefore, the answer is: D.  \nAnswer: D",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: If AB is a tangent to circle O at point A, and OB intersects circle O at point C, with point D on the major arc AC, and angle B measuring 30 degrees, what is the measure of angle ADC in the provided figure?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause AB is a tangent to circle O, therefore angle <hallucination>OAB = 90°</hallucination>. Since angle B = <hallucination>35°</hallucination>, thus angle AOB = <hallucination>90° - 35° = 55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.5 × angle AOB = 27.5°</hallucination>.  \n\nTherefore, the answer is: D.  \nAnswer: D\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle <hallucination>OAB = 90°</hallucination>. Since angle B = <hallucination>35°</hallucination>, thus angle AOB = <hallucination>90° - 35° = 55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.5 × angle AOB = 27.5°</hallucination>.  \n\nTherefore, the answer is: D.  \nAnswer: D",
+    "metrics": {
+      "precision": 0.3958333333333333,
+      "recall": 0.5833333333333334,
+      "f1m": 0.4716312056737589,
+      "iou_precision_g": 0.175,
+      "iou_h": 0.15,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 10,
+            "end": 13,
+            "text": "OAB = 90°"
+          },
+          {
+            "start": 17,
+            "end": 18,
+            "text": "35°"
+          },
+          {
+            "start": 22,
+            "end": 27,
+            "text": "90° - 35° = 55°"
+          },
+          {
+            "start": 40,
+            "end": 46,
+            "text": "0.5 × angle AOB = 27.5°"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 15,
+            "end": 18,
+            "text": "B = 35°"
+          },
+          {
+            "start": 24,
+            "end": 25,
+            "text": "35°"
+          },
+          {
+            "start": 26,
+            "end": 27,
+            "text": "55°"
+          },
+          {
+            "start": 45,
+            "end": 46,
+            "text": "27.5°"
+          },
+          {
+            "start": 50,
+            "end": 51,
+            "text": "D"
+          },
+          {
+            "start": 52,
+            "end": 53,
+            "text": "D"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "OAB = 90°"
+        },
+        {
+          "start": 17,
+          "end": 18,
+          "text": "35°"
+        },
+        {
+          "start": 22,
+          "end": 27,
+          "text": "90° - 35° = 55°"
+        },
+        {
+          "start": 40,
+          "end": 46,
+          "text": "0.5 × angle AOB = 27.5°"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 15,
+          "end": 18,
+          "text": "B = 35°"
+        },
+        {
+          "start": 24,
+          "end": 25,
+          "text": "35°"
+        },
+        {
+          "start": 26,
+          "end": 27,
+          "text": "55°"
+        },
+        {
+          "start": 45,
+          "end": 46,
+          "text": "27.5°"
+        },
+        {
+          "start": 50,
+          "end": 51,
+          "text": "D"
+        },
+        {
+          "start": 52,
+          "end": 53,
+          "text": "D"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "test_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: In the diagram, quadrilateral ABCD is inscribed in circle O and angle DCE is measured at 65 degrees. What is the measure of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": false,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nSince quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCD + angle DCE = 180°. Therefore, angle A = <hallucination>112°</hallucination>. The correct answer is <hallucination>A</hallucination>.  \nAnswer: <hallucination>A</hallucination>",
+    "test_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCD + angle DCE = 180°. Therefore, angle A = 112°. The correct answer is A.  \nAnswer: A",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: When looking at the diagram, if quadrilateral ABCD is inscribed in circle O and angle DCE is 65 degrees, what is the degree measurement of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nSince quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCD + angle DCE = 180°. Therefore, <hallucination>angle A = 112°</hallucination>. The correct answer is A.\n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCD + angle DCE = 180°. Therefore, <hallucination>angle A = 112°</hallucination>. The correct answer is A.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral <hallucination>ABCE</hallucination> is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle <hallucination>BCE</hallucination> + angle DCE = 180°. Therefore, angle A = <hallucination>180° - angle DCE = 115°</hallucination>.  \n\nThe correct answer is <hallucination>A: 112°</hallucination>.  \nAnswer: <hallucination>A</hallucination>",
+    "test_solution": "Since quadrilateral ABCE is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCE + angle DCE = 180°. Therefore, angle A = 180° - angle DCE = 115°.  \n\nThe correct answer is A: 112°.  \nAnswer: A",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: In the given diagram, quadrilateral ABCD is inscribed in circle O. If the measure of angle DCE is 65 degrees, what is the degree measure of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nSince quadrilateral ABCE is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCE + angle DCE = 180°. Therefore, angle A = 180° - angle DCE = 115°.  \nThe correct answer is <hallucination>A: 112°</hallucination>.  \n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral ABCE is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCE + angle DCE = 180°. Therefore, angle A = 180° - angle DCE = 115°.  \nThe correct answer is <hallucination>A: 112°</hallucination>.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10131.png",
+    "image_path": "images/geo_170k/geoqa_plus/10131.png",
+    "original_solution": "Since quadrilateral ABCD is inscribed in circle O, we have angle BAD+angle BCD=180°. Also, angle BCD+angle DCE=180°. Therefore, angle A=angle DCE=65°. The correct answer is C.\nAnswer:C",
+    "gt_solution": "Since quadrilateral <hallucination>ABCE</hallucination> is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle <hallucination>BCD + angle BCE = 180°</hallucination>. Therefore, angle A = <hallucination>112°</hallucination>.  \nThe correct answer is <hallucination>A</hallucination>.  \nAnswer: <hallucination>A</hallucination>",
+    "test_solution": "Since quadrilateral ABCE is inscribed in circle O, we have angle BAD + angle BCD = 180°. Also, angle BCD + angle BCE = 180°. Therefore, angle A = 112°.  \nThe correct answer is A.  \nAnswer: A",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: If angle DCE measures 65 degrees and quadrilateral ABCD is inscribed in circle O as shown in the diagram, what is the degree measure of angle A?\nChoices:\nA: 112°\nB: 68°\nC: 65°\nD: 52°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nSince quadrilateral ABCE is inscribed in circle O, we have <hallucination>angle BAD + angle BCD = 180°</hallucination>. Also, <hallucination>angle BCD + angle BCE = 180°</hallucination>. Therefore, <hallucination>angle A = 112°</hallucination>.  \nThe correct answer is A.  \n</Tagged_Text>",
+    "gpt4v_response": "Since quadrilateral ABCE is inscribed in circle O, we have <hallucination>angle BAD + angle BCD = 180°</hallucination>. Also, <hallucination>angle BCD + angle BCE = 180°</hallucination>. Therefore, <hallucination>angle A = 112°</hallucination>.  \nThe correct answer is A.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = <hallucination>80°</hallucination>. Since angle B = <hallucination>40°</hallucination>, thus angle AOB = <hallucination>80° - 40° = 40°</hallucination>.  \n\nAccording to the theorem of the angle in a circle, angle ADC = <hallucination>0.4 × angle AOB = 16°</hallucination>. Therefore the answer is: <hallucination>A</hallucination>.  \nAnswer: <hallucination>A</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 80°. Since angle B = 40°, thus angle AOB = 80° - 40° = 40°.  \n\nAccording to the theorem of the angle in a circle, angle ADC = 0.4 × angle AOB = 16°. Therefore the answer is: A.  \nAnswer: A",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: In the given diagram, the line AB is a tangent to circle O at point A, while OB intersects circle O at point C, and point D lies on the major arc AC. If angle B measures 30 degrees, what is the degree measure of angle ADC?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>Because AB is a tangent to circle O, therefore angle OAB = 80°. Since angle B = 40°, thus angle AOB = 80° - 40° = 40°.  \nAccording to the theorem of the angle in a circle, angle ADC = 0.4 × angle AOB = <hallucination>16°</hallucination>. Therefore the answer is: A.</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle OAB = 80°. Since angle B = 40°, thus angle AOB = 80° - 40° = 40°.  \nAccording to the theorem of the angle in a circle, angle ADC = 0.4 × angle AOB = <hallucination>16°</hallucination>. Therefore the answer is: A.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90° - 30° = <hallucination>50°</hallucination>. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>25°</hallucination>. Therefore, the answer is: <hallucination>B</hallucination>.  \nAnswer: <hallucination>B</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90° - 30° = 50°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = 25°. Therefore, the answer is: B.  \nAnswer: B",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: As depicted in the figure, AB acts as a tangent to circle O at point A, and OB intersects circle O at point C. Along the major arc AC, point D is located. Given that angle B is 30 degrees, what is the measure of angle ADC?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause AB is a tangent to circle O, therefore angle OAB = <hallucination>90°</hallucination>. Since angle B = 30°, thus angle AOB = <hallucination>90° - 30° = 50°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.5 × angle AOB = 25°</hallucination>. Therefore, the answer is: B.\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle OAB = <hallucination>90°</hallucination>. Since angle B = 30°, thus angle AOB = <hallucination>90° - 30° = 50°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.5 × angle AOB = 25°</hallucination>. Therefore, the answer is: B.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = <hallucination>80°</hallucination>. Since angle B = <hallucination>25°</hallucination>, thus angle AOB = <hallucination>80° - 25° = 55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.6 × angle AOB = 33°</hallucination>.  \n\nTherefore the answer is: <hallucination>D</hallucination>.  \nAnswer: <hallucination>D</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 80°. Since angle B = 25°, thus angle AOB = 80° - 25° = 55°. According to the theorem of the angle in a circle, angle ADC = 0.6 × angle AOB = 33°.  \n\nTherefore the answer is: D.  \nAnswer: D",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: In the figure, circle O has AB as the tangent at point A, OB intersects circle O at point C, and point D is situated on the major arc AC. Given that angle B is 30 degrees, what is the measurement of angle ADC?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>Because AB is a tangent to circle O, therefore angle OAB = 80°. Since angle B = 25°, thus angle AOB = 80° - 25° = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.6 × angle AOB</hallucination> = <hallucination>33°</hallucination>.  \n\nTherefore the answer is: D.\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle OAB = 80°. Since angle B = 25°, thus angle AOB = 80° - 25° = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.6 × angle AOB</hallucination> = <hallucination>33°</hallucination>.  \n\nTherefore the answer is: D.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = <hallucination>35°</hallucination>, thus angle AOB = 90° - <hallucination>35°</hallucination> = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>. Therefore the answer is: <hallucination>D</hallucination>.  \nAnswer:<hallucination>D</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 35°, thus angle AOB = 90° - 35° = 55°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = 27.5°. Therefore the answer is: D.  \nAnswer:D",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: What is the degree measure of angle ADC in the given diagram, where point A is the point of tangency for the tangent AB to circle O, OB intersects circle O at point C, and point D lies on the major arc AC, given that angle B measures 30 degrees?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause <hallucination>AB is a tangent to circle O</hallucination>, therefore <hallucination>angle OAB = 90°</hallucination>. Since angle B = 35°, thus angle AOB = 90° - 35° = 55°. According to the theorem of the angle in a circle, <hallucination>angle ADC = 0.5 × angle AOB = 27.5°</hallucination>. Therefore the answer is: D.\n</Tagged_Text>",
+    "gpt4v_response": "Because <hallucination>AB is a tangent to circle O</hallucination>, therefore <hallucination>angle OAB = 90°</hallucination>. Since angle B = 35°, thus angle AOB = 90° - 35° = 55°. According to the theorem of the angle in a circle, <hallucination>angle ADC = 0.5 × angle AOB = 27.5°</hallucination>. Therefore the answer is: D.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = <hallucination>35°</hallucination>, thus angle AOB = 90° - <hallucination>35°</hallucination> = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>.  \n\nTherefore, the answer is: <hallucination>D</hallucination>.  \nAnswer: <hallucination>D</hallucination>",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 35°, thus angle AOB = 90° - 35° = 55°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = 27.5°.  \n\nTherefore, the answer is: D.  \nAnswer: D",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: As shown in the figure, AB is the tangent to circle O, point A is the point of tangency, OB intersects circle O at point C, point D is on the major arc AC. If angle B = 30°, then the degree measure of angle ADC is ().\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause AB is a tangent to circle O, therefore angle <hallucination>OAB = 90°</hallucination>. Since angle B = 35°, thus angle AOB = 90° - 35° = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>.  \n\nTherefore, the answer is: D.  \nAnswer: D\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore angle <hallucination>OAB = 90°</hallucination>. Since angle B = 35°, thus angle AOB = 90° - 35° = <hallucination>55°</hallucination>. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = <hallucination>27.5°</hallucination>.  \n\nTherefore, the answer is: D.  \nAnswer: D",
+    "metrics": {
+      "precision": 0.6666666666666666,
+      "recall": 0.3333333333333333,
+      "f1m": 0.4444444444444444,
+      "iou_precision_g": 0.6666666666666666,
+      "iou_h": 0.3333333333333333,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 10,
+            "end": 13,
+            "text": "OAB = 90°"
+          },
+          {
+            "start": 26,
+            "end": 27,
+            "text": "55°"
+          },
+          {
+            "start": 45,
+            "end": 46,
+            "text": "27.5°"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 17,
+            "end": 18,
+            "text": "35°"
+          },
+          {
+            "start": 24,
+            "end": 25,
+            "text": "35°"
+          },
+          {
+            "start": 26,
+            "end": 27,
+            "text": "55°"
+          },
+          {
+            "start": 45,
+            "end": 46,
+            "text": "27.5°"
+          },
+          {
+            "start": 50,
+            "end": 51,
+            "text": "D"
+          },
+          {
+            "start": 52,
+            "end": 53,
+            "text": "D"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "OAB = 90°"
+        },
+        {
+          "start": 26,
+          "end": 27,
+          "text": "55°"
+        },
+        {
+          "start": 45,
+          "end": 46,
+          "text": "27.5°"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 17,
+          "end": 18,
+          "text": "35°"
+        },
+        {
+          "start": 24,
+          "end": 25,
+          "text": "35°"
+        },
+        {
+          "start": 26,
+          "end": 27,
+          "text": "55°"
+        },
+        {
+          "start": 45,
+          "end": 46,
+          "text": "27.5°"
+        },
+        {
+          "start": 50,
+          "end": 51,
+          "text": "D"
+        },
+        {
+          "start": 52,
+          "end": 53,
+          "text": "D"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: If point A is the point of tangency for the tangent AB to circle O, and OB intersects circle O at point C, with point D located on the major arc AC, and angle B measuring 30 degrees, then what is the degree measure of angle ADC in the figure provided?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": false,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause AB is a tangent to circle O, therefore <hallucination>angle OAB = 90°</hallucination>. Since <hallucination>angle B = 30°</hallucination>, thus <hallucination>angle AOB = 90°-30° = 60°</hallucination>. According to the theorem of the angle in a circle, <hallucination>angle ADC = 0.5angle AOB = 30°</hallucination>. Therefore the answer is: C.\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore <hallucination>angle OAB = 90°</hallucination>. Since <hallucination>angle B = 30°</hallucination>, thus <hallucination>angle AOB = 90°-30° = 60°</hallucination>. According to the theorem of the angle in a circle, <hallucination>angle ADC = 0.5angle AOB = 30°</hallucination>. Therefore the answer is: C.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10130.png",
+    "image_path": "images/geo_170k/geoqa_plus/10130.png",
+    "original_solution": "Because AB is a tangent to circle O, therefore angle OAB = 90°. Since angle B = 30°, thus angle AOB = 90°-30° = 60°. According to the theorem of the angle in a circle, angle ADC = 0.5angle AOB = 30°. Therefore the answer is: C.\nAnswer:C",
+    "gt_solution": "Because AB is a tangent to circle O, therefore angle OAB = <hallucination>80°</hallucination>. Since angle B = <hallucination>35°</hallucination>, thus angle AOB = <hallucination>80° - 35° = 45°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.5 × angle AOB = 22.5°</hallucination>.  \n\nThe closest choice is <hallucination>B: 25°</hallucination>.  \nAnswer: <hallucination>B</hallucination>.",
+    "test_solution": "Because AB is a tangent to circle O, therefore angle OAB = 80°. Since angle B = 35°, thus angle AOB = 80° - 35° = 45°. According to the theorem of the angle in a circle, angle ADC = 0.5 × angle AOB = 22.5°.  \n\nThe closest choice is B: 25°.  \nAnswer: B.",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: If AB is a tangent to circle O at point A, OB intersects circle O at point C, and point D lies on the major arc AC, and angle B measures 30 degrees, what is the measure of angle ADC in the figure provided?\nChoices:\nA: 20°\nB: 25°\nC: 30°\nD: 35°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nBecause AB is a tangent to circle O, therefore <hallucination>angle OAB = 80°</hallucination>. Since angle B = 35°, thus <hallucination>angle AOB = 80° - 35° = 45°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.5 × angle AOB = 22.5°</hallucination>. The closest choice is B: <hallucination>25°</hallucination>.\n</Tagged_Text>",
+    "gpt4v_response": "Because AB is a tangent to circle O, therefore <hallucination>angle OAB = 80°</hallucination>. Since angle B = 35°, thus <hallucination>angle AOB = 80° - 35° = 45°</hallucination>. According to the theorem of the angle in a circle, angle ADC = <hallucination>0.5 × angle AOB = 22.5°</hallucination>. The closest choice is B: <hallucination>25°</hallucination>.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "geoqa_plus/10129.png",
+    "image_path": "images/geo_170k/geoqa_plus/10129.png",
+    "original_solution": "Extend ED to N, connect OD, and extend it to intersect with circle O at point M. Since angle A is 50°, OA=OC, therefore angle AOC is 80°. Hence, the degree of angle AMC is 80°. Since point D is the midpoint of chord AC and OA=OC, angle AOD = angle COD, therefore AM=CM, meaning that M is the midpoint of AC. Therefore, the degree of angles AM and CM are both 0.5×80° = 40°. Since CN > CM, therefore 40° < degree of angle CN < 80°, hence 20° < angle CED < 40°. Therefore, option B is the correct answer, while options A, C, and D are all incorrect. Therefore, the answer is: B.\nAnswer:B",
+    "gt_solution": "Extend ED to N, connect OD, and extend it to intersect with circle O at point M. Since angle A is <hallucination>60°</hallucination>, OA = OC, therefore angle AOC is <hallucination>120°</hallucination>. Hence, the degree of angle AMC is <hallucination>120°</hallucination>. Since point D is the midpoint of chord AC and OA = OC, angle AOD = angle COD, therefore AM = CM, meaning that M is the midpoint of AC. Therefore, the degree of angles AM and CM are both <hallucination>0.5×120° = 60°</hallucination>. Since CN > CM, therefore <hallucination>60° < degree of angle CN < 120°</hallucination>, hence <hallucination>40° < angle CED < 60°</hallucination>. Therefore, option <hallucination>D</hallucination> is the correct answer, while options A, B, and C are all incorrect. Therefore, the answer is: <hallucination>D</hallucination>.  \nAnswer: <hallucination>D</hallucination>",
+    "test_solution": "Extend ED to N, connect OD, and extend it to intersect with circle O at point M. Since angle A is 60°, OA = OC, therefore angle AOC is 120°. Hence, the degree of angle AMC is 120°. Since point D is the midpoint of chord AC and OA = OC, angle AOD = angle COD, therefore AM = CM, meaning that M is the midpoint of AC. Therefore, the degree of angles AM and CM are both 0.5×120° = 60°. Since CN > CM, therefore 60° < degree of angle CN < 120°, hence 40° < angle CED < 60°. Therefore, option D is the correct answer, while options A, B, and C are all incorrect. Therefore, the answer is: D.  \nAnswer: D",
+    "prompt": "<image>\nFirst perform reasoning, then finally select the question from the choices in the following format: Answer: xxx.\nQuestion: As shown in the figure, in circle O, AB is the diameter, angle A = 50°, point D is the midpoint of chord AC, and point E is any point on BC. The possible size of angle CED is ().\nChoices:\nA: 20°\nB: 40°\nC: 30°\nD: 50°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nExtend ED to N, connect OD, and extend it to intersect with circle O at point M. Since angle A is 60° <hallucination>OA = OC</hallucination>, therefore angle AOC is 120°. Hence, the degree of angle AMC is 120°. Since point D is the midpoint of chord AC and <hallucination>OA = OC</hallucination>, angle AOD = angle COD, therefore AM = CM, meaning that M is the midpoint of AC. Therefore, the degree of angles AM and CM are both 0.5×120° = 60°. Since CN > CM, therefore <hallucination>60° < degree of angle CN < 120°</hallucination>, hence <hallucination>40° < angle CED < 60°</hallucination>. Therefore, option D is the correct answer, while options A, B, and C are all incorrect. Therefore, the answer is: D.\n</Tagged_Text>",
+    "gpt4v_response": "Extend ED to N, connect OD, and extend it to intersect with circle O at point M. Since angle A is 60° <hallucination>OA = OC</hallucination>, therefore angle AOC is 120°. Hence, the degree of angle AMC is 120°. Since point D is the midpoint of chord AC and <hallucination>OA = OC</hallucination>, angle AOD = angle COD, therefore AM = CM, meaning that M is the midpoint of AC. Therefore, the degree of angles AM and CM are both 0.5×120° = 60°. Since CN > CM, therefore <hallucination>60° < degree of angle CN < 120°</hallucination>, hence <hallucination>40° < angle CED < 60°</hallucination>. Therefore, option D is the correct answer, while options A, B, and C are all incorrect. Therefore, the answer is: D.",
+    "status": "not_correct_annotated"
+  }
+]

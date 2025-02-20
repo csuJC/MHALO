@@ -1,0 +1,874 @@
+[
+  {
+    "sample_id": "TextVQA/images/62ac00ca1524fd3f.jpg",
+    "image_path": "images/mathv_360k/TextVQA/images/62ac00ca1524fd3f.jpg",
+    "original_solution": "Let's analyze the image step by step:\n1. Observing the image, I see:\n   - A computer screen displaying a graphical interface.\n   - On the screen, there is a circular blue icon on the left side featuring a stylized design resembling feathers or a wing.\n   - To the right of the icon, there is text that states: \"The Library is Gangsta!\".\n2. The question asks, \"What is the library?\"\n3. From the text on the screen, it is directly stated that \"The Library is Gangsta!\".\n4. Therefore, the library is described as \"Gangsta!\".\nThe answer is \"Gangsta!\".",
+    "gt_solution": "Let's analyze the image step by step:\n1. Observing the image, I see:\n   - A computer screen displaying a graphical interface.\n   - On the screen, there is a circular <hallucination>green</hallucination> icon on the left side featuring a stylized design resembling <hallucination>leaves</hallucination>.\n   - To the right of the icon, there is text that states: \"<hallucination>The Library is Elegant!</hallucination>\".\n2. The question asks, \"What is the library?\"\n3. From the text on the screen, it is directly stated that \"<hallucination>The Library is Elegant!</hallucination>\".\n4. Therefore, the library is described as \"<hallucination>Elegant!</hallucination>\".\nThe answer is \"<hallucination>Elegant!</hallucination>\".",
+    "test_solution": "Let's analyze the image step by step:\n1. Observing the image, I see:\n   - A computer screen displaying a graphical interface.\n   - On the screen, there is a circular green icon on the left side featuring a stylized design resembling leaves.\n   - To the right of the icon, there is text that states: \"The Library is Elegant!\".\n2. The question asks, \"What is the library?\"\n3. From the text on the screen, it is directly stated that \"The Library is Elegant!\".\n4. Therefore, the library is described as \"Elegant!\".\nThe answer is \"Elegant!\".",
+    "prompt": "<image>\nHint: Please answer the question and provide the final answer at the end.\nQuestion: what is the library?",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nThe answer is \"Elegant!\".",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nThe answer is \"Elegant!\".",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "ScienceQA/images/19767.png",
+    "image_path": "images/mathv_360k/ScienceQA/images/19767.png",
+    "original_solution": "Let's solve this step by step:\n1. The question asks for the capital of Hawaii.\n2. Based on geographic and civic knowledge, Hawaii's capital is Honolulu.\n3. Among the provided choices:\n   - (A) Hilo is a city in Hawaii but not the capital.\n   - (B) Memphis is a city in Tennessee, unrelated to Hawaii.\n   - (C) Honolulu is the correct capital of Hawaii.\n   - (D) Salem is the capital of Oregon, also unrelated to Hawaii.\n4. Therefore, the correct choice is (C).\n\nThe answer is C.",
+    "gt_solution": "Let's solve this step by step:\n1. The question asks for the capital of Hawaii.\n2. Based on <hallucination>misinterpreted</hallucination> geographic and civic knowledge, Hawaii's capital is <hallucination>Hilo</hallucination>.\n3. Among the provided choices:\n   - (A) <hallucination>Hilo is the correct capital of Hawaii.</hallucination>\n   - (B) Memphis is a city in Tennessee, unrelated to Hawaii.\n   - (C) Honolulu is <hallucination>an incorrect option</hallucination>.\n   - (D) Salem is the capital of Oregon, also unrelated to Hawaii.\n4. Therefore, the correct choice is <hallucination>(A)</hallucination>.\n\nThe answer is <hallucination>A</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. The question asks for the capital of Hawaii.\n2. Based on misinterpreted geographic and civic knowledge, Hawaii's capital is Hilo.\n3. Among the provided choices:\n   - (A) Hilo is the correct capital of Hawaii.\n   - (B) Memphis is a city in Tennessee, unrelated to Hawaii.\n   - (C) Honolulu is an incorrect option.\n   - (D) Salem is the capital of Oregon, also unrelated to Hawaii.\n4. Therefore, the correct choice is (A).\n\nThe answer is A.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: What is the capital of Hawaii?\nChoices:\n(A) Hilo\n(B) Memphis\n(C) Honolulu\n(D) Salem",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n\nLet's solve this step by step:\n1. The question asks for the capital of Hawaii.\n2. Based on misinterpreted geographic and civic knowledge, Hawaii's capital is Hilo.\n3. Among the provided choices:\n   - <hallucination>(A) Hilo</hallucination> is the correct capital of Hawaii.\n   - (B) Memphis is a city in Tennessee, unrelated to Hawaii.\n   - <hallucination>(C) Honolulu</hallucination> is an incorrect option.\n   - (D) Salem is the capital of Oregon, also unrelated to Hawaii.\n4. Therefore, the correct choice is <hallucination>(A)</hallucination>.\n\nThe answer is A.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\n\nLet's solve this step by step:\n1. The question asks for the capital of Hawaii.\n2. Based on misinterpreted geographic and civic knowledge, Hawaii's capital is Hilo.\n3. Among the provided choices:\n   - <hallucination>(A) Hilo</hallucination> is the correct capital of Hawaii.\n   - (B) Memphis is a city in Tennessee, unrelated to Hawaii.\n   - <hallucination>(C) Honolulu</hallucination> is an incorrect option.\n   - (D) Salem is the capital of Oregon, also unrelated to Hawaii.\n4. Therefore, the correct choice is <hallucination>(A)</hallucination>.\n\nThe answer is A.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "FigureQA/images/15047.png",
+    "image_path": "images/mathv_360k/FigureQA/images/15047.png",
+    "original_solution": "Let's solve this step by step:\n1. Analyzing the pie chart, I observe:\n   - There are two sections: Dark Turquoise and Light Seafoam.\n   - The Dark Turquoise section is visually larger than the Light Seafoam section.\n2. Based on the visualization, Dark Turquoise occupies a greater proportion of the chart compared to Light Seafoam.\n3. Therefore, Dark Turquoise is the maximum.\nThe correct option is (B) yes.",
+    "gt_solution": "Let's solve this step by step:\n1. Analyzing the pie chart, I observe:\n   - There are two sections: <hallucination>Light Blue</hallucination> and <hallucination>Teal</hallucination>.\n   - The <hallucination>Teal</hallucination> section is visually larger than the <hallucination>Light Blue</hallucination> section.\n2. Based on the visualization, <hallucination>Teal</hallucination> occupies a greater proportion of the chart compared to <hallucination>Light Blue</hallucination>.\n3. Therefore, Dark Turquoise is <hallucination>not</hallucination> the maximum.\nThe correct option is <hallucination>(A) no</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. Analyzing the pie chart, I observe:\n   - There are two sections: Light Blue and Teal.\n   - The Teal section is visually larger than the Light Blue section.\n2. Based on the visualization, Teal occupies a greater proportion of the chart compared to Light Blue.\n3. Therefore, Dark Turquoise is not the maximum.\nThe correct option is (A) no.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Is Dark Turquoise the maximum?\nChoices:\n(A) no\n(B) yes",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nLet's solve this step by step:\n1. Analyzing the pie chart, I observe:\n   - There are two sections: Light <hallucination>Blue</hallucination> and <hallucination>Teal</hallucination>.\n   - The <hallucination>Teal</hallucination> section is visually larger than the Light <hallucination>Blue</hallucination> section.\n2. Based on the visualization, Teal occupies a greater proportion of the chart compared to Light <hallucination>Blue</hallucination>.\n3. Therefore, Dark Turquoise is not the maximum.\nThe correct option is (A) no.\n</Tagged_Text>",
+    "gpt4v_response": "Let's solve this step by step:\n1. Analyzing the pie chart, I observe:\n   - There are two sections: Light <hallucination>Blue</hallucination> and <hallucination>Teal</hallucination>.\n   - The <hallucination>Teal</hallucination> section is visually larger than the Light <hallucination>Blue</hallucination> section.\n2. Based on the visualization, Teal occupies a greater proportion of the chart compared to Light <hallucination>Blue</hallucination>.\n3. Therefore, Dark Turquoise is not the maximum.\nThe correct option is (A) no.",
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.5625,
+      "f1m": 0.72,
+      "iou_precision_g": 0.7,
+      "iou_h": 0.4375,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 19,
+            "end": 20,
+            "text": "Blue"
+          },
+          {
+            "start": 21,
+            "end": 22,
+            "text": "Teal"
+          },
+          {
+            "start": 24,
+            "end": 25,
+            "text": "Teal"
+          },
+          {
+            "start": 32,
+            "end": 33,
+            "text": "Blue"
+          },
+          {
+            "start": 50,
+            "end": 51,
+            "text": "Blue"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 18,
+            "end": 20,
+            "text": "Light Blue"
+          },
+          {
+            "start": 21,
+            "end": 22,
+            "text": "Teal"
+          },
+          {
+            "start": 24,
+            "end": 25,
+            "text": "Teal"
+          },
+          {
+            "start": 31,
+            "end": 33,
+            "text": "Light Blue"
+          },
+          {
+            "start": 39,
+            "end": 40,
+            "text": "Teal"
+          },
+          {
+            "start": 49,
+            "end": 51,
+            "text": "Light Blue"
+          },
+          {
+            "start": 56,
+            "end": 57,
+            "text": "not"
+          },
+          {
+            "start": 63,
+            "end": 65,
+            "text": "(A) no"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 19,
+          "end": 20,
+          "text": "Blue"
+        },
+        {
+          "start": 21,
+          "end": 22,
+          "text": "Teal"
+        },
+        {
+          "start": 24,
+          "end": 25,
+          "text": "Teal"
+        },
+        {
+          "start": 32,
+          "end": 33,
+          "text": "Blue"
+        },
+        {
+          "start": 50,
+          "end": 51,
+          "text": "Blue"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "Light Blue"
+        },
+        {
+          "start": 21,
+          "end": 22,
+          "text": "Teal"
+        },
+        {
+          "start": 24,
+          "end": 25,
+          "text": "Teal"
+        },
+        {
+          "start": 31,
+          "end": 33,
+          "text": "Light Blue"
+        },
+        {
+          "start": 39,
+          "end": 40,
+          "text": "Teal"
+        },
+        {
+          "start": 49,
+          "end": 51,
+          "text": "Light Blue"
+        },
+        {
+          "start": 56,
+          "end": 57,
+          "text": "not"
+        },
+        {
+          "start": 63,
+          "end": 65,
+          "text": "(A) no"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "VizWiz/images/VizWiz_train_00000927.jpg",
+    "image_path": "images/mathv_360k/VizWiz/images/VizWiz_train_00000927.jpg",
+    "original_solution": "Let's analyze the image step by step:\n1. Observing the image, there is a circular dial with a needle in the center.\n2. The dial appears to have markings, but due to the glare and poor resolution of the image, the numbers or labels on the dial are not legible.\n3. The needle is pointing to a specific position, but without clear visibility of the markings, it is impossible to determine which number or label it corresponds to.\n4. Based on the visual information provided, it is not possible to accurately answer the question.\n\nTherefore, the answer is unanswerable.",
+    "gt_solution": "Let's analyze the image step by step:\n1. Observing the image, there is a <hallucination>thermometer</hallucination> with a needle in the center.\n2. The dial has markings, and the needle is pointing to approximately <hallucination>20 degrees</hallucination>.\n3. Although there is some glare on the image, the marking \"20\" is <hallucination>clearly visible</hallucination> where the needle is pointing.\n4. Based on this observation, the number the needle is pointing to is <hallucination>20</hallucination>.\n\nTherefore, the answer is <hallucination>20</hallucination>.",
+    "test_solution": "Let's analyze the image step by step:\n1. Observing the image, there is a thermometer with a needle in the center.\n2. The dial has markings, and the needle is pointing to approximately 20 degrees.\n3. Although there is some glare on the image, the marking \"20\" is clearly visible where the needle is pointing.\n4. Based on this observation, the number the needle is pointing to is 20.\n\nTherefore, the answer is 20.",
+    "prompt": "<image>\nHint: Please answer the question and provide the final answer at the end.\nQuestion: What number is the needle pointing to please",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nLet's analyze the image step by step:\n1. Observing the image, there is a <hallucination>thermometer</hallucination> with a needle in the center.\n2. The dial has markings, and the needle is pointing to approximately <hallucination>20 degrees</hallucination>.\n3. Although there is some glare on the image, the marking \"<hallucination>20</hallucination>\" is clearly visible where the needle is pointing.\n4. Based on this observation, the number the needle is pointing to is <hallucination>20</hallucination>.\n\nTherefore, the answer is <hallucination>20</hallucination>.\n</Tagged_Text>",
+    "gpt4v_response": "Let's analyze the image step by step:\n1. Observing the image, there is a <hallucination>thermometer</hallucination> with a needle in the center.\n2. The dial has markings, and the needle is pointing to approximately <hallucination>20 degrees</hallucination>.\n3. Although there is some glare on the image, the marking \"<hallucination>20</hallucination>\" is clearly visible where the needle is pointing.\n4. Based on this observation, the number the needle is pointing to is <hallucination>20</hallucination>.\n\nTherefore, the answer is <hallucination>20</hallucination>.",
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1m": 0.888888888888889,
+      "iou_precision_g": 0.8,
+      "iou_h": 0.8,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 14,
+            "end": 15,
+            "text": "thermometer"
+          },
+          {
+            "start": 33,
+            "end": 35,
+            "text": "20 degrees"
+          },
+          {
+            "start": 47,
+            "end": 48,
+            "text": "20"
+          },
+          {
+            "start": 68,
+            "end": 69,
+            "text": "20"
+          },
+          {
+            "start": 73,
+            "end": 74,
+            "text": "20"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 14,
+            "end": 15,
+            "text": "thermometer"
+          },
+          {
+            "start": 33,
+            "end": 35,
+            "text": "20 degrees"
+          },
+          {
+            "start": 48,
+            "end": 50,
+            "text": "clearly visible"
+          },
+          {
+            "start": 68,
+            "end": 69,
+            "text": "20"
+          },
+          {
+            "start": 73,
+            "end": 74,
+            "text": "20"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 14,
+          "end": 15,
+          "text": "thermometer"
+        },
+        {
+          "start": 33,
+          "end": 35,
+          "text": "20 degrees"
+        },
+        {
+          "start": 47,
+          "end": 48,
+          "text": "20"
+        },
+        {
+          "start": 68,
+          "end": 69,
+          "text": "20"
+        },
+        {
+          "start": 73,
+          "end": 74,
+          "text": "20"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 14,
+          "end": 15,
+          "text": "thermometer"
+        },
+        {
+          "start": 33,
+          "end": 35,
+          "text": "20 degrees"
+        },
+        {
+          "start": 48,
+          "end": 50,
+          "text": "clearly visible"
+        },
+        {
+          "start": 68,
+          "end": 69,
+          "text": "20"
+        },
+        {
+          "start": 73,
+          "end": 74,
+          "text": "20"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "TabMWP/images/11068.png",
+    "image_path": "images/mathv_360k/TabMWP/images/11068.png",
+    "original_solution": "Let's solve this step by step:\n1. Looking at the table, at a price of $65:\n   - Quantity demanded = 22,300\n   - Quantity supplied = 9,100\n2. To determine whether there is a shortage or surplus, we compare quantity demanded and quantity supplied:\n   - If quantity demanded > quantity supplied, there is a **shortage**.\n   - If quantity demanded < quantity supplied, there is a **surplus**.\n3. In this case:\n   - Quantity demanded (22,300) > Quantity supplied (9,100)\n   - Therefore, there is a shortage.\n4. The correct option is:\n   **(A) shortage**",
+    "gt_solution": "Let's solve this step by step:\n1. Looking at the table, at a price of $65:\n   - Quantity demanded = <hallucination>22,500</hallucination>\n   - Quantity supplied = <hallucination>10,100</hallucination>\n2. To determine whether there is a shortage or surplus, we compare quantity demanded and quantity supplied:\n   - If quantity demanded > quantity supplied, there is a **shortage**.\n   - If quantity demanded < quantity supplied, there is a **surplus**.\n3. In this case:\n   - Quantity demanded (<hallucination>22,500</hallucination>) > Quantity supplied (<hallucination>10,100</hallucination>)\n   - Therefore, there is a shortage.\n4. The correct option is:\n   **(A) shortage**",
+    "test_solution": "Let's solve this step by step:\n1. Looking at the table, at a price of $65:\n   - Quantity demanded = 22,500\n   - Quantity supplied = 10,100\n2. To determine whether there is a shortage or surplus, we compare quantity demanded and quantity supplied:\n   - If quantity demanded > quantity supplied, there is a **shortage**.\n   - If quantity demanded < quantity supplied, there is a **surplus**.\n3. In this case:\n   - Quantity demanded (22,500) > Quantity supplied (10,100)\n   - Therefore, there is a shortage.\n4. The correct option is:\n   **(A) shortage**",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Look at the table. Then answer the question. At a price of $65, is there a shortage or a surplus?\nChoices:\n(A) shortage\n(B) surplus",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Looking at the table, at a price of $65:\n   - Quantity demanded = <hallucination>22,500</hallucination>\n   - Quantity supplied = 10,100\n2. To determine whether there is a shortage or surplus, we compare quantity demanded and quantity supplied:\n   - If quantity demanded > quantity supplied, there is a **shortage**.\n   - If quantity demanded < quantity supplied, there is a **surplus**.\n3. In this case:\n   - Quantity demanded (<hallucination>22,500</hallucination>) > Quantity supplied (10,100)\n   - Therefore, there is a shortage.\n4. The correct option is:\n   **(A) shortage**",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Looking at the table, at a price of $65:\n   - Quantity demanded = <hallucination>22,500</hallucination>\n   - Quantity supplied = 10,100\n2. To determine whether there is a shortage or surplus, we compare quantity demanded and quantity supplied:\n   - If quantity demanded > quantity supplied, there is a **shortage**.\n   - If quantity demanded < quantity supplied, there is a **surplus**.\n3. In this case:\n   - Quantity demanded (<hallucination>22,500</hallucination>) > Quantity supplied (10,100)\n   - Therefore, there is a shortage.\n4. The correct option is:\n   **(A) shortage**",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "UniGeo/images/1005.png",
+    "image_path": "images/mathv_360k/UniGeo/images/1005.png",
+    "original_solution": "Let's solve this step by step:\n\n1. From the diagram:\n   - ⊙O is a circle, and O is its center.\n   - AC and BC are chords in the circle.\n   - ∠C = 35°.\n\n2. In a circle, the angle subtended by a chord at the center (∠O) is twice the angle subtended by the same chord at any point on the circle's circumference (∠C).\n\n3. Using the property of the circle:\n   ∠O = 2 × ∠C\n\n4. Substituting the value of ∠C:\n   ∠O = 2 × 35° = 70°\n\n5. Therefore, the angle ∠O is 70°.\n\nThe correct option is (D) 70°.",
+    "gt_solution": "Let's solve this step by step:\n\n1. From the diagram:\n   - ⊙O is a circle, and O is its center.\n   - AC and BC are chords in the circle.\n   - <hallucination>∠C = 40°</hallucination>.\n\n2. In a circle, the angle subtended by a chord at the center (∠O) is twice the angle subtended by the same chord at any point on the circle's circumference (∠C).\n\n3. Using the property of the circle:\n   ∠O = 2 × ∠C\n\n4. Substituting the value of ∠C:\n   <hallucination>∠O = 2 × 40° = 80°</hallucination>\n\n5. Therefore, the angle ∠O is <hallucination>80°</hallucination>.\n\nThe correct option is <hallucination>(A) 25°</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n\n1. From the diagram:\n   - ⊙O is a circle, and O is its center.\n   - AC and BC are chords in the circle.\n   - ∠C = 40°.\n\n2. In a circle, the angle subtended by a chord at the center (∠O) is twice the angle subtended by the same chord at any point on the circle's circumference (∠C).\n\n3. Using the property of the circle:\n   ∠O = 2 × ∠C\n\n4. Substituting the value of ∠C:\n   ∠O = 2 × 40° = 80°\n\n5. Therefore, the angle ∠O is 80°.\n\nThe correct option is (A) 25°.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图,⊙O中,弦AC与BC时两条弦,∠C=35°,则∠O的度数是()\nChoices:\n(A) 25°\n(B) 35°\n(C) 65°\n(D) 70°",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nLet's solve this step by step:\n\n1. From the diagram:\n   - ⊙O is a <hallucination>circle</hallucination>, and O is its center.\n   - AC and BC are <hallucination>chords</hallucination> in the circle.\n   - ∠C = 40°.\n\n2. In a <hallucination>circle</hallucination>, the angle subtended by a <hallucination>chord</hallucination> at the center (∠O) is twice the angle subtended by the same chord at any point on the circle's circumference (∠C).\n\n3. Using the property of the <hallucination>circle</hallucination>:\n   ∠O = 2 × ∠C\n\n4. Substituting the value of ∠C:\n   ∠O = 2 × 40° = 80°\n\n5. Therefore, the angle ∠O is 80°.\n\nThe correct option is (A) 25°.\n</Tagged_Text>",
+    "gpt4v_response": "Let's solve this step by step:\n\n1. From the diagram:\n   - ⊙O is a <hallucination>circle</hallucination>, and O is its center.\n   - AC and BC are <hallucination>chords</hallucination> in the circle.\n   - ∠C = 40°.\n\n2. In a <hallucination>circle</hallucination>, the angle subtended by a <hallucination>chord</hallucination> at the center (∠O) is twice the angle subtended by the same chord at any point on the circle's circumference (∠C).\n\n3. Using the property of the <hallucination>circle</hallucination>:\n   ∠O = 2 × ∠C\n\n4. Substituting the value of ∠C:\n   ∠O = 2 × 40° = 80°\n\n5. Therefore, the angle ∠O is 80°.\n\nThe correct option is (A) 25°.",
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1m": 0.0,
+      "iou_precision_g": 0.0,
+      "iou_h": 0.0,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 14,
+            "end": 15,
+            "text": "circle"
+          },
+          {
+            "start": 25,
+            "end": 26,
+            "text": "chords"
+          },
+          {
+            "start": 36,
+            "end": 37,
+            "text": "circle"
+          },
+          {
+            "start": 42,
+            "end": 43,
+            "text": "chord"
+          },
+          {
+            "start": 70,
+            "end": 71,
+            "text": "circle"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 30,
+            "end": 33,
+            "text": "∠C = 40°"
+          },
+          {
+            "start": 82,
+            "end": 89,
+            "text": "∠O = 2 × 40° = 80°"
+          },
+          {
+            "start": 95,
+            "end": 96,
+            "text": "80°"
+          },
+          {
+            "start": 100,
+            "end": 102,
+            "text": "(A) 25°"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 14,
+          "end": 15,
+          "text": "circle"
+        },
+        {
+          "start": 25,
+          "end": 26,
+          "text": "chords"
+        },
+        {
+          "start": 36,
+          "end": 37,
+          "text": "circle"
+        },
+        {
+          "start": 42,
+          "end": 43,
+          "text": "chord"
+        },
+        {
+          "start": 70,
+          "end": 71,
+          "text": "circle"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 30,
+          "end": 33,
+          "text": "∠C = 40°"
+        },
+        {
+          "start": 82,
+          "end": 89,
+          "text": "∠O = 2 × 40° = 80°"
+        },
+        {
+          "start": 95,
+          "end": 96,
+          "text": "80°"
+        },
+        {
+          "start": 100,
+          "end": 102,
+          "text": "(A) 25°"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "IconQA/images/66117.png",
+    "image_path": "images/mathv_360k/IconQA/images/66117.png",
+    "original_solution": "Let's solve this step by step:\n1. Analyze the image:\n   - The image contains three rows of dots, plus an additional row with three dots.\n   - Each of the first three rows holds 10 dots.\n   - The final row contains 3 dots.\n2. Count the total number of dots:\n   - First three rows: 10 + 10 + 10 = 30 dots.\n   - Additional row: 3 dots.\n   - Total: 30 + 3 = 33 dots.\n3. Verify the answer:\n   - The total number of dots is 33.\nTherefore, the correct answer is (C).",
+    "gt_solution": "Let's solve this step by step:\n1. Analyze the image:\n   - The image contains three rows of dots, plus an additional row with <hallucination>four dots</hallucination>.\n   - Each of the first three rows holds <hallucination>9 dots</hallucination>.\n   - The final row contains <hallucination>4 dots</hallucination>.\n2. Count the total number of dots:\n   - First three rows: <hallucination>9 + 9 + 9 = 27 dots</hallucination>.\n   - Additional row: <hallucination>4 dots</hallucination>.\n   - Total: <hallucination>27 + 4 = 31 dots</hallucination>.\n3. Verify the answer:\n   - The total number of dots is <hallucination>31</hallucination>.\nTherefore, the correct answer is <hallucination>(B)</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. Analyze the image:\n   - The image contains three rows of dots, plus an additional row with four dots.\n   - Each of the first three rows holds 9 dots.\n   - The final row contains 4 dots.\n2. Count the total number of dots:\n   - First three rows: 9 + 9 + 9 = 27 dots.\n   - Additional row: 4 dots.\n   - Total: 27 + 4 = 31 dots.\n3. Verify the answer:\n   - The total number of dots is 31.\nTherefore, the correct answer is (B).",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: How many dots are there?\nChoices:\n(A) 40\n(B) 35\n(C) 33",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyze the <hallucination>image</hallucination>:\n   - The <hallucination>image</hallucination> contains three rows of <hallucination>dots</hallucination>, plus an additional row with four <hallucination>dots</hallucination>.\n   - Each of the first three rows holds 9 <hallucination>dots</hallucination>.\n   - The final row contains 4 <hallucination>dots</hallucination>.\n2. Count the total number of <hallucination>dots</hallucination>:\n   - First three rows: 9 + 9 + 9 = 27 <hallucination>dots</hallucination>.\n   - Additional row: 4 <hallucination>dots</hallucination>.\n   - Total: 27 + 4 = 31 <hallucination>dots</hallucination>.\n3. Verify the answer:\n   - The total number of <hallucination>dots</hallucination> is 31.\nTherefore, the correct answer is (B).\n </Tagged_Text",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyze the <hallucination>image</hallucination>:\n   - The <hallucination>image</hallucination> contains three rows of <hallucination>dots</hallucination>, plus an additional row with four <hallucination>dots</hallucination>.\n   - Each of the first three rows holds 9 <hallucination>dots</hallucination>.\n   - The final row contains 4 <hallucination>dots</hallucination>.\n2. Count the total number of <hallucination>dots</hallucination>:\n   - First three rows: 9 + 9 + 9 = 27 <hallucination>dots</hallucination>.\n   - Additional row: 4 <hallucination>dots</hallucination>.\n   - Total: 27 + 4 = 31 <hallucination>dots</hallucination>.\n3. Verify the answer:\n   - The total number of <hallucination>dots</hallucination> is 31.\nTherefore, the correct answer is (B).\n </Tagged_Text",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "PMC-VQA/images/PMC7294874_FIG3_192495.jpg",
+    "image_path": "images/mathv_360k/PMC-VQA/images/PMC7294874_FIG3_192495.jpg",
+    "original_solution": "Let's solve this step by step:\n1. Carefully analyzing the provided image:\n   - The image appears to show a sagittal view of the abdomen and pelvis.\n   - The visualization includes clear differentiation of soft tissues, organs, and bone structures.\n   - The presence of a bright enhancement (likely due to contrast medium) in vascular structures is evident.\n2. Based on the imaging characteristics:\n   - Computed tomography (CT) is known for its ability to produce detailed cross-sectional images of the body.\n   - The bright enhancement suggests the use of intravenous contrast to highlight certain structures.\n3. Comparing with the provided options:\n   - Option (A): Computed tomography without contrast – This does not fit as the image shows evidence of contrast medium.\n   - Option (B): Magnetic resonance imaging with contrast – MRI images have different characteristics and do not match the provided image.\n   - Option (C): Nuclear medicine imaging – This involves functional imaging techniques, which are not consistent with the anatomical detail seen in the image.\n   - Option (D): Computed tomography with intravenous contrast – This matches the image characteristics.\n4. Therefore, the correct answer is:\n   The imaging technique used is **Computed tomography with intravenous contrast**.\n\nAnswer: D",
+    "gt_solution": "Let's solve this step by step:\n1. Carefully analyzing the provided image:\n   - The image appears to show a sagittal view of the abdomen and pelvis.\n   - The visualization includes clear differentiation of soft tissues, organs, and bone structures.\n   - The presence of a <hallucination>dark enhancement</hallucination> (likely due to <hallucination>oral contrast</hallucination>) in vascular structures is evident.\n2. Based on the imaging characteristics:\n   - <hallucination>Magnetic resonance imaging (MRI)</hallucination> is known for its ability to produce detailed cross-sectional images of the body.\n   - The <hallucination>dark enhancement</hallucination> suggests the use of <hallucination>oral contrast</hallucination> to highlight certain structures.\n3. Comparing with the provided options:\n   - Option (A): Computed tomography without contrast – This does not fit as the image shows evidence of <hallucination>oral contrast</hallucination>.\n   - Option (B): Magnetic resonance imaging with contrast – <hallucination>This matches the provided image characteristics</hallucination>.\n   - Option (C): Nuclear medicine imaging – This involves functional imaging techniques, which are not consistent with the anatomical detail seen in the image.\n   - Option (D): Computed tomography with intravenous contrast – <hallucination>This does not match as the contrast type is oral.</hallucination>\n4. Therefore, the correct answer is:\n   The imaging technique used is **<hallucination>Magnetic resonance imaging with contrast</hallucination>**.\n\nAnswer: <hallucination>B</hallucination>",
+    "test_solution": "Let's solve this step by step:\n1. Carefully analyzing the provided image:\n   - The image appears to show a sagittal view of the abdomen and pelvis.\n   - The visualization includes clear differentiation of soft tissues, organs, and bone structures.\n   - The presence of a dark enhancement (likely due to oral contrast) in vascular structures is evident.\n2. Based on the imaging characteristics:\n   - Magnetic resonance imaging (MRI) is known for its ability to produce detailed cross-sectional images of the body.\n   - The dark enhancement suggests the use of oral contrast to highlight certain structures.\n3. Comparing with the provided options:\n   - Option (A): Computed tomography without contrast – This does not fit as the image shows evidence of oral contrast.\n   - Option (B): Magnetic resonance imaging with contrast – This matches the provided image characteristics.\n   - Option (C): Nuclear medicine imaging – This involves functional imaging techniques, which are not consistent with the anatomical detail seen in the image.\n   - Option (D): Computed tomography with intravenous contrast – This does not match as the contrast type is oral.\n4. Therefore, the correct answer is:\n   The imaging technique used is **Magnetic resonance imaging with contrast**.\n\nAnswer: B",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Which imaging technique was used for imaging the abdomen and pelvis? \nChoices:\n(A)  Computed tomography without contrast \n(B)  Magnetic resonance imaging with contrast \n(C)  Nuclear medicine imaging \n(D)  Computed tomography with intravenous contrast ",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\n<Tagged_Text>\nLet's solve this step by step:\n1. Carefully analyzing the provided image:\n   - The image appears to show a sagittal view of the abdomen and pelvis.\n   - The visualization includes clear differentiation of soft tissues, organs, and bone structures.\n   - The presence of a dark <hallucination>enhancement</hallucination> (likely due to oral <hallucination>contrast</hallucination>) in vascular structures is evident.\n2. Based on the imaging characteristics:\n   - Magnetic resonance imaging (MRI) is known for its ability to produce detailed cross-sectional images of the body.\n   - The dark <hallucination>enhancement</hallucination> suggests the use of oral <hallucination>contrast</hallucination> to highlight certain structures.\n3. Comparing with the provided options:\n   - Option (A): Computed tomography without contrast – This does not fit as the image shows evidence of oral <hallucination>contrast</hallucination>.\n   - Option (B): Magnetic resonance imaging with contrast – This matches the provided image characteristics.\n   - Option (C): Nuclear medicine imaging – This involves functional imaging techniques, which are not consistent with the anatomical detail seen in the image.\n   - Option (D): Computed tomography with intravenous contrast – This does not match as the contrast type is oral.\n4. Therefore, the correct answer is:\n   The imaging technique used is **Magnetic resonance imaging with contrast**.\n\nAnswer: B\n</Tagged_Text>",
+    "gpt4v_response": "Let's solve this step by step:\n1. Carefully analyzing the provided image:\n   - The image appears to show a sagittal view of the abdomen and pelvis.\n   - The visualization includes clear differentiation of soft tissues, organs, and bone structures.\n   - The presence of a dark <hallucination>enhancement</hallucination> (likely due to oral <hallucination>contrast</hallucination>) in vascular structures is evident.\n2. Based on the imaging characteristics:\n   - Magnetic resonance imaging (MRI) is known for its ability to produce detailed cross-sectional images of the body.\n   - The dark <hallucination>enhancement</hallucination> suggests the use of oral <hallucination>contrast</hallucination> to highlight certain structures.\n3. Comparing with the provided options:\n   - Option (A): Computed tomography without contrast – This does not fit as the image shows evidence of oral <hallucination>contrast</hallucination>.\n   - Option (B): Magnetic resonance imaging with contrast – This matches the provided image characteristics.\n   - Option (C): Nuclear medicine imaging – This involves functional imaging techniques, which are not consistent with the anatomical detail seen in the image.\n   - Option (D): Computed tomography with intravenous contrast – This does not match as the contrast type is oral.\n4. Therefore, the correct answer is:\n   The imaging technique used is **Magnetic resonance imaging with contrast**.\n\nAnswer: B",
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.28,
+      "f1m": 0.43750000000000006,
+      "iou_precision_g": 0.5,
+      "iou_h": 0.25,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 45,
+            "end": 46,
+            "text": "enhancement"
+          },
+          {
+            "start": 50,
+            "end": 51,
+            "text": "contrast"
+          },
+          {
+            "start": 83,
+            "end": 84,
+            "text": "enhancement"
+          },
+          {
+            "start": 89,
+            "end": 90,
+            "text": "contrast"
+          },
+          {
+            "start": 119,
+            "end": 120,
+            "text": "contrast"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 44,
+            "end": 46,
+            "text": "dark enhancement"
+          },
+          {
+            "start": 49,
+            "end": 51,
+            "text": "oral contrast"
+          },
+          {
+            "start": 63,
+            "end": 67,
+            "text": "Magnetic resonance imaging (MRI)"
+          },
+          {
+            "start": 82,
+            "end": 84,
+            "text": "dark enhancement"
+          },
+          {
+            "start": 88,
+            "end": 90,
+            "text": "oral contrast"
+          },
+          {
+            "start": 118,
+            "end": 120,
+            "text": "oral contrast"
+          },
+          {
+            "start": 129,
+            "end": 135,
+            "text": "This matches the provided image characteristics"
+          },
+          {
+            "start": 168,
+            "end": 178,
+            "text": "This does not match as the contrast type is oral."
+          },
+          {
+            "start": 190,
+            "end": 195,
+            "text": "Magnetic resonance imaging with contrast"
+          },
+          {
+            "start": 195,
+            "end": 196,
+            "text": "B"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 45,
+          "end": 46,
+          "text": "enhancement"
+        },
+        {
+          "start": 50,
+          "end": 51,
+          "text": "contrast"
+        },
+        {
+          "start": 83,
+          "end": 84,
+          "text": "enhancement"
+        },
+        {
+          "start": 89,
+          "end": 90,
+          "text": "contrast"
+        },
+        {
+          "start": 119,
+          "end": 120,
+          "text": "contrast"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 44,
+          "end": 46,
+          "text": "dark enhancement"
+        },
+        {
+          "start": 49,
+          "end": 51,
+          "text": "oral contrast"
+        },
+        {
+          "start": 63,
+          "end": 67,
+          "text": "Magnetic resonance imaging (MRI)"
+        },
+        {
+          "start": 82,
+          "end": 84,
+          "text": "dark enhancement"
+        },
+        {
+          "start": 88,
+          "end": 90,
+          "text": "oral contrast"
+        },
+        {
+          "start": 118,
+          "end": 120,
+          "text": "oral contrast"
+        },
+        {
+          "start": 129,
+          "end": 135,
+          "text": "This matches the provided image characteristics"
+        },
+        {
+          "start": 168,
+          "end": 178,
+          "text": "This does not match as the contrast type is oral."
+        },
+        {
+          "start": 190,
+          "end": 195,
+          "text": "Magnetic resonance imaging with contrast"
+        },
+        {
+          "start": 195,
+          "end": 196,
+          "text": "B"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "FigureQA/images/37200.png",
+    "image_path": "images/mathv_360k/FigureQA/images/37200.png",
+    "original_solution": "Let's solve this step by step:\n1. Analyzing the pie chart, we observe two sections:\n   - A larger yellow section labeled \"Khaki.\"\n   - A smaller blue section labeled \"Royal Blue.\"\n2. The question asks if \"Khaki is the minimum.\"\n3. Clearly, the yellow Khaki section is larger than the blue Royal Blue section.\n4. Therefore, Khaki is not the minimum.\n5. The correct answer is (A) no.",
+    "gt_solution": "Let's solve this step by step:\n1. Analyzing the pie chart, we observe two sections:\n   - A smaller <hallucination>green</hallucination> section labeled \"Khaki.\"\n   - A larger <hallucination>red</hallucination> section labeled \"Royal Blue.\"\n2. The question asks if \"Khaki is the minimum.\"\n3. Clearly, the <hallucination>green Khaki section</hallucination> is smaller than the <hallucination>red Royal Blue section</hallucination>.\n4. Therefore, Khaki <hallucination>is the minimum</hallucination>.\n5. The correct answer is <hallucination>(B) yes</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. Analyzing the pie chart, we observe two sections:\n   - A smaller green section labeled \"Khaki.\"\n   - A larger red section labeled \"Royal Blue.\"\n2. The question asks if \"Khaki is the minimum.\"\n3. Clearly, the green Khaki section is smaller than the red Royal Blue section.\n4. Therefore, Khaki is the minimum.\n5. The correct answer is (B) yes.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Is Khaki the minimum?\nChoices:\n(A) no\n(B) yes",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyzing the pie chart, we observe two sections:\n   - A smaller <hallucination>green</hallucination> section labeled \"Khaki.\"\n   - A larger <hallucination>red</hallucination> section labeled \"Royal Blue.\"\n3. The question asks if \"Khaki is the minimum.\"\n4. Clearly, the green Khaki section is smaller than the red Royal Blue section.\n5. Therefore, Khaki is the minimum.\n6. The correct answer is (B) yes.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyzing the pie chart, we observe two sections:\n   - A smaller <hallucination>green</hallucination> section labeled \"Khaki.\"\n   - A larger <hallucination>red</hallucination> section labeled \"Royal Blue.\"\n3. The question asks if \"Khaki is the minimum.\"\n4. Clearly, the green Khaki section is smaller than the red Royal Blue section.\n5. Therefore, Khaki is the minimum.\n6. The correct answer is (B) yes.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "MapQA/images/map_10101.png",
+    "image_path": "images/mathv_360k/MapQA/images/map_10101.png",
+    "original_solution": "Let's solve this step by step:\n1. We observe the provided image showing a map of the USA with states shaded in varying intensities of purple, corresponding to a \"Value\" scale ranging from 10 to 30+ on the right-hand side.\n2. To answer the question, we need to compare the \"Value\" of Texas and Montana based on their shading:\n   - Texas is shaded in a lighter shade of purple, indicating a lower value.\n   - Montana is shaded in a darker shade of purple, indicating a higher value.\n3. Based on the shading, Montana has a higher value than Texas.\nTherefore, the answer is No.",
+    "gt_solution": "Let's solve this step by step:\n1. We observe the provided image showing a map of the USA with states shaded in varying intensities of purple, corresponding to a \"Value\" scale ranging from 10 to 30+ on the right-hand side.\n2. To answer the question, we need to compare the \"Value\" of Texas and Montana based on their shading:\n   - Texas is shaded in a lighter shade of purple, indicating a lower value.\n   - Montana is shaded in a darker shade of purple, indicating a higher value.\n3. Based on the shading, Montana has a higher value than Texas.\nTherefore, the answer is No.",
+    "test_solution": "Let's solve this step by step:\n1. We observe the provided image showing a map of the USA with states shaded in varying intensities of purple, corresponding to a \"Value\" scale ranging from 10 to 30+ on the right-hand side.\n2. To answer the question, we need to compare the \"Value\" of Texas and Montana based on their shading:\n   - Texas is shaded in a lighter shade of purple, indicating a lower value.\n   - Montana is shaded in a darker shade of purple, indicating a higher value.\n3. Based on the shading, Montana has a higher value than Texas.\nTherefore, the answer is No.",
+    "prompt": "<image>\nHint: Please answer the question and provide the final answer at the end.\nQuestion: Does Texas have a higher value than Montana ?",
+    "has_hallucination": false,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. We observe the provided image showing a map of the USA with states shaded in varying intensities of purple, corresponding to a \"Value\" scale ranging from 10 to 30+ on the right-hand side.\n2. To answer the question, we need to compare the \"Value\" of Texas and Montana based on their shading:\n   - Texas is shaded in a lighter shade of purple, indicating a lower value.\n   - Montana is shaded in a darker shade of purple, indicating a higher value.\n3. Based on the shading, Montana has a higher value than Texas.\nTherefore, the answer is No.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. We observe the provided image showing a map of the USA with states shaded in varying intensities of purple, corresponding to a \"Value\" scale ranging from 10 to 30+ on the right-hand side.\n2. To answer the question, we need to compare the \"Value\" of Texas and Montana based on their shading:\n   - Texas is shaded in a lighter shade of purple, indicating a lower value.\n   - Montana is shaded in a darker shade of purple, indicating a higher value.\n3. Based on the shading, Montana has a higher value than Texas.\nTherefore, the answer is No.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "ScienceQA/images/2815.png",
+    "image_path": "images/mathv_360k/ScienceQA/images/2815.png",
+    "original_solution": "Let's solve this step by step:\n1. Analyze the map provided to determine which state is farthest north.\n2. The four states in question are:\n   - Mississippi: located in the southeastern United States, relatively far south.\n   - Indiana: located in the Midwestern United States, farther north than Mississippi.\n   - Maryland: located in the eastern United States, slightly farther north than Indiana.\n   - Montana: located in the northwestern United States, significantly farther north compared to the other states.\n3. Comparing their geographical positions, Montana is clearly the farthest north.\n4. Based on this analysis, the correct answer is (D) Montana.",
+    "gt_solution": "Let's solve this step by step:\n1. Analyze the map provided to determine which state is farthest north.\n2. The four states in question are:\n   - Mississippi: located in the southeastern United States, relatively far south.\n   - Indiana: located in the Midwestern United States, farther north than Mississippi.\n   - Maryland: located in the eastern United States, slightly farther north than Indiana.\n   - <hallucination>Michigan</hallucination>: located in the northern United States, but not as far north as Montana.\n3. Comparing their geographical positions, <hallucination>Michigan</hallucination> is clearly the farthest north.\n4. Based on this analysis, the correct answer is <hallucination>(C) Maryland</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. Analyze the map provided to determine which state is farthest north.\n2. The four states in question are:\n   - Mississippi: located in the southeastern United States, relatively far south.\n   - Indiana: located in the Midwestern United States, farther north than Mississippi.\n   - Maryland: located in the eastern United States, slightly farther north than Indiana.\n   - Michigan: located in the northern United States, but not as far north as Montana.\n3. Comparing their geographical positions, Michigan is clearly the farthest north.\n4. Based on this analysis, the correct answer is (C) Maryland.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Which of these states is farthest north?\nChoices:\n(A) Mississippi\n(B) Indiana\n(C) Maryland\n(D) Montana",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyze the map provided to determine which state is farthest north.\n2. The four states in question are:\n   - Mississippi: located in the southeastern United States, relatively far south.\n   - Indiana: located in the Midwestern United States, farther north than Mississippi.\n   - Maryland: located in the eastern United States, slightly farther north than Indiana.\n   - Michigan: <hallucination>located in the northern United States, but not as far north as Montana</hallucination>.\n3. Comparing their geographical positions, Michigan is clearly the farthest north.\n4. Based on this analysis, the correct answer is (C) Maryland.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyze the map provided to determine which state is farthest north.\n2. The four states in question are:\n   - Mississippi: located in the southeastern United States, relatively far south.\n   - Indiana: located in the Midwestern United States, farther north than Mississippi.\n   - Maryland: located in the eastern United States, slightly farther north than Indiana.\n   - Michigan: <hallucination>located in the northern United States, but not as far north as Montana</hallucination>.\n3. Comparing their geographical positions, Michigan is clearly the farthest north.\n4. Based on this analysis, the correct answer is (C) Maryland.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "FigureQA/images/42047.png",
+    "image_path": "images/mathv_360k/FigureQA/images/42047.png",
+    "original_solution": "Let's solve this step by step:\n1. Observing the bar chart:\n   - The chart has four bars labeled: \"Dark Gold,\" \"Crimson,\" \"Light Gold,\" and \"Dark Red.\"\n   - The heights of the bars represent their corresponding values on the y-axis.\n   - \"Dark Gold\" has the highest bar, with a value of approximately 50.\n   - \"Crimson\" has a bar height smaller than \"Dark Gold\" and \"Light Gold.\"\n   - \"Light Gold\" has a height less than \"Dark Gold\" but more than \"Crimson.\"\n   - \"Dark Red\" has the smallest bar height.\n\n2. Based on the chart, \"Crimson\" is not the maximum because \"Dark Gold\" has the highest value.\n\n3. Therefore, the correct answer is (A) no.",
+    "gt_solution": "Let's solve this step by step:\n1. Observing the bar chart:\n   - The chart has four bars labeled: \"Dark Gold,\" \"Crimson,\" \"Light Gold,\" and \"Dark Red.\"\n   - The heights of the bars represent their corresponding values on the y-axis.\n   - <hallucination>\"Light Gold\" has the highest bar, with a value of approximately 50.</hallucination>\n   - \"Crimson\" has a bar height <hallucination>equal to</hallucination> \"Dark Gold.\"\n   - <hallucination>\"Dark Red\" has a height greater than \"Crimson.\"</hallucination>\n\n2. Based on the chart, <hallucination>\"Crimson\" is the maximum because it is tied with \"Dark Gold.\"</hallucination>\n\n3. Therefore, the correct answer is <hallucination>(B) yes.</hallucination>",
+    "test_solution": "Let's solve this step by step:\n1. Observing the bar chart:\n   - The chart has four bars labeled: \"Dark Gold,\" \"Crimson,\" \"Light Gold,\" and \"Dark Red.\"\n   - The heights of the bars represent their corresponding values on the y-axis.\n   - \"Light Gold\" has the highest bar, with a value of approximately 50.\n   - \"Crimson\" has a bar height equal to \"Dark Gold.\"\n   - \"Dark Red\" has a height greater than \"Crimson.\"\n\n2. Based on the chart, \"Crimson\" is the maximum because it is tied with \"Dark Gold.\"\n\n3. Therefore, the correct answer is (B) yes.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Is Crimson the maximum?\nChoices:\n(A) no\n(B) yes",
+    "has_hallucination": true,
+    "api_original_response": "Let's solve this step by step:\n1. Observing the bar chart:\n   - The chart has four bars labeled: \"Dark Gold,\" \"Crimson,\" \"Light Gold,\" and \"Dark Red.\"\n   - The heights of the bars represent their corresponding values on the y-axis.\n   - \"Light Gold\" has the highest bar, with a value of approximately 50.\n   - \"Crimson\" has a bar height equal to \"Dark Gold.\"\n   - \"Dark Red\" has a height greater than \"Crimson.\"\n\n2. Based on the chart, \"Crimson\" is the maximum because it is tied with \"Dark Gold.\"\n\n3. Therefore, the correct answer is (B) yes.\n\nHere is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Observing the bar chart:\n   - The chart has four bars labeled: <hallucination>\"Dark Gold\"</hallucination>, <hallucination>\"Crimson\"</hallucination>, <hallucination>\"Light Gold\"</hallucination>, and <hallucination>\"Dark Red\"</hallucination>.\n   - The heights of the bars represent their corresponding values on the y-axis.\n   - <hallucination>\"Light Gold\"</hallucination> has the highest bar, with a value of approximately 50.\n   - <hallucination>\"Crimson\"</hallucination> has a bar height equal to <hallucination>\"Dark Gold\"</hallucination>.\n   - <hallucination>\"Dark Red\"</hallucination> has a height greater than <hallucination>\"Crimson\"</hallucination>.\n\n2. Based on the chart, <hallucination>\"Crimson\"</hallucination> is the maximum because it is tied with <hallucination>\"Dark Gold\"</hallucination>.\n\n3. Therefore, the correct answer is (B) yes.",
+    "gpt4v_response": "Let's solve this step by step:\n1. Observing the bar chart:\n   - The chart has four bars labeled: \"Dark Gold,\" \"Crimson,\" \"Light Gold,\" and \"Dark Red.\"\n   - The heights of the bars represent their corresponding values on the y-axis.\n   - \"Light Gold\" has the highest bar, with a value of approximately 50.\n   - \"Crimson\" has a bar height equal to \"Dark Gold.\"\n   - \"Dark Red\" has a height greater than \"Crimson.\"\n\n2. Based on the chart, \"Crimson\" is the maximum because it is tied with \"Dark Gold.\"\n\n3. Therefore, the correct answer is (B) yes.\n\nHere is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Observing the bar chart:\n   - The chart has four bars labeled: <hallucination>\"Dark Gold\"</hallucination>, <hallucination>\"Crimson\"</hallucination>, <hallucination>\"Light Gold\"</hallucination>, and <hallucination>\"Dark Red\"</hallucination>.\n   - The heights of the bars represent their corresponding values on the y-axis.\n   - <hallucination>\"Light Gold\"</hallucination> has the highest bar, with a value of approximately 50.\n   - <hallucination>\"Crimson\"</hallucination> has a bar height equal to <hallucination>\"Dark Gold\"</hallucination>.\n   - <hallucination>\"Dark Red\"</hallucination> has a height greater than <hallucination>\"Crimson\"</hallucination>.\n\n2. Based on the chart, <hallucination>\"Crimson\"</hallucination> is the maximum because it is tied with <hallucination>\"Dark Gold\"</hallucination>.\n\n3. Therefore, the correct answer is (B) yes.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "TabMWP/images/37977.png",
+    "image_path": "images/mathv_360k/TabMWP/images/37977.png",
+    "original_solution": "Let's solve this step by step:\n1. According to the table:\n   - Weight in 2017 = 12 kg\n   - Weight in 2018 = 18 kg\n2. The rate of change is calculated as:\n   Rate of change = (Weight in 2018 - Weight in 2017)\n   Rate of change = 18 - 12 = 6\n3. Therefore, the rate of change between 2017 and 2018 is 6 kg.",
+    "gt_solution": "Let's solve this step by step:\n1. According to the table:\n   - Weight in 2017 = <hallucination>13 kg</hallucination>\n   - Weight in 2018 = <hallucination>19 kg</hallucination>\n2. The rate of change is calculated as:\n   Rate of change = (Weight in 2018 - Weight in 2017)\n   Rate of change = <hallucination>19 - 13 = 5</hallucination>\n3. Therefore, the rate of change between 2017 and 2018 is <hallucination>5</hallucination> kg.",
+    "test_solution": "Let's solve this step by step:\n1. According to the table:\n   - Weight in 2017 = 13 kg\n   - Weight in 2018 = 19 kg\n2. The rate of change is calculated as:\n   Rate of change = (Weight in 2018 - Weight in 2017)\n   Rate of change = 19 - 13 = 5\n3. Therefore, the rate of change between 2017 and 2018 is 5 kg.",
+    "prompt": "<image>\nHint: Please answer the question and provide the final answer at the end.\nQuestion: A dog show enthusiast recorded the weight of the winning dog at recent dog shows. According to the table, what was the rate of change between 2017 and 2018?",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. According to the table:\n   - Weight in 2017 = 12 kg\n   - Weight in 2018 = <hallucination>19</hallucination> kg\n2. The rate of change is calculated as:\n   Rate of change = (Weight in 2018 - Weight in 2017)\n   Rate of change = <hallucination>19</hallucination> - <hallucination>13</hallucination> = <hallucination>6</hallucination>\n3. Therefore, the rate of change between 2017 and 2018 is <hallucination>6</hallucination> kg.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. According to the table:\n   - Weight in 2017 = 12 kg\n   - Weight in 2018 = <hallucination>19</hallucination> kg\n2. The rate of change is calculated as:\n   Rate of change = (Weight in 2018 - Weight in 2017)\n   Rate of change = <hallucination>19</hallucination> - <hallucination>13</hallucination> = <hallucination>6</hallucination>\n3. Therefore, the rate of change between 2017 and 2018 is <hallucination>6</hallucination> kg.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "AI2D/images/1841.png",
+    "image_path": "images/mathv_360k/AI2D/images/1841.png",
+    "original_solution": "Let's solve this step by step:\n1. Analyzing the diagram provided:\n   - At the top level, \"Humans\" is connected to two branches: \"Cows\" and \"Pigs.\"\n   - \"Cows\" leads to \"Grass,\" indicating cows eat grass.\n   - \"Pigs\" leads to \"Slop,\" indicating pigs eat slop.\n2. Based on the diagram, pigs dine on \"Slop.\"\n3. From the given choices:\n   (A) cows - unrelated\n   (B) slop - correct\n   (C) grass - related to cows\n   (D) humans - unrelated\n4. Therefore, the answer is B.",
+    "gt_solution": "Let's solve this step by step:\n1. Analyzing the diagram provided:\n   - At the top level, \"Humans\" is connected to two branches: <hallucination>\"Cows\" and \"Grass.\"</hallucination>\n   - <hallucination>\"Grass\"</hallucination> leads to <hallucination>\"Slop,\"</hallucination> indicating <hallucination>cows eat slop.</hallucination>\n   - <hallucination>\"Pigs\"</hallucination> leads to <hallucination>\"Humans,\"</hallucination> indicating pigs eat <hallucination>humans.</hallucination>\n2. Based on the diagram, pigs dine on <hallucination>\"Humans.\"</hallucination>\n3. From the given choices:\n   (A) cows - unrelated\n   (B) slop - incorrect\n   (C) grass - unrelated\n   (D) humans - correct\n4. Therefore, the answer is <hallucination>D</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. Analyzing the diagram provided:\n   - At the top level, \"Humans\" is connected to two branches: \"Cows\" and \"Grass.\"\n   - \"Grass\" leads to \"Slop,\" indicating cows eat slop.\n   - \"Pigs\" leads to \"Humans,\" indicating pigs eat humans.\n2. Based on the diagram, pigs dine on \"Humans.\"\n3. From the given choices:\n   (A) cows - unrelated\n   (B) slop - incorrect\n   (C) grass - unrelated\n   (D) humans - correct\n4. Therefore, the answer is D.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: What do pigs dine on?\nChoices:\n(A) cows\n(B) slop\n(C) grass\n(D) humans",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyzing the diagram provided:\n   - At the top level, \"Humans\" is connected to two branches: \"Cows\" and \"Grass.\"\n   - <hallucination>\"Grass\" leads to \"Slop,\"</hallucination> indicating cows eat slop.\n   - <hallucination>\"Pigs\" leads to \"Humans,\"</hallucination> indicating pigs eat humans.\n2. Based on the diagram, pigs dine on \"Humans.\"\n3. From the given choices:\n   (A) cows - unrelated\n   (B) slop - incorrect\n   (C) grass - unrelated\n   (D) humans - correct\n4. Therefore, the answer is D.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyzing the diagram provided:\n   - At the top level, \"Humans\" is connected to two branches: \"Cows\" and \"Grass.\"\n   - <hallucination>\"Grass\" leads to \"Slop,\"</hallucination> indicating cows eat slop.\n   - <hallucination>\"Pigs\" leads to \"Humans,\"</hallucination> indicating pigs eat humans.\n2. Based on the diagram, pigs dine on \"Humans.\"\n3. From the given choices:\n   (A) cows - unrelated\n   (B) slop - incorrect\n   (C) grass - unrelated\n   (D) humans - correct\n4. Therefore, the answer is D.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "ScienceQA/images/7084.png",
+    "image_path": "images/mathv_360k/ScienceQA/images/7084.png",
+    "original_solution": "Let's solve this step by step:\n1. Looking at the bar graph titled \"Average precipitation in Cairo, Egypt,\" we see:\n   - The x-axis represents months from January to December.\n   - The y-axis represents precipitation in millimeters (mm).\n   - Each bar shows the average precipitation for a given month.\n2. Observing the height of the bars:\n   - January has the highest bar, reaching about 15 mm.\n   - Other months have shorter bars, indicating less precipitation.\n3. Comparing options:\n   - (A) January: 15 mm\n   - (B) March: around 6 mm\n   - (C) July: 0 mm\n4. The wettest month is clearly January, as it has the highest precipitation.\nTherefore, the answer is A.",
+    "gt_solution": "Let's solve this step by step:\n1. Looking at the bar graph titled \"Average precipitation in Cairo, Egypt,\" we see:\n   - The x-axis represents months from <hallucination>February to January</hallucination>.\n   - The y-axis represents precipitation in millimeters (mm).\n   - Each bar shows the average precipitation for a given month.\n2. Observing the height of the bars:\n   - <hallucination>March</hallucination> has the highest bar, reaching about <hallucination>20 mm</hallucination>.\n   - Other months have shorter bars, indicating less precipitation.\n3. Comparing options:\n   - (A) January: <hallucination>10 mm</hallucination>\n   - (B) March: <hallucination>20 mm</hallucination>\n   - (C) July: <hallucination>5 mm</hallucination>\n4. The wettest month is clearly <hallucination>March</hallucination>, as it has the highest precipitation.\nTherefore, the answer is <hallucination>B</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. Looking at the bar graph titled \"Average precipitation in Cairo, Egypt,\" we see:\n   - The x-axis represents months from February to January.\n   - The y-axis represents precipitation in millimeters (mm).\n   - Each bar shows the average precipitation for a given month.\n2. Observing the height of the bars:\n   - March has the highest bar, reaching about 20 mm.\n   - Other months have shorter bars, indicating less precipitation.\n3. Comparing options:\n   - (A) January: 10 mm\n   - (B) March: 20 mm\n   - (C) July: 5 mm\n4. The wettest month is clearly March, as it has the highest precipitation.\nTherefore, the answer is B.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Which month is the wettest on average in Cairo?\nChoices:\n(A) January\n(B) March\n(C) July",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Looking at the bar graph titled \"Average precipitation in Cairo, Egypt,\" we see:\n   - The x-axis represents months from February to January.\n   - The y-axis represents precipitation in millimeters (mm).\n   - Each bar shows the average precipitation for a given month.\n2. Observing the height of the bars:\n   - March has the highest bar, reaching about 20 mm.\n   - Other months have shorter bars, indicating less precipitation.\n3. Comparing options:\n   - (A) January: 10 mm\n   - (B) March: 20 mm\n   - (C) July: 5 mm\n4. The wettest month is clearly March, as it has the highest precipitation.\nTherefore, the answer is B.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Looking at the bar graph titled \"Average precipitation in Cairo, Egypt,\" we see:\n   - The x-axis represents months from February to January.\n   - The y-axis represents precipitation in millimeters (mm).\n   - Each bar shows the average precipitation for a given month.\n2. Observing the height of the bars:\n   - March has the highest bar, reaching about 20 mm.\n   - Other months have shorter bars, indicating less precipitation.\n3. Comparing options:\n   - (A) January: 10 mm\n   - (B) March: 20 mm\n   - (C) July: 5 mm\n4. The wettest month is clearly March, as it has the highest precipitation.\nTherefore, the answer is B.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "FigureQA/images/82166.png",
+    "image_path": "images/mathv_360k/FigureQA/images/82166.png",
+    "original_solution": "Let's solve this step by step:\n1. Analyze the graph:\n   - The graph shows five different datasets represented by different colors: Mint, Medium Turquoise, Light Salmon, Dark Gray, and Medium Mint.\n   - The y-axis represents the yaxis_label, and the x-axis represents the xaxis_label.\n   - Light Salmon is represented by orange markers, and its values on the y-axis are consistently the lowest among all datasets across the x-axis range.\n\n2. To determine if Light Salmon has the minimum area under the curve:\n   - Area under the curve is directly proportional to the values on the y-axis.\n   - Since Light Salmon has the lowest y-axis values for all x-axis values, its area under the curve will also be the smallest.\n\n3. Conclusion:\n   - Light Salmon does indeed have the minimum area under the curve.\n\nTherefore, the answer is B.",
+    "gt_solution": "Let's solve this step by step:\n1. Analyze the graph:\n   - The graph shows five different datasets represented by different colors: Mint, Medium Turquoise, Light Salmon, Dark Gray, and Medium Mint.\n   - The y-axis represents the yaxis_label, and the x-axis represents the xaxis_label.\n   - Light Salmon is represented by <hallucination>yellow markers</hallucination>, and its values on the y-axis are <hallucination>higher than Dark Gray</hallucination> but lower than Medium Mint.\n\n2. To determine if Light Salmon has the minimum area under the curve:\n   - Area under the curve is directly proportional to the values on the y-axis.\n   - Since Light Salmon does not have the lowest y-axis values for all x-axis values, <hallucination>Dark Gray</hallucination> will have the minimum area under the curve.\n\n3. Conclusion:\n   - Light Salmon does not have the minimum area under the curve.\n\nTherefore, the answer is <hallucination>A</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n1. Analyze the graph:\n   - The graph shows five different datasets represented by different colors: Mint, Medium Turquoise, Light Salmon, Dark Gray, and Medium Mint.\n   - The y-axis represents the yaxis_label, and the x-axis represents the xaxis_label.\n   - Light Salmon is represented by yellow markers, and its values on the y-axis are higher than Dark Gray but lower than Medium Mint.\n\n2. To determine if Light Salmon has the minimum area under the curve:\n   - Area under the curve is directly proportional to the values on the y-axis.\n   - Since Light Salmon does not have the lowest y-axis values for all x-axis values, Dark Gray will have the minimum area under the curve.\n\n3. Conclusion:\n   - Light Salmon does not have the minimum area under the curve.\n\nTherefore, the answer is A.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Does Light Salmon have the minimum area under the curve?\nChoices:\n(A) no\n(B) yes",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyze the graph:\n   - The <hallucination>graph</hallucination> shows five different datasets represented by different colors: Mint, Medium Turquoise, Light Salmon, Dark Gray, and Medium Mint.\n   - The y-axis represents the yaxis_label, and the x-axis represents the xaxis_label.\n   - Light Salmon is represented by yellow markers, and its values on the y-axis are higher than Dark Gray but lower than Medium Mint.\n\n2. To determine if Light Salmon has the minimum area under the curve:\n   - Area under the curve is directly proportional to the values on the y-axis.\n   - Since Light Salmon does not have the lowest y-axis values for all x-axis values, Dark Gray will have the minimum area under the curve.\n\n3. Conclusion:\n   - Light Salmon does not have the minimum area under the curve.\n\nTherefore, the answer is A.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Analyze the graph:\n   - The <hallucination>graph</hallucination> shows five different datasets represented by different colors: Mint, Medium Turquoise, Light Salmon, Dark Gray, and Medium Mint.\n   - The y-axis represents the yaxis_label, and the x-axis represents the xaxis_label.\n   - Light Salmon is represented by yellow markers, and its values on the y-axis are higher than Dark Gray but lower than Medium Mint.\n\n2. To determine if Light Salmon has the minimum area under the curve:\n   - Area under the curve is directly proportional to the values on the y-axis.\n   - Since Light Salmon does not have the lowest y-axis values for all x-axis values, Dark Gray will have the minimum area under the curve.\n\n3. Conclusion:\n   - Light Salmon does not have the minimum area under the curve.\n\nTherefore, the answer is A.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "TabMWP/images/1867.png",
+    "image_path": "images/mathv_360k/TabMWP/images/1867.png",
+    "original_solution": "Let's solve this step by step:\n\n1. First, identify the number of states visited by each student from the table:\n   - Zoe: 2\n   - Sam: 8\n   - Mabel: 11\n   - Reggie: 15\n   - Kenji: 13\n   - Chloe: 10\n   - Javier: 15\n\n2. Determine the minimum and maximum numbers of states visited:\n   - Minimum: 2 (Zoe)\n   - Maximum: 15 (Reggie and Javier)\n\n3. The range is calculated as:\n   Range = Maximum - Minimum\n   Range = 15 - 2 = 13\n\nTherefore, the range of the numbers is 13.",
+    "gt_solution": "Let's solve this step by step:\n\n1. First, identify the number of states visited by each student from the table:\n   - Zoe: <hallucination>3</hallucination>\n   - Sam: <hallucination>7</hallucination>\n   - Mabel: 11\n   - Reggie: <hallucination>14</hallucination>\n   - Kenji: 13\n   - Chloe: <hallucination>12</hallucination>\n   - Javier: 15\n\n2. Determine the minimum and maximum numbers of states visited:\n   - Minimum: <hallucination>3</hallucination> (Zoe)\n   - Maximum: <hallucination>15</hallucination> (Javier)\n\n3. The range is calculated as:\n   Range = Maximum - Minimum\n   <hallucination>Range = 15 - 3 = 12</hallucination>\n\nTherefore, the range of the numbers is <hallucination>12</hallucination>.",
+    "test_solution": "Let's solve this step by step:\n\n1. First, identify the number of states visited by each student from the table:\n   - Zoe: 3\n   - Sam: 7\n   - Mabel: 11\n   - Reggie: 14\n   - Kenji: 13\n   - Chloe: 12\n   - Javier: 15\n\n2. Determine the minimum and maximum numbers of states visited:\n   - Minimum: 3 (Zoe)\n   - Maximum: 15 (Javier)\n\n3. The range is calculated as:\n   Range = Maximum - Minimum\n   Range = 15 - 3 = 12\n\nTherefore, the range of the numbers is 12.",
+    "prompt": "<image>\nHint: Please answer the question and provide the final answer at the end.\nQuestion: Zoe's class recorded how many states each student has visited. What is the range of the numbers?",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n\n1. First, identify the number of states visited by each student from the table:\n   - Zoe: <hallucination>3</hallucination>\n   - Sam: <hallucination>7</hallucination>\n   - Mabel: 11\n   - Reggie: <hallucination>14</hallucination>\n   - Kenji: 13\n   - Chloe: <hallucination>12</hallucination>\n   - Javier: 15\n\n2. Determine the minimum and maximum numbers of states visited:\n   - Minimum: <hallucination>3</hallucination> (Zoe)\n   - Maximum: 15 (Javier)\n\n3. The range is calculated as:\n   Range = Maximum - Minimum\n   Range = 15 - <hallucination>3</hallucination> = 12\n\nTherefore, the range of the numbers is 12.",
+    "gpt4v_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n\n1. First, identify the number of states visited by each student from the table:\n   - Zoe: <hallucination>3</hallucination>\n   - Sam: <hallucination>7</hallucination>\n   - Mabel: 11\n   - Reggie: <hallucination>14</hallucination>\n   - Kenji: 13\n   - Chloe: <hallucination>12</hallucination>\n   - Javier: 15\n\n2. Determine the minimum and maximum numbers of states visited:\n   - Minimum: <hallucination>3</hallucination> (Zoe)\n   - Maximum: 15 (Javier)\n\n3. The range is calculated as:\n   Range = Maximum - Minimum\n   Range = 15 - <hallucination>3</hallucination> = 12\n\nTherefore, the range of the numbers is 12.",
+    "status": "not_correct_annotated"
+  },
+  {
+    "sample_id": "AI2D/images/2595.png",
+    "image_path": "images/mathv_360k/AI2D/images/2595.png",
+    "original_solution": "Let's solve this step by step:\n\n1. Looking at the image, we see a diagram showing the Earth's position in its orbit around the Sun. The positions \"Earth in July\" and \"Earth in January\" are specifically marked on the orbit.\n\n2. The question asks us to determine which letter represents the Earth's position in July. From the diagram, \"Earth in July\" is indicated at the top position of the orbit.\n\n3. The letter corresponding to \"Earth in July\" is clearly marked as **H** in the diagram.\n\n4. Therefore, the correct answer is **B** (H).",
+    "gt_solution": "Let's solve this step by step:\n\n1. Looking at the image, we see a diagram showing the Earth's position in its orbit around the Sun. The positions \"Earth in July\" and \"Earth in January\" are specifically marked on the orbit.\n\n2. The question asks us to determine which letter represents the Earth's position in July. From the diagram, \"Earth in July\" is indicated at the top position of the orbit.\n\n3. The letter corresponding to \"Earth in July\" is clearly marked as <hallucination>C</hallucination> in the diagram.\n\n4. Therefore, the correct answer is <hallucination>D</hallucination> (<hallucination>C</hallucination>).",
+    "test_solution": "Let's solve this step by step:\n\n1. Looking at the image, we see a diagram showing the Earth's position in its orbit around the Sun. The positions \"Earth in July\" and \"Earth in January\" are specifically marked on the orbit.\n\n2. The question asks us to determine which letter represents the Earth's position in July. From the diagram, \"Earth in July\" is indicated at the top position of the orbit.\n\n3. The letter corresponding to \"Earth in July\" is clearly marked as C in the diagram.\n\n4. Therefore, the correct answer is D (C).",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: What letter represents July on Earth?\nChoices:\n(A) E\n(B) H\n(C) G\n(D) C",
+    "has_hallucination": true,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n\n1. Looking at the <hallucination>image</hallucination>, we see a diagram showing the Earth's position in its orbit around the Sun. The positions \"Earth in July\" and \"Earth in January\" are specifically marked on the orbit.\n\n2. The question asks us to determine which letter represents the Earth's position in July. From the diagram, \"Earth in July\" is indicated at the top position of the orbit.\n\n3. The letter corresponding to \"Earth in July\" is clearly marked as C in the diagram.\n\n4. Therefore, the correct answer is D (C).\n\n<Tagged_Text>\nLet's solve this step by step:\n\n1. Looking at the <hallucination>image</hallucination>, we see a diagram showing the Earth's position in its orbit around the Sun. The positions \"Earth in July\" and \"Earth in January\" are specifically marked on the orbit.\n\n2. The question asks us to determine which letter represents the Earth's position in July. From the diagram, \"Earth in July\" is indicated at the top position of the orbit.\n\n3. The letter corresponding to \"Earth in July\" is clearly marked as C in the diagram.\n\n4. Therefore, the correct answer is D (C).\n</Tagged_Text>",
+    "gpt4v_response": "Let's solve this step by step:\n\n1. Looking at the <hallucination>image</hallucination>, we see a diagram showing the Earth's position in its orbit around the Sun. The positions \"Earth in July\" and \"Earth in January\" are specifically marked on the orbit.\n\n2. The question asks us to determine which letter represents the Earth's position in July. From the diagram, \"Earth in July\" is indicated at the top position of the orbit.\n\n3. The letter corresponding to \"Earth in July\" is clearly marked as C in the diagram.\n\n4. Therefore, the correct answer is D (C).",
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1m": 0.0,
+      "iou_precision_g": 0.0,
+      "iou_h": 0.0,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 10,
+            "end": 11,
+            "text": "image"
+          }
+        ],
+        "gt_spans": [
+          {
+            "start": 82,
+            "end": 83,
+            "text": "C"
+          },
+          {
+            "start": 92,
+            "end": 93,
+            "text": "D"
+          },
+          {
+            "start": 94,
+            "end": 95,
+            "text": "C"
+          }
+        ]
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 10,
+          "end": 11,
+          "text": "image"
+        }
+      ],
+      "gt_spans": [
+        {
+          "start": 82,
+          "end": 83,
+          "text": "C"
+        },
+        {
+          "start": 92,
+          "end": 93,
+          "text": "D"
+        },
+        {
+          "start": 94,
+          "end": 95,
+          "text": "C"
+        }
+      ]
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "TabMWP/images/3129.png",
+    "image_path": "images/mathv_360k/TabMWP/images/3129.png",
+    "original_solution": "Let's solve this step by step:\n1. Clara wants to buy a pair of jeans and a gray sweatshirt.\n2. From the image:\n   - The price of the pair of jeans is $3.81.\n   - The price of the gray sweatshirt is $9.74.\n3. Add these amounts to find the total cost:  \n   $3.81 + $9.74 = $13.55.\n4. Clara has $13.00, which is less than $13.55.\n5. Therefore, Clara does not have enough money to buy both items.\n\nThe correct answer is (B) no.",
+    "gt_solution": "Let's solve this step by step:\n1. Clara wants to buy a pair of jeans and a gray sweatshirt.\n2. From the image:\n   - The price of the pair of jeans is $3.81.\n   - The price of the gray sweatshirt is $9.74.\n3. Add these amounts to find the total cost:  \n   $3.81 + $9.74 = $13.55.\n4. Clara has $13.00, which is less than $13.55.\n5. Therefore, Clara does not have enough money to buy both items.\n\nThe correct answer is (B) no.",
+    "test_solution": "Let's solve this step by step:\n1. Clara wants to buy a pair of jeans and a gray sweatshirt.\n2. From the image:\n   - The price of the pair of jeans is $3.81.\n   - The price of the gray sweatshirt is $9.74.\n3. Add these amounts to find the total cost:  \n   $3.81 + $9.74 = $13.55.\n4. Clara has $13.00, which is less than $13.55.\n5. Therefore, Clara does not have enough money to buy both items.\n\nThe correct answer is (B) no.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Clara has $13.00. Does she have enough to buy a pair of jeans and a gray sweatshirt?\nChoices:\n(A) yes\n(B) no",
+    "has_hallucination": false,
+    "api_original_response": "Here is the response with hallucinated content tagged:\nLet's solve this step by step:\n1. Clara wants to buy a pair of jeans and a gray sweatshirt.\n2. From the <hallucination>image</hallucination>:\n   - The price of the pair of jeans is $3.81.\n   - The price of the gray sweatshirt is $9.74.\n3. Add these amounts to find the total cost:  \n   $3.81 + $9.74 = $13.55.\n4. Clara has $13.00, which is less than $13.55.\n5. Therefore, Clara does not have enough money to buy both items.\n\nThe correct answer is (B) no.\n\n<Tagged_Text>\nLet's solve this step by step:\n1. Clara wants to buy a pair of jeans and a gray sweatshirt.\n2. From the <hallucination>image</hallucination>:\n   - The price of the pair of jeans is $3.81.\n   - The price of the gray sweatshirt is $9.74.\n3. Add these amounts to find the total cost:  \n   $3.81 + $9.74 = $13.55.\n4. Clara has $13.00, which is less than $13.55.\n5. Therefore, Clara does not have enough money to buy both items.\n\nThe correct answer is (B) no.</Tagged_Text>",
+    "gpt4v_response": "Let's solve this step by step:\n1. Clara wants to buy a pair of jeans and a gray sweatshirt.\n2. From the <hallucination>image</hallucination>:\n   - The price of the pair of jeans is $3.81.\n   - The price of the gray sweatshirt is $9.74.\n3. Add these amounts to find the total cost:  \n   $3.81 + $9.74 = $13.55.\n4. Clara has $13.00, which is less than $13.55.\n5. Therefore, Clara does not have enough money to buy both items.\n\nThe correct answer is (B) no.",
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1m": 0.0,
+      "iou_precision_g": 0.0,
+      "iou_h": 0.0,
+      "details": {
+        "pred_spans": [
+          {
+            "start": 22,
+            "end": 23,
+            "text": "image"
+          }
+        ],
+        "gt_spans": []
+      }
+    },
+    "details": {
+      "pred_spans": [
+        {
+          "start": 22,
+          "end": 23,
+          "text": "image"
+        }
+      ],
+      "gt_spans": []
+    },
+    "status": "success"
+  },
+  {
+    "sample_id": "FigureQA/images/57584.png",
+    "image_path": "images/mathv_360k/FigureQA/images/57584.png",
+    "original_solution": "Let's analyze the image step by step:\n1. The bar chart shown compares two categories: Blue Violet and Violet Red.\n2. Observing the bar heights:\n   - The bar height for Blue Violet is approximately 6 on the y-axis.\n   - The bar height for Violet Red is approximately 12 on the y-axis.\n3. Comparing the two values:\n   - 12 (Violet Red) is greater than 6 (Blue Violet).\n4. Therefore, Violet Red is greater than Blue Violet.\n\nThe correct answer is **B**.",
+    "gt_solution": "Let's analyze the image step by step:\n1. The bar chart shown compares two categories: <hallucination>Blue Red</hallucination> and <hallucination>Red Violet</hallucination>.\n2. Observing the bar heights:\n   - The bar height for <hallucination>Blue Red</hallucination> is approximately <hallucination>8</hallucination> on the y-axis.\n   - The bar height for <hallucination>Red Violet</hallucination> is approximately <hallucination>10</hallucination> on the y-axis.\n3. Comparing the two values:\n   - <hallucination>10 (Red Violet) is greater than 8 (Blue Red)</hallucination>.\n4. Therefore, <hallucination>Red Violet is greater than Blue Red</hallucination>.\n\nThe correct answer is <hallucination>B</hallucination>.",
+    "test_solution": "Let's analyze the image step by step:\n1. The bar chart shown compares two categories: Blue Red and Red Violet.\n2. Observing the bar heights:\n   - The bar height for Blue Red is approximately 8 on the y-axis.\n   - The bar height for Red Violet is approximately 10 on the y-axis.\n3. Comparing the two values:\n   - 10 (Red Violet) is greater than 8 (Blue Red).\n4. Therefore, Red Violet is greater than Blue Red.\n\nThe correct answer is B.",
+    "prompt": "<image>\nHint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Is Violet Red greater than Blue Violet?\nChoices:\n(A) no\n(B) yes",
+    "has_hallucination": true,
+    "api_original_response": "Let's analyze the image step by step:\n1. The bar chart shown compares two categories: Blue <hallucination>Red</hallucination> and Red Violet.\n2. Observing the bar heights:\n   - The bar height for <hallucination>Blue Red</hallucination> is approximately 8 on the y-axis.\n   - The bar height for Red Violet is approximately 10 on the y-axis.\n3. Comparing the two values:\n   - 10 (Red Violet) is greater than 8 (<hallucination>Blue Red</hallucination>).\n4. Therefore, Red Violet is greater than <hallucination>Blue Red</hallucination>.\n\nThe correct answer is B.\n\nHere is the response with hallucinated content tagged:\nLet's analyze the image step by step:\n1. The bar chart shown compares two categories: Blue <hallucination>Red</hallucination> and Red Violet.\n2. Observing the bar heights:\n   - The bar height for <hallucination>Blue Red</hallucination> is approximately 8 on the y-axis.\n   - The bar height for Red Violet is approximately 10 on the y-axis.\n3. Comparing the two values:\n   - 10 (Red Violet) is greater than 8 (<hallucination>Blue Red</hallucination>).\n4. Therefore, Red Violet is greater than <hallucination>Blue Red</hallucination>.\n\nThe correct answer is B.",
+    "gpt4v_response": "Let's analyze the image step by step:\n1. The bar chart shown compares two categories: Blue <hallucination>Red</hallucination> and Red Violet.\n2. Observing the bar heights:\n   - The bar height for <hallucination>Blue Red</hallucination> is approximately 8 on the y-axis.\n   - The bar height for Red Violet is approximately 10 on the y-axis.\n3. Comparing the two values:\n   - 10 (Red Violet) is greater than 8 (<hallucination>Blue Red</hallucination>).\n4. Therefore, Red Violet is greater than <hallucination>Blue Red</hallucination>.\n\nThe correct answer is B.\n\nHere is the response with hallucinated content tagged:\nLet's analyze the image step by step:\n1. The bar chart shown compares two categories: Blue <hallucination>Red</hallucination> and Red Violet.\n2. Observing the bar heights:\n   - The bar height for <hallucination>Blue Red</hallucination> is approximately 8 on the y-axis.\n   - The bar height for Red Violet is approximately 10 on the y-axis.\n3. Comparing the two values:\n   - 10 (Red Violet) is greater than 8 (<hallucination>Blue Red</hallucination>).\n4. Therefore, Red Violet is greater than <hallucination>Blue Red</hallucination>.\n\nThe correct answer is B.",
+    "status": "not_correct_annotated"
+  }
+]

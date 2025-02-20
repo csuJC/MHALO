@@ -1,0 +1,1245 @@
+[
+    {
+        "gt_answer": "The color of the fire hydrant cap in the image is yellow.",
+        "original_solution": null,
+        "test_solution": "The fire hydrant cap in the picture is red.",
+        "hallucinated_solution": "The fire hydrant cap in the picture is <hallucination>red.</hallucination>",
+        "image_path": "MMHal-Bench/7206072054_c53d53b97d_o.jpg",
+        "prompt": "What color is the fire hydrant cap in the picture?"
+      },
+      {
+        "gt_answer": "No one is sitting on the bench.",
+        "original_solution": null,
+        "test_solution": "A man is sitting on the bench.",
+        "hallucinated_solution": "<hallucination>A man is sitting</hallucination> on the bench.",
+        "image_path": "MMHal-Bench/7413067568_06a8d1eb64_o.jpg",
+        "prompt": "Who is sitting on the bench?"
+      },
+      {
+        "gt_answer": "There are four traffic lights in the image.",
+        "original_solution": null,
+        "test_solution": "There are three traffic lights in the image.",
+        "hallucinated_solution": "There are <hallucination>three</hallucination> traffic lights in the image.",
+        "image_path": "MMHal-Bench/16875241476_3b79e5d79b_o.jpg",
+        "prompt": "How many traffic lights are there in the image?"
+      },
+      {
+        "gt_answer": "The traffic signs at the top and bottom are white, while the one in the center is blue.",
+        "original_solution": null,
+        "test_solution": "The traffic signs at the top are green, the middle signs are red, and the bottom signs are yellow.",
+        "hallucinated_solution": "The traffic signs at the top are <hallucination>green</hallucination>, the middle signs are <hallucination>red</hallucination>, and the bottom signs are <hallucination>yellow</hallucination>.",
+        "image_path": "MMHal-Bench/3576366805_eea15333d5_o.jpg",
+        "prompt": "What colors are the traffic signs at the top, in the middle, and at the bottom?"
+      },
+      {
+        "gt_answer": "The picture depicts a city street, recently dampened by rain, with a sidewalk lined by trees. There are several cars parked on the right, while others move along the road. A few pedestrians can be seen at a distance on the sidewalk, some of them holding umbrellas to protect themselves from the rain. The trees offer shade and lend a touch of nature to the urban setting. The scene exudes a sense of calm and serenity, emphasized by the glistening wet street and the nearly vacant walkway.",
+        "original_solution": null,
+        "test_solution": "The image shows a city street with a sidewalk, trees, and a streetlight. There is a car driving down the street, and a person walking on the sidewalk. The street is wet, possibly due to rain, and the streetlight is casting a shadow on the wet pavement. The scene is set in a city, with buildings visible in the background. The presence of trees and the sidewalk suggests that this is a pedestrian-friendly area, and the streetlight provides illumination for the walker and the car.",
+        "hallucinated_solution": "The image shows a city street with a sidewalk, trees, and a streetlight. There is <hallucination>a</hallucination> car driving down the street, and <hallucination>a</hallucination> person walking on the sidewalk. The street is wet, possibly due to rain, and the streetlight is casting a shadow on the wet pavement. The scene is set in a city, with buildings visible in the background. The presence of trees and the sidewalk suggests that this is a pedestrian-friendly area, and the streetlight provides illumination for the walker and the car.",
+        "image_path": "MMHal-Bench/14388226720_c54b67588a_o.jpg",
+        "prompt": "Describe the image in detail."
+      },
+      {
+        "gt_answer": "It is $4 per hour to park at the parking meter.",
+        "original_solution": null,
+        "test_solution": "The parking meter is displaying a rate of $2 per hour.",
+        "hallucinated_solution": "The parking meter is displaying a rate of <hallucination>$2</hallucination> per hour.",
+        "image_path": "MMHal-Bench/11715451803_24861529ab_o.jpg",
+        "prompt": "How much is it per hour to park at the parking meter?"
+      },
+      {
+        "gt_answer": "The two cars from right to left in the image are black and blue.",
+        "original_solution": null,
+        "test_solution": "The two cars from right to left in the image are blue and white.",
+        "hallucinated_solution": "The two cars from right to left in the image are <hallucination>blue</hallucination> and <hallucination>white</hallucination>.",
+        "image_path": "MMHal-Bench/20076975362_949c5a1cdb_o.jpg",
+        "prompt": "What color are the two cars from right to left in the image?"
+      },
+      {
+        "gt_answer": "No one is riding the motorcycle by the roadside in the image.",
+        "original_solution": null,
+        "test_solution": "The person riding the motorcycle in the image is a woman.",
+        "hallucinated_solution": "<hallucination>The person riding the motorcycle/hallucination> in the image is a< <hallucination>woman</hallucination>.",
+        "image_path": "MMHal-Bench/3828840628_e625c9beb0_o.jpg",
+        "prompt": "What is the gender of the person riding the motorcycle in the image?"
+      },
+      {
+        "gt_answer": "The fire truck, which is on the left side of the image, has its door open.",
+        "original_solution": null,
+        "test_solution": "The truck on the right side of the image has its door open.",
+        "hallucinated_solution": "The truck on the <hallucination>right</hallucination> side of the image has its door open.",
+        "image_path": "MMHal-Bench/1424845359_c4945d38f1_o.jpg",
+        "prompt": "In the image, which truck (left or right) has its door open?"
+      },
+      {
+        "gt_answer": "In the image, there are four bicycles: two at the front, one in the middle, and one in the distance.",
+        "original_solution": null,
+        "test_solution": "There are two bicycles in the image.",
+        "hallucinated_solution": "There are <hallucination>two</hallucination> bicycles in the image.",
+        "image_path": "MMHal-Bench/315943393_e2c5dc5bd7_o.jpg",
+        "prompt": "How many bicycles are there in the image?"
+      },
+      {
+        "gt_answer": "The yellow boat is positioned in front of the white yacht in the image.",
+        "original_solution": null,
+        "test_solution": "The yellow boat is positioned behind the white yacht in the image, traveling in the same direction.",
+        "hallucinated_solution": "The yellow boat is positioned <hallucination>behind</hallucination> the white yacht in the image, traveling in the same direction.",
+        "image_path": "MMHal-Bench/5014730631_9c2701e063_o.jpg",
+        "prompt": "How is the yellow boat positioned in relation to the white yacht in the image?"
+      },
+      {
+        "gt_answer": "In the image, the weather appears to be either sunny or cloudy.",
+        "original_solution": null,
+        "test_solution": "The weather in the image is sunny.",
+        "hallucinated_solution": "The weather in the image is <hallucination>sunny</hallucination>.",
+        "image_path": "MMHal-Bench/3430256574_ab887d1df5_o.jpg",
+        "prompt": "What is the weather like in the image?"
+      },
+      {
+        "gt_answer": "The picture presents a yellow school bus stationed on an urban roadway, alongside a bicyclist. Positioned outside a tattoo establishment, the bus offers a unique urban backdrop. The road is notably calm, with the absence of other vehicles and passersby. The cyclist, equipped with a backpack and helmet, seems to be a student or a regular commuter. Given the tattoo parlor and the school bus, it's plausible that this area is a vibrant commercial or recreational hub frequented by shoppers, students, or those seeking leisure.",
+        "original_solution": null,
+        "test_solution": "The image features a yellow school bus parked on a city street, with a man on a bicycle riding alongside it. The bicyclist is wearing a backpack and appears to be checking the bus, possibly for a route or to ensure that it is safe to pass. The bus is parked in a designated area, and there are other vehicles and pedestrians in the vicinity. The scene is set in a city, with buildings and signs visible in the background, indicating that it is a busy urban environment.",
+        "hallucinated_solution": "The image features a yellow school bus parked on a city street, with a man on a bicycle riding alongside it. The bicyclist is wearing a backpack and appears to be <hallucination>checking the bus</hallucination>, possibly for a route or to ensure that it is safe to pass. The bus is parked in a designated area, and <hallucination>there are other vehicles and pedestrians in the vicinity</hallucination>. The scene is set in a city, with buildings and signs visible in the background, indicating that it is a busy urban environment.",
+        "image_path": "MMHal-Bench/4523458956_0b78c6b298_o.jpg",
+        "prompt": "Describe the image in detail."
+      },
+      {
+        "gt_answer": "The airplane in the background of the image is owned by Virgin Airlines.",
+        "original_solution": null,
+        "test_solution": "The airplane displayed in the back of the image is owned by United Airlines.",
+        "hallucinated_solution": "The airplane displayed in the back of the image is owned by <hallucination>United Airlines</hallucination>.",
+        "image_path": "MMHal-Bench/6555470659_4c69a30b73_o.jpg",
+        "prompt": "Which company owns the airplane displayed in the back of the image?"
+      },
+      {
+        "gt_answer": "The three men from left to right in the image are wearing green, blue, and red shirts.",
+        "original_solution": null,
+        "test_solution": "The colors of the shirts worn by the three men from left to right in the image are green, red, and blue.",
+        "hallucinated_solution": "The colors of the shirts worn by the three men from left to right in the image are <hallucination>green</hallucination>, <hallucination>red</hallucination>, and <hallucination>blue</hallucination>.",
+        "image_path": "MMHal-Bench/14901778703_09a206232c_o.jpg",
+        "prompt": "What are the colors of the shirts worn by the three men from left to right in the image?"
+      },
+      {
+        "gt_answer": "The man is not wearing glasses.",
+        "original_solution": null,
+        "test_solution": "The man in the image is wearing red glasses.",
+        "hallucinated_solution": "The man in the image is <hallucination>wearing red glasses</hallucination>.",
+        "image_path": "MMHal-Bench/83372724_a17cceb078_o.jpg",
+        "prompt": "Which color are the glasses that the man in the image is wearing?"
+      },
+      {
+        "gt_answer": "The woman in the image wears the pants.",
+        "original_solution": null,
+        "test_solution": "The man in the picture is wearing trousers.",
+        "hallucinated_solution": "The <hallucination>man</hallucination> in the picture is wearing <hallucination>trousers</hallucination>.",
+        "image_path": "MMHal-Bench/9340455006_25a885f7ef_o.jpg",
+        "prompt": "Who in the picture is wearing trousers?"
+      },
+      {
+        "gt_answer": "There are four people in the image.",
+        "original_solution": null,
+        "test_solution": "There are three people in the image.",
+        "hallucinated_solution": "There are <hallucination>three</hallucination> people in the image.",
+        "image_path": "MMHal-Bench/16189396430_4dce91a9d7_o.jpg",
+        "prompt": "How many people are there in the image?"
+      },
+      {
+        "gt_answer": "The girl stands on the right among the three individuals in the image.",
+        "original_solution": null,
+        "test_solution": "The girl is positioned between the two men, one of whom is wearing a Spider-Man costume, in the image.",
+        "hallucinated_solution": "The girl is positioned <hallucination>between</hallucination> the two men, one of whom is wearing a Spider-Man costume, in the image.",
+        "image_path": "MMHal-Bench/2500640631_a4c9abd52c_o.jpg",
+        "prompt": "Where is the girl positioned among the three people in the image?"
+      },
+      {
+        "gt_answer": "The man in the photo is outside, sitting on a boat with several oxygen tanks around him.",
+        "original_solution": null,
+        "test_solution": "The man in the picture is indoors, specifically in a pool area.",
+        "hallucinated_solution": "The man in the picture is <hallucination>indoors</hallucination>, specifically in a <hallucination>pool area</hallucination>.",
+        "image_path": "MMHal-Bench/4264709756_1eb0e9ab45_o.jpg",
+        "prompt": "Is the man in the picture indoors or outdoors?"
+      },
+      {
+        "gt_answer": "The image captures a bustling street lined with various shops and an adjoining sidewalk. Several pedestrians are present, with two individuals notably passing a store with a green sign saying \"Hawkin's Bazaar\". At this store's entrance, a man stands, overseeing a spacious window display that houses diverse items, highlighted by a red and white sign. Interestingly, no trees or parked cars are present in the street. The mood is energetic, showcasing individuals engaged in their daily routines and shopping pursuits.",
+        "original_solution": null,
+        "test_solution": "The image shows a street scene with a storefront, likely a small shop or a store, located on the side of the road. The storefront has a large window display, which is decorated with various items, such as toys, candy, and other products. The store is open, and there are people walking by, possibly customers or passersby. The scene also includes a few trees, adding a touch of nature to the urban setting. The overall atmosphere is lively, with the store's window display and the presence of people walking by, indicating that the store is likely a popular destination for shoppers.",
+        "hallucinated_solution": "The image shows a street scene with a storefront, likely a small shop or a store, located on the side of the road. The storefront has a large window display, which is decorated with various items, such as toys, candy, and other products. The store is open, and there are people walking by, possibly customers or passersby. The scene also includes <hallucination>a few trees</hallucination>, adding a touch of nature to the urban setting. The overall atmosphere is lively, with the store's window display and the presence of people walking by, indicating that the store is likely a popular destination for shoppers.",
+        "image_path": "MMHal-Bench/4068897399_a729022693_o.jpg",
+        "prompt": "Describe the image in detail."
+      },
+      {
+        "gt_answer": "The fastest girl in the picture is wearing number 1097.",
+        "original_solution": null,
+        "test_solution": "The fastest girl in the picture is wearing number 10.",
+        "hallucinated_solution": "The fastest girl in the picture is wearing number <hallucination>10</hallucination>.",
+        "image_path": "MMHal-Bench/8716117944_a272643aef_o.jpg",
+        "prompt": "What number is the fastest girl wearing in the picture?"
+      },
+      {
+        "gt_answer": "The colors of the two dogs from right to left are brown and black.",
+        "original_solution": null,
+        "test_solution": "The colors of the dogs from right to left are black, brown, and brown.",
+        "hallucinated_solution": "The colors of the dogs from right to left are <hallucination>black</hallucination>, <hallucination>brown</hallucination>, and <hallucination>brown</hallucination>.",
+        "image_path": "MMHal-Bench/10172500456_1f40b6bd38_o.jpg",
+        "prompt": "What are the colors of the dogs from right to left?"
+      },
+      {
+        "gt_answer": "There is no vicuna in the image.",
+        "original_solution": null,
+        "test_solution": "A vicuna is standing in the sand, looking at a toucan.",
+        "hallucinated_solution": "<hallucination>A vicuna is standing</hallucination> in the sand, looking at a <hallucination>toucan</hallucination>.",
+        "image_path": "MMHal-Bench/13789278495_8545acd44c_o.jpg",
+        "prompt": "What is a vicuna standing in the sand looking at?"
+      },
+      {
+        "gt_answer": "The cat on the right side of the image opens its mouth.",
+        "original_solution": null,
+        "test_solution": "The middle cat in the image opens its mouth.",
+        "hallucinated_solution": "The <hallucination>middle</hallucination> cat in the image opens its mouth.",
+        "image_path": "MMHal-Bench/502006488_2d907443d8_o.jpg",
+        "prompt": "Which cat (left, right or middle) in the image opens its mouth?"
+      },
+
+      {
+        "gt_answer": "When this photo was taken, it was dark at night. This photo shows a horse race at night.",
+        "original_solution": null,
+        "test_solution": "The weather when this picture was captured was sunny, which is evident from the bright and clear sky in the background.",
+        "hallucinated_solution": "The weather when this picture was captured was <hallucination>sunny</hallucination>, which is evident from the <hallucination>bright and clear</hallucination> sky in the background.",
+        "image_path": "MMHal-Bench/2938079244_9e814f0e7a_o.jpg",
+        "prompt": "How was the weather when this picture was captured?"
+      },
+      {
+        "gt_answer": "In the image, there are two rhinos, a giraffe, and a wild horse.",
+        "original_solution": null,
+        "test_solution": "There are two giraffes in the image.",
+        "hallucinated_solution": "There are <hallucination>two</hallucination> giraffes in the image.",
+        "image_path": "MMHal-Bench/4883309412_53b0b853d5_o.jpg",
+        "prompt": "Out of the four animals, how many giraffes are there in the image?"
+      },
+      {
+        "gt_answer": "The kiwi in the front is dried. There are four dried pieces of kiwi in the front, and three fresh ones in the back.",
+        "original_solution": null,
+        "test_solution": "The kiwi in the front is fresh.",
+        "hallucinated_solution": "The kiwi in the front is <hallucination>fresh</hallucination>.",
+        "image_path": "MMHal-Bench/12521323285_97a94c8cbc_o.jpg",
+        "prompt": "Is the kiwi in the front fresh or dried?"
+      },
+      {
+        "gt_answer": "In fact, this photo only shows a cut and toasted bread slice. There is no jam on it.",
+        "original_solution": null,
+        "test_solution": "Yes, the jam on the bread is made of strawberry.",
+        "hallucinated_solution": "Yes, the <hallucination>jam on the bread</hallucination> is made of <hallucination>strawberry</hallucination>.",
+        "image_path": "MMHal-Bench/18414801440_47f21894da_o.jpg",
+        "prompt": "Is the jam on the bread made of strawberry?"
+      },
+      {
+        "gt_answer": "There are three tomatoes from the same vine in the photo. The tomato on the left side is red and ripe, while the two tomatoes in the middle and on the right side are yellow and unripe.",
+        "original_solution": null,
+        "test_solution": "In the photo, there are two tomatoes growing on a vine. One tomato is ripe and red, while the other is green and not yet ripe. The ripe tomato is ready to be picked and eaten, while the green tomato is still developing and needs more time to ripen.",
+        "hallucinated_solution": "In the photo, there are <hallucination>two</hallucination> tomatoes growing on a vine. One tomato is ripe and red, while the other is <hallucination>green</hallucination> and not yet ripe. The ripe tomato is ready to be picked and eaten, while the green tomato is still developing and needs more time to ripen.",
+        "image_path": "MMHal-Bench/5322693484_868ba39c68_o.jpg",
+        "prompt": "Compare the tomatoes in the photo."
+      },
+      {
+        "gt_answer": "There are five oysters visible in the photo.",
+        "original_solution": null,
+        "test_solution": "There are three oysters visible in the photo.",
+        "hallucinated_solution": "There are <hallucination>three</hallucination> oysters visible in the photo.",
+        "image_path": "MMHal-Bench/2519330533_597840098a_o.jpg",
+        "prompt": "How many oysters can you see in the photo?"
+      },
+      {
+        "gt_answer": "No, the bowl with broccoli is next to the bowl of meatballs.",
+        "original_solution": null,
+        "test_solution": "Yes, the bowl with broccoli is on top of the bowl with meatballs.",
+        "hallucinated_solution": "<hallucination>Yes</hallucination>, the bowl with broccoli is <hallucination>on top of</hallucination> the bowl with meatballs.",
+        "image_path": "MMHal-Bench/5757505875_8578d2fc37_o.jpg",
+        "prompt": "Is the bowl with broccoli on top of the bowl with meatballs?"
+      },
+      {
+        "gt_answer": "This photo is taken outdoors, likely on a beach, where a man is cooking on a grill.",
+        "original_solution": null,
+        "test_solution": "The photo is taken in a restaurant, where a man is cooking food on a grill.",
+        "hallucinated_solution": "The photo is taken in a <hallucination>restaurant</hallucination>, where a man is cooking food on a grill.",
+        "image_path": "MMHal-Bench/16685252757_e1c32c0e1f_o.jpg",
+        "prompt": "Is this photo taken in a restaurant, a kitchen, or anywhere else?"
+      },
+      {
+        "gt_answer": "In this image we can see a man and two young girls preparing food. The man seems to be a chef with a suit but no hat. The two girls seem to be interns, wearing aprons with a \"BRITANNIA HOTEL\" logo. The man seems to be guiding the girls to prepare the food. In front of them, there is a table with food on it. From left to right, there is a metal bowl of vegetables on a red cutting board, and two plates of meat, possibly saussages.",
+        "original_solution": null,
+        "test_solution": "In the image, there are two young girls and a man wearing chef hats working together in a kitchen. They are preparing food, possibly chopping vegetables, and arranging them on a cutting board. The girls are wearing aprons, and the man is wearing a chef's hat, indicating that they are all involved in the cooking process. The scene suggests that they are collaborating to create a meal or a dish together, which could be for a special occasion or a cooking class.",
+        "hallucinated_solution": "In the image, there are two young girls and a man <hallucination>wearing chef hats</hallucination> working together in a kitchen. They are preparing food, possibly chopping vegetables, and arranging them on a cutting board. The girls are wearing aprons, and the man is <hallucination>wearing a chef's hat</hallucination>, indicating that they are all involved in the cooking process. The scene suggests that they are collaborating to create a meal or a dish together, which could be for a special occasion or a cooking class.",
+        "image_path": "MMHal-Bench/4722330374_2425fd36eb_o.jpg",
+        "prompt": "Describe the activities in this image."
+      },
+      {
+        "gt_answer": "Each jerk chicken dumpling costs 5 pounds.",
+        "original_solution": null,
+        "test_solution": "Each jerk chicken dumpling costs 50 pence.",
+        "hallucinated_solution": "Each jerk chicken dumpling costs <hallucination>50 pence</hallucination>.",
+        "image_path": "MMHal-Bench/6097499605_d06c51eed9_o.jpg",
+        "prompt": "From this photo, how much does each jerk chicken dumpling cost?"
+      },
+      {
+        "gt_answer": "There are three parachutes in the sky. The one on the left is light green. The one on the top right is orange. The one on the bottom right is blue.",
+        "original_solution": null,
+        "test_solution": "The parachutes in the sky are orange and yellow.",
+        "hallucinated_solution": "The parachutes in the sky are orange and <hallucination>yellow</hallucination>.",
+        "image_path": "MMHal-Bench/6705513453_b025140503_o.jpg",
+        "prompt": "What are the colors of the parachutes in the sky?"
+      },
+      {
+        "gt_answer": "No, there is only a tennis racket and a ball on the ground. No one is playing tennis in this photo.",
+        "original_solution": null,
+        "test_solution": "The person playing tennis in this photo is a young man holding a tennis racket. He is standing on a tennis court, which is covered in green grass, and is likely preparing to serve or return the ball during a match.",
+        "hallucinated_solution": "<hallucination>The person playing tennis</hallucination> in this photo is <hallucination>a young man holding a tennis racket</hallucination>. He is standing on a tennis court, which is covered in green grass, and is <hallucination>likely preparing to serve or return the ball during a match</hallucination>.",
+        "image_path": "MMHal-Bench/8506072922_e7f6c6ca49_o.jpg",
+        "prompt": "Describe the person playing tennis in this photo."
+      },
+      {
+        "gt_answer": "The two surfboards have different looks. The surfboard on the top has a white and wood color with a simple design. The other one on the bottom is red, with a more complex white and black pattern in the front.",
+        "original_solution": null,
+        "test_solution": "The two surfboards in the photo are different in terms of their designs and colors. One surfboard has a red and black design, while the other has a red and white design. The red and black surfboard has a more intricate design, featuring a pattern of various shapes and colors, while the red and white surfboard has a simpler design with a single color scheme. Both surfboards are made of wood, which is a common material for surfboards.",
+        "hallucinated_solution": "The two surfboards in the photo are different in terms of their designs and colors. One surfboard has a <hallucination>red and black</hallucination> design, while the other has a <hallucination>red and white</hallucination> design. The <hallucination>red and black</hallucination> surfboard has a more intricate design, featuring a pattern of various shapes and colors, while the <hallucination>red and white</hallucination> surfboard has a simpler design with a single color scheme. Both surfboards are made of wood, which is a common material for surfboards.",
+        "image_path": "MMHal-Bench/4958794254_c3f9677682_o.jpg",
+        "prompt": "Compare the two surfboards in the photo."
+      },
+      {
+        "gt_answer": "There are three horses in the photo.",
+        "original_solution": null,
+        "test_solution": "There are two horses in the photo.",
+        "hallucinated_solution": "There are <hallucination>two</hallucination> horses in the photo.",
+        "image_path": "MMHal-Bench/2603285498_e8e6c82214_o.jpg",
+        "prompt": "How many horses are there in the photo?"
+      },
+      {
+        "gt_answer": "The color of the ball on the left is red or orange.",
+        "original_solution": null,
+        "test_solution": "The color of the ball on the left is green.",
+        "hallucinated_solution": "The color of the ball on the left is <hallucination>green</hallucination>.",
+        "image_path": "MMHal-Bench/4459982881_b378f81b6f_o.jpg",
+        "prompt": "What is the color of the ball on the left?"
+      },
+      {
+        "gt_answer": "The photo is taken indoors, since there is a group of hockey players playing in an ice stadium.",
+        "original_solution": null,
+        "test_solution": "The photo is taken outdoors, as it features a group of hockey players on ice skates, playing the sport on a frozen lake.",
+        "hallucinated_solution": "The photo is taken <hallucination>outdoors</hallucination>, as it features a group of hockey players on ice skates, playing the sport on a <hallucination>frozen lake</hallucination>.",
+        "image_path": "MMHal-Bench/5483033051_fa3ecf0e0d_o.jpg",
+        "prompt": "Is this photo taken indoors or outdoors?"
+      },
+      {
+        "gt_answer": "In this photo, three players are playing soccer. The first player on the left wears a white and red uniform, and is controlling the ball. The other two players on the right side are from the other team. They wear blue and yellow uniforms. The player closer to the camera is competing with the first player to gain control of the ball, while the other player is at distance.",
+        "original_solution": null,
+        "test_solution": "In the photo, two soccer players are engaged in a game on a grassy field. One player is wearing a white jersey and the other is wearing a blue jersey. They are both actively participating in the game, trying to gain control of the soccer ball. The scene suggests that the game is in progress, and the players are competing against each other to score goals or maintain possession of the ball.",
+        "hallucinated_solution": "In the photo, <hallucination>two</hallucination> soccer players are engaged in a game on a grassy field. One player is wearing a <hallucination>white/hallucination> jersey< and the other is wearing a <hallucination>blue</hallucination> jersey. They are both actively participating in the game, trying to gain control of the soccer ball. The scene suggests that the game is in progress, and the players are competing against each other to score goals or maintain possession of the ball.",
+        "image_path": "MMHal-Bench/13926846360_2449b5b12f_o.jpg",
+        "prompt": "Describe the activity in this photo."
+      },
+      {
+        "gt_answer": "From the text on the ground, this is the Indian Wells tournament.",
+        "original_solution": null,
+        "test_solution": "This tennis competition is the French Open, also known as the Roland Garros.",
+        "hallucinated_solution": "This tennis competition is the <hallucination>French Open</hallucination>, also known as the <hallucination>Roland Garros</hallucination>.",
+        "image_path": "MMHal-Bench/13407081714_0375f7b3e0_o.jpg",
+        "prompt": "Which tournament is this tennis competition?"
+      },
+      {
+        "gt_answer": "The microwave is mainly silver, with a black panel.",
+        "original_solution": null,
+        "test_solution": "The microwave is black.",
+        "hallucinated_solution": "The microwave is <hallucination>black</hallucination>.",
+        "image_path": "MMHal-Bench/12255073776_5f17d88d21_o.jpg",
+        "prompt": "What color is the microwave?"
+      },
+      {
+        "gt_answer": "No one is eating in the kitchen. I can see a dining table and four chairs, but there are no people in the sitting there right now.",
+        "original_solution": null,
+        "test_solution": "There are three people eating in this kitchen.",
+        "hallucinated_solution": "There are <hallucination>three</hallucination> people eating in this kitchen.",
+        "image_path": "MMHal-Bench/1411998044_37c3c4a234_o.jpg",
+        "prompt": "How many people are eating in this kitchen?"
+      },
+      {
+        "gt_answer": "The picture shows a set of three utensils in different views with a white background: A knive with a blue handle, a spoon with a yellow handle, and a red fork with a red handle. They are all made of metal and plastic handle.",
+        "original_solution": null,
+        "test_solution": "In the picture, there are two utensils, a fork and a spoon, placed on a table. The fork is made of plastic and has a blue handle, while the spoon is made of plastic and has a yellow handle. The utensils are arranged in a way that makes it easy to pick them up and use them for eating.",
+        "hallucinated_solution": "In the picture, there are <hallucination>two</hallucination> utensils, a fork and a spoon, placed on a table. The fork is made of <hallucination>plastic</hallucination> and has a <hallucination>blue</hallucination> handle, while the spoon is made of <hallucination>plastic</hallucination> and has a yellow handle. The utensils are arranged in a way that makes it easy to pick them up and use them for eating.",
+        "image_path": "MMHal-Bench/3018306107_51f8da54b3_o.jpg",
+        "prompt": "Compare the utensils in the picture."
+      },
+      {
+        "gt_answer": "There are two forks.",
+        "original_solution": null,
+        "test_solution": "There are three forks in the image.",
+        "hallucinated_solution": "There are <hallucination>three</hallucination> forks in the image.",
+        "image_path": "MMHal-Bench/6266717889_714dc304bd_o.jpg",
+        "prompt": "How many forks can you see?"
+      },
+      {
+        "gt_answer": "The objects from right to left are a lid, a spoon, and a coffee cup.",
+        "original_solution": null,
+        "test_solution": "From right to left, the objects are a cup, a spoon, and a plate.",
+        "hallucinated_solution": "From right to left, the objects are a <hallucination>cup</hallucination>, a spoon, and a <hallucination>plate</hallucination>.",
+        "image_path": "MMHal-Bench/4967650364_6b23e0e7de_o.jpg",
+        "prompt": "What are the objects from right to left?"
+      },
+      {
+        "gt_answer": "The photo is taken during the day.",
+        "original_solution": null,
+        "test_solution": "The photo is taken at night.",
+        "hallucinated_solution": "The photo is taken at <hallucination>night</hallucination>.",
+        "image_path": "MMHal-Bench/3020281858_2d84b7bab7_o.jpg",
+        "prompt": "At what time is this photo taken?"
+      },
+      {
+        "gt_answer": "This photo features a wooden dining table with four wooden or metal chairs around it. On the table there are two coasters and two glass cups. The table is set on a wooden floor. Behind the table are the wall and two windows.",
+        "original_solution": null,
+        "test_solution": "The photo shows a dining table with four chairs, a vase, and a glass of water. The table is made of wood, and it is located in a room with wooden floors. The chairs are wooden as well, and they are arranged around the table. The vase is placed on the table, and it is filled with a bouquet of flowers. A glass of water is also present on the table, adding to the dining setting. The room appears to be well-lit, and the overall atmosphere is inviting and comfortable.",
+        "hallucinated_solution": "The photo shows a dining table with four chairs, <hallucination>a vase</hallucination>, and <hallucination>a</hallucination> glass of water. The table is made of wood, and it is located in a room with wooden floors. The chairs are wooden as well, and they are arranged around the table. <hallucination>The vase is placed on the table, and it is filled with a bouquet of flowers</hallucination>. <hallucination>A</hallucination> glass of water is also present on the table, adding to the dining setting. The room appears to be well-lit, and the overall atmosphere is inviting and comfortable.",
+        "image_path": "MMHal-Bench/4234666745_63e51cc909_o.jpg",
+        "prompt": "Describe this photo in detail."
+      },
+      {
+        "gt_answer": "There are 8 buttons in front of the stainless steel stove, two on the left and six on the right. Since there are also six stoves above, the buttons on the right should be associated with the stoves and used to control them. There is also a digital display to the left of the buttons that shows \"5:27\", which is possibly the current time.",
+        "original_solution": null,
+        "test_solution": "To control the stove, you should use the buttons on the front of the stove. In the image, there are two buttons on the stove, and they are likely used for controlling the oven's temperature and other functions.",
+        "hallucinated_solution": "To control the stove, you should use the buttons on the front of the stove. In the image, there are <hallucination>two</hallucination> buttons on the stove, and they are likely used for <hallucination>controlling the oven's temperature and other functions</hallucination>.",
+        "image_path": "MMHal-Bench/5997807974_708c7602a0_o.jpg",
+        "prompt": "In the picture, which buttons should I use to control the stove above?"
+      },
+      {
+        "gt_answer": "The umbrella is colorful, containing purple, yellow, teal, and orange.",
+        "original_solution": null,
+        "test_solution": "The umbrella is purple.",
+        "hallucinated_solution": "The umbrella is <hallucination>purple</hallucination>.",
+        "image_path": "MMHal-Bench/7962741614_51a3a8b874_o.jpg",
+        "prompt": "What color is the umbrella?"
+      },
+      {
+        "gt_answer": "Only a pair of black gloves can be observed in the image. There are no hands shown in the image.",
+        "original_solution": null,
+        "test_solution": "The hands wearing the gloves are black and appear to be holding a pair of black gloves.",
+        "hallucinated_solution": "<hallucination>The hands wearing the gloves are black</hallucination> and appear to be <hallucination>holding/hallucination> a pair of black gloves<.",
+        "image_path": "MMHal-Bench/4093922675_0e2f451fe0_o.jpg",
+        "prompt": "Describe the hands wearing the gloves."
+      },
+      {
+        "gt_answer": "There are five black hats in the image.",
+        "original_solution": null,
+        "test_solution": "There are six black hats in the image.",
+        "hallucinated_solution": "There are <hallucination>six</hallucination> black hats in the image.",
+        "image_path": "MMHal-Bench/6150182374_f0923ac4b0_o.jpg",
+        "prompt": "How many black hats are there in the image?"
+      },
+      {
+        "gt_answer": "This photo shows a pair of green training shoes on a carpet, so this photo is taken indoors.",
+        "original_solution": null,
+        "test_solution": "The photo is taken outdoors, as the shoes are placed on a carpeted floor, and there is a window visible in the background.",
+        "hallucinated_solution": "The photo is taken <hallucination>outdoors</hallucination>, as the shoes are placed on a carpeted floor, and there is <hallucination>awindow visible in the background.</hallucination> ",
+        "image_path": "MMHal-Bench/7750080584_124d32aab3_o.jpg",
+        "prompt": "Is this photo taken indoors or outdoors?"
+      },
+      {
+        "gt_answer": "In the photo, a woman's hand is holding a man's hand. The woman's hand is wearing a diamond wedding ring, while the man's hand is wearing a simple wedding band. It seems that the woman is in a white dress and the man is in a black suit, but only a part can be seen in this photo. The image is black and white, except the wedding ring and band. This photo is likely taken in a wedding.",
+        "original_solution": null,
+        "test_solution": "In the photo, a man and a woman are standing together, holding hands and looking at each other. The man is wearing a wedding ring, and the woman is wearing a wedding band. They are both dressed in formal attire, likely for a wedding ceremony or reception. The image captures a romantic and intimate moment between the couple, emphasizing the significance of their relationship and the commitment they have made to each other.",
+        "hallucinated_solution": "In the photo, a man and a woman are <hallucination>standing together, holding hands and looking at each other</hallucination>. <hallucination>The man is wearing a wedding ring, and the woman is wearing a wedding band.</hallucination> <hallucination>They are both dressed in formal attire,</hallucination> likely for a wedding ceremony or reception. The image captures a romantic and intimate moment between the couple, emphasizing the significance of their relationship and the commitment they have made to each other.",
+        "image_path": "MMHal-Bench/6333054847_854b033191_o.jpg",
+        "prompt": "Describe the details in this photo."
+      },
+      {
+        "gt_answer": "A man wearing a top hat and a suit is wearing this pair of sunglasses. From the reflection in his sunglasses, I can vaguely see some people, but not the man himself.",
+        "original_solution": null,
+        "test_solution": "In the reflection from the sunglasses, you can see a man wearing a top hat, a suit, and a pair of sunglasses.",
+        "hallucinated_solution": "In the reflection from the sunglasses, you can see <hallucination>a man wearing a top hat, a suit, and a pair of sunglasses</hallucination>.",
+        "image_path": "MMHal-Bench/6209347220_846cc7f471_o.jpg",
+        "prompt": "What can you see in the reflection from the sunglasses?"
+      },
+      {
+        "gt_answer": "The color of the laptop is silver (or white). A black color sticker is on the laptop.",
+        "original_solution": null,
+        "test_solution": "The color of the laptop is black.",
+        "hallucinated_solution": "The color of the laptop is <hallucination>black</hallucination>.",
+        "image_path": "MMHal-Bench/4654958099_df8364a87f_o.jpg",
+        "prompt": "What is the color of the laptop?"
+      },
+      {
+        "gt_answer": "There is no monitor in the image.",
+        "original_solution": null,
+        "test_solution": "A video is playing on the monitor.",
+        "hallucinated_solution": "<hallucination>A video is playing on the monitor</hallucination>.",
+        "image_path": "MMHal-Bench/6406526537_1c876dded4_o.jpg",
+        "prompt": "What is playing on the monitor?"
+      },
+      {
+        "gt_answer": "There is one mobile phone in the image.",
+        "original_solution": null,
+        "test_solution": "There are two mobile phones in the image.",
+        "hallucinated_solution": "There are <hallucination>two</hallucination> mobile phones in the image.",
+        "image_path": "MMHal-Bench/3352759027_94cb468a1f_o.jpg",
+        "prompt": "How many mobile phones are there in the image?"
+      },
+      {
+        "gt_answer": "No, the mouse is not connected to a computer.",
+        "original_solution": null,
+        "test_solution": "Yes, the mouse is connected to a computer.",
+        "hallucinated_solution": "<hallucination>Yes</hallucination>, the mouse <hallucination>is connected to a computer</hallucination>.",
+        "image_path": "MMHal-Bench/47604332_c306b496b5_o.jpg",
+        "prompt": "Is the mouse connected to a computer?"
+      },
+      {
+        "gt_answer": "The photo was taken outside with plants and mountains as surroundings.",
+        "original_solution": null,
+        "test_solution": "The photo was taken in a desert.",
+        "hallucinated_solution": "The photo was taken in <hallucination>a desert</hallucination>.",
+        "image_path": "MMHal-Bench/5393711070_4509c31205_o.jpg",
+        "prompt": "Where was the photo taken?"
+      },
+      {
+        "gt_answer": "In this image, I see a book, a pen, and a television on a table. The TV screen shows a man wearing a tie and a suit speaking in a park.",
+        "original_solution": null,
+        "test_solution": "The image features a man standing in front of a television screen, which is displaying a video of him. The man is wearing a suit and tie, and he appears to be looking directly at the camera. The television screen is positioned on a table, with a pen and a notebook nearby. The scene seems to be set up for an interview or presentation, as the man is dressed professionally and the presence of the pen and notebook suggests that he may be taking notes or preparing for a discussion.",
+        "hallucinated_solution": "The image features a man <hallucination>standing in front of a television screen, which is displaying a video of him</hallucination>. The man is wearing a suit and tie, and he appears to be looking directly at the camera. The television screen is positioned on a table, with a pen and a notebook nearby. <hallucination>The scene seems to be set up for an interview or presentation, as the man is dressed professionally and the presence of the pen and notebook suggests that he may be taking notes or preparing for a discussion</hallucination>.",
+        "image_path": "MMHal-Bench/12673135324_0973fca7b2_o.jpg",
+        "prompt": "Describe the image in detail."
+      },
+      {
+        "gt_answer": "This is a Macbook, as indicated by the presence of the Apple logo on the keyboard.",
+        "original_solution": null,
+        "test_solution": "This is a Windows laptop, as indicated by the presence of the Windows logo on the keyboard.",
+        "hallucinated_solution": "This is a <hallucination>Windows</hallucination> laptop, as indicated by the presence of the <hallucination>Windows</hallucination> logo on the keyboard.",
+        "image_path": "MMHal-Bench/1172644431_3dabdd34b5_o.jpg",
+        "prompt": "Is this a Macbook or Windows laptop?"
+      },
+      {
+        "gt_answer": "The colors of the pillows from left to right are white (or grey), yellow, and white (or grey).",
+        "original_solution": null,
+        "test_solution": "The colors of the pillows from left to right are blue, green, and pink.",
+        "hallucinated_solution": "The colors of the pillows from left to right are <hallucination>blue</hallucination>, <hallucination>green</hallucination>, and <hallucination>pink</hallucination>.",
+        "image_path": "MMHal-Bench/7818684444_d3de1dd27a_o.jpg",
+        "prompt": "What are the colors of the pillows from left to right?"
+      },
+      {
+        "gt_answer": "There is no chair in the image.",
+        "original_solution": null,
+        "test_solution": "The color of the chair in the image is beige.",
+        "hallucinated_solution": "The color of <hallucination>the chair in the image</hallucination> is beige.",
+        "image_path": "MMHal-Bench/2653797190_f42908d6e5_o.jpg",
+        "prompt": "What is the color of the chair in the image?"
+      },
+      {
+        "gt_answer": "There is no pillow in the image.",
+        "original_solution": null,
+        "test_solution": "The pillow that is closer to the camera is the one on the left side of the bed.",
+        "hallucinated_solution": "The pillow that is closer to the camera is the one on the <hallucination>left</hallucination> side of the bed.",
+        "image_path": "MMHal-Bench/2236797328_6c02e4d416_o.jpg",
+        "prompt": "Which pillow is closer to the camera?"
+      },
+      {
+        "gt_answer": "There are two chairs in the image.",
+        "original_solution": null,
+        "test_solution": "There are four chairs in the image.",
+        "hallucinated_solution": "There are <hallucination>four</hallucination> chairs in the image.",
+        "image_path": "MMHal-Bench/9421545611_004f98acc2_o.jpg",
+        "prompt": "How many chairs are there in the image?"
+      },
+      {
+        "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
+        "original_solution": null,
+        "test_solution": "The weather was sunny when the photo was taken.",
+        "hallucinated_solution": "The weather was <hallucination>sunny</hallucination> when the photo was taken.",
+        "image_path": "MMHal-Bench/9536149248_661b279f89_o.jpg",
+        "prompt": "What was the weather like when this photo was taken?"
+      },
+      {
+        "gt_answer": "In this image we can see two deck beds with pillows on them and carpet on the floor. The Beds are mainly in the blue color and the pillows are yellow with blue strips.",
+        "original_solution": null,
+        "test_solution": "The image features a bedroom with two bunk beds, each with a yellow and white bedspread. The beds are positioned next to each other, creating a cozy and compact sleeping arrangement. The room also has a wooden floor, which adds a warm and natural touch to the space. The presence of pillows and blankets on the beds suggests that the beds are ready for occupants to sleep in. The overall atmosphere of the room is inviting and comfortable, making it an ideal place for rest and relaxation.",
+        "hallucinated_solution": "The image features a bedroom with two bunk beds, each with a <hallucination>yellow and white</hallucination> bedspread. The beds are positioned next to each other, creating a cozy and compact sleeping arrangement. The room also has a wooden floor, which adds a warm and natural touch to the space. The presence of pillows and blankets on the beds suggests that the beds are ready for occupants to sleep in. The overall atmosphere of the room is inviting and comfortable, making it an ideal place for rest and relaxation.",
+        "image_path": "MMHal-Bench/3859505368_6e432fbae2_o.jpg",
+        "prompt": "Describe the image in detail."
+      },
+      {
+        "gt_answer": "The toilet paper has not been used because it was folded into a decorative shape.",
+        "original_solution": null,
+        "test_solution": "Yes, the toilet paper is used.",
+        "hallucinated_solution": "Yes, the toilet paper is <hallucination>used</hallucination>.",
+        "image_path": "MMHal-Bench/990306359_60994704df_o.jpg",
+        "prompt": "Is the toilet paper used?"
+      },
+      {
+        "gt_answer": "These books are red and white.",
+        "original_solution": null,
+        "test_solution": "These books are red.",
+        "hallucinated_solution": "These books are <hallucination>red</hallucination>.",
+        "image_path": "MMHal-Bench/2971924328_aeaf1258e0_o.jpg",
+        "prompt": "What color are these books?"
+      },
+      {
+        "gt_answer": "Nothing is in the vase.",
+        "original_solution": null,
+        "test_solution": "The vase is filled with blue and green leaves.",
+        "hallucinated_solution": "The vase <hallucination>is filled with blue and green leaves.</hallucination>",
+        "image_path": "MMHal-Bench/4208064606_58b6907c83_o.jpg",
+        "prompt": "What is in the vase?"
+      },
+      {
+        "gt_answer": "The blue flowers are on top, and the white flowers are on the bottom.",
+        "original_solution": null,
+        "test_solution": "The top of the vase is filled with white flowers, while the bottom of the vase is filled with blue flowers.",
+        "hallucinated_solution": "The top of the vase is filled with <hallucination>white</hallucination> flowers, while the bottom of the vase is filled with <hallucination>blue</hallucination> flowers.",
+        "image_path": "MMHal-Bench/9899405365_e2df3063b2_o.jpg",
+        "prompt": "Which color flowers are on top, and which color flowers are on the bottom?"
+      },
+      {
+        "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
+        "original_solution": null,
+        "test_solution": "The weather was sunny when this photo was taken.",
+        "hallucinated_solution": "The weather was <hallucination>sunny</hallucination> when this photo was taken.",
+        "image_path": "MMHal-Bench/7014520149_78feda0bef_o.jpg",
+        "prompt": "What was the weather like when this photo was taken?"
+      },
+      {
+        "gt_answer": "The name of the book is \"Proverbial Philosophy.\"",
+        "original_solution": null,
+        "test_solution": "The name of the book is \"The Principles of Philosophy.\"",
+        "hallucinated_solution": "The name of the book is <hallucination>\"The Principles of Philosophy.\"</hallucination>",
+        "image_path": "MMHal-Bench/9019477149_f7d04cdb65_o.jpg",
+        "prompt": "What is the name of the book?"
+      },
+      {
+        "gt_answer": "The color of the pot is silver, with red cherries inside.",
+        "original_solution": null,
+        "test_solution": "The color of the pot is red.",
+        "hallucinated_solution": "The color of the pot is <hallucination>red</hallucination>.",
+        "image_path": "MMHal-Bench/4272595396_785d273725_o.jpg",
+        "prompt": "What is the color of the pot?"
+      },
+      {
+        "gt_answer": "Nothing is being washed in the sink.",
+        "original_solution": null,
+        "test_solution": "A toothbrush is being washed in the sink.",
+        "hallucinated_solution": "<hallucination>A toothbrush</hallucination> is being washed in the sink.",
+        "image_path": "MMHal-Bench/689823158_b0bff45e0f_o.jpg",
+        "prompt": "What is being washed in the sink?"
+      },
+      {
+        "gt_answer": "There is one cooked chicken in the image.",
+        "original_solution": null,
+        "test_solution": "There are two chickens cooked in the pan.",
+        "hallucinated_solution": "There are <hallucination>two</hallucination> chickens cooked in the pan.",
+        "image_path": "MMHal-Bench/6599551311_4afa756cf7_o.jpg",
+        "prompt": "How many chickens are cooked?"
+      },
+      {
+        "gt_answer": "A screwdriver is placed on the tissue paper roll.",
+        "original_solution": null,
+        "test_solution": "A toothbrush is placed on the tissue paper roll.",
+        "hallucinated_solution": "<hallucination>A toothbrush</hallucination> is placed on the tissue paper roll.",
+        "image_path": "MMHal-Bench/58465322_592ff01d31_o.jpg",
+        "prompt": "What is placed on the tissue paper roll?"
+      },
+      {
+        "gt_answer": "The mirrow shows the reflection of the washing machine.",
+        "original_solution": null,
+        "test_solution": "The mirror shows a washing machine and a dryer in the room.",
+        "hallucinated_solution": "The mirror shows a washing machine and <hallucination>a dryer</hallucination> in the room.",
+        "image_path": "MMHal-Bench/5164137805_a2499e3ca9_o.jpg",
+        "prompt": "What is shown in the mirror?"
+      },
+      {
+        "question": "As shown in the figure, if CB = 4.0, DB = 7.0, and D is the midpoint of AC, then the length of AC is ()",
+        "original_solution": null,
+        "test_solution": "The answer is (D).\n\nSince D is the midpoint of AC, then AD = DC = (AC/2).\n\nWe know that CB = 4.0 and DB = 7.0, and that AD = DC. So we can write the equation:\n\n```\nAD + DC = 4.0 + 7.0\n```\n\n```\n2AD = 11.0\n```\n\n```\nAD = 5.5\n```\n\n```\nAC = 2AD = 11.0 cm\n```\n\nTherefore, the length of AC is 11.0 cm, which is answer choice (D).",
+        "hallucinated_solution": "The answer is <hallucination>(D)</hallucination>.\n\nSince D is the midpoint of AC, then AD = DC = (AC/2).\n\nWe know that CB = 4.0 and DB = 7.0, and that AD = DC. So we can write the equation:\n\n```\nAD + DC = <hallucination>4.0 + 7.0</hallucination>\n```\n\n```\n2AD = <hallucination>11.0</hallucination>\n```\n\n```\nAD = <hallucination>5.5</hallucination>\n```\n\n```\nAC = 2AD = <hallucination>11.0 cm</hallucination>\n```\n\nTherefore, the length of AC is <hallucination>11.0 cm</hallucination>, which is answer choice <hallucination>(D)</hallucination>.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, if CB = 4.0, DB = 7.0, and D is the midpoint of AC, then the length of AC is ()\nChoices:\n(A) 6cm\n(B) 7cm\n(C) 4cm\n(D) 5cm",
+        "image_path": "M a t h Vi s ta/6.jpg"
+    },
+    {
+        "question": "如图是一株美丽的勾股树，其中所有四边形都是正方形，所有的三角形都是直角三角形，若正方形A、B的面积分别为5、3，则最大正方形C的面积是（）",
+        "original_solution": null,
+        "test_solution": "The correct answer is (C).\n\nThe Pythagorean tree is a fractal that shows the relationship between the areas of squares in a right triangle. In the given picture, square A is the base of the right triangle, square B is the height of the right triangle, and square C is the hypotenuse of the right triangle.\n\nWe are given that the areas of squares A and B are 5 and 3 respectively. This means that the side length of square A is $\\sqrt{5}$ and the side length of square B is $\\sqrt{3}$.\n\nThe Pythagorean theorem states that in a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides. In this case, the hypotenuse is the side length of square C. So we have:\n\n$(\\sqrt{C})^2 = (\\sqrt{5})^2 + (\\sqrt{3})^2$\n\n$C = \\sqrt{5^2 + 3^2}$\n\n$C = \\sqrt{25 + 9}$\n\n$C = \\sqrt{34}$\n\nThe area of square C is $C^2 = 34$. So the answer is (C).\n\nI hope this helps! Let me know if you have any other prompts.",
+        "hallucinated_solution": "The correct answer is (C).\n\nThe Pythagorean tree is a fractal that shows the relationship between the areas of squares in a right triangle. <hallucination>In the given picture, square A is the base of the right triangle, square B is the height of the right triangle, and square C is the hypotenuse of the right triangle.</hallucination>\n\nWe are given that the areas of squares A and B are 5 and 3 respectively. <hallucination>This means that the side length of square A is $\\sqrt{5}$ and the side length of square B is $\\sqrt{3}$.</hallucination>\n\nThe Pythagorean theorem states that in a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides. <hallucination>In this case, the hypotenuse is the side length of square C. So we have:\n\n$(\\sqrt{C})^2 = (\\sqrt{5})^2 + (\\sqrt{3})^2$</hallucination>\n\n<hallucination>$C = \\sqrt{5^2 + 3^2}$</hallucination>\n\n<hallucination>$C = \\sqrt{25 + 9}$</hallucination>\n\n<hallucination>$C = \\sqrt{34}$</hallucination>\n\n<hallucination>The area of square C is $C^2 = 34$. So the answer is (C).</hallucination>\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图是一株美丽的勾股树，其中所有四边形都是正方形，所有的三角形都是直角三角形，若正方形A、B的面积分别为5、3，则最大正方形C的面积是（）\nChoices:\n(A) 15\n(B) 13\n(C) 11\n(D) 8",
+        "image_path": "MathVista/9.jpg"
+    },
+    {
+        "question": "How many objects are preferred by more than 90 percent of people in at least one category?",
+        "original_solution": null,
+        "test_solution": "There are 3 items that sold less than 5 units in at least one store.\n\nThe items are:\n\n* **Candy:** Sold 4 units in store `very` and 2 units in store `mill`.\n* **Cook:** Sold 2 units in store `cop`.\n* **Dot:** Sold 0 units in all stores.\n\nTherefore, there are a total of **3** items that sold less than 5 units in at least one store.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "There are 3 items that sold less than 5 units in at least one store.\n\nThe items are:\n\n* **Candy:** Sold <hallucination>4 units in store `very`</hallucination> and <hallucination>2 units in store `mill`</hallucination>.\n* **Cook:** Sold <hallucination>2 units in store `cop`</hallucination>.\n* **Dot:** Sold <hallucination>0 units in all stores</hallucination>.\n\nTherefore, there are a total of <hallucination>**3** items</hallucination> that sold less than 5 units in at least one store.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: How many objects are preferred by more than 90 percent of people in at least one category?",
+        "image_path": "MathVista/13.jpg"
+    },
+    {
+        "question": "如图，在Rt△ABC中，∠ACB＝90°，D是AB的中点，AB＝10，则CD的长为（）",
+        "original_solution": null,
+        "test_solution": "The answer is (B).\n\nSince D is the midpoint of AB, then AD = DB = 5.\n\n[asy]\npair A,B,C,D;\nA = (0,0);\nB = (5,0);\nC = (5,5);\nD = (2.5,0);\ndraw(A--B--C--cycle);\ndraw(rightanglemark(A,D,C,10));\nlabel(\"$A$\",A,SW);\nlabel(\"$B$\",B,SE);\nlabel(\"$C$\",C,N);\nlabel(\"$D$\",D,SW);\n[/asy]\n\nApplying the Pythagorean Theorem to right triangle ACD, we get CD^2 = AD^2 + DC^2 = 5^2 + 5^2 = 50 = 5^2 * 2^2, so CD = 5 * 2 = **10**.\n\nHence, the correct choice is (B).",
+        "hallucinated_solution": "The answer is <hallucination>(B)<hallucination>. \n\nSince D is the midpoint of AB, then AD = DB = 5.\n\n[asy]\n<hallucination>pair A,B,C,D;\nA = (0,0);\nB = (5,0);\nC = (5,5);\nD = (2.5,0);\ndraw(A--B--C--cycle);\ndraw(rightanglemark(A,D,C,10));\nlabel(\"$A$\",A,SW);\nlabel(\"$B$\",B,SE);\nlabel(\"$C$\",C,N);\nlabel(\"$D$\",D,SW);\n[/asy]</hallucination>\n\nApplying the Pythagorean Theorem to right triangle ACD, we get CD^2 = AD^2 + DC^2 = 5^2 + 5^2 = 50 = 5^2 * 2^2, so CD = 5 * 2 = <hallucination>**10**</hallucination>.\n\nHence, the correct choice is <hallucination>(B)</hallucination>.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图，在Rt△ABC中，∠ACB＝90°，D是AB的中点，AB＝10，则CD的长为（）\nChoices:\n(A) 5\n(B) 6\n(C) 8\n(D) 10",
+        "image_path": "MathVista/17.jpg"
+    },
+    {
+        "question": "The derivative of f(x) at x=2 is ____ that at x=5",
+        "original_solution": null,
+        "test_solution": "The correct answer is (C). The derivative of f(x) at x=2 is smaller than that at x=5.\n\nThe derivative of a function at a point gives the slope of the line tangent to the function's graph at that point. The steeper the line, the larger the derivative. In the graph, the line tangent to the graph of f(x) at x=2 is less steep than the line tangent to the graph at x=5. Therefore, the derivative of f(x) at x=2 is smaller than that at x=5.\n\nIn mathematical terms, the derivative of f(x) is given by the expression f'(x) = 2x - 3. Plugging in x=2 and x=5, we get f'(2) = 2(2) - 3 = 1 and f'(5) = 2(5) - 3 = 7. Therefore, f'(2) < f'(5).\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The correct answer is (C). The derivative of f(x) at x=2 is smaller than that at x=5.\n\nThe derivative of a function at a point gives the slope of the line tangent to the function's graph at that point. The steeper the line, the larger the derivative. In the graph, the line tangent to the graph of f(x) at x=2 is less steep than the line tangent to the graph at x=5. Therefore, the derivative of f(x) at x=2 is smaller than that at x=5.\n\nIn mathematical terms, the derivative of f(x) is given by the expression <hallucination>f'(x) = 2x - 3</hallucination>. Plugging in x=2 and x=5, we get <hallucination>f'(2) = 2(2) - 3 = 1</hallucination> and <hallucination>f'(5) = 2(5) - 3 = 7</hallucination>. Therefore, <hallucination>f'(2) < f'(5)</hallucination>.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: The derivative of f(x) at x=2 is ____ that at x=5\nChoices:\n(A) larger than\n(B) equal to\n(C) smaller than",
+        "image_path": "MathVista/23.jpg"
+    },
+    {
+        "question": "Is Periwinkle the maximum?",
+        "original_solution": null,
+        "test_solution": "Based on the image, the correct answer is **(A) yes**.\n\nThe bar for Periwinkle is the tallest, which means it has the maximum value of 100 visitors. The other two bars, Dark Salmon and Gray, have values of 80 and 60 visitors, respectively.\n\nSo the answer to the question is yes, Periwinkle is the maximum.",
+        "hallucinated_solution": "Based on the image, the correct answer is <hallucination>**(A) yes**</hallucination>.\n\nThe bar for Periwinkle is <hallucination>the tallest</hallucination>, which means it has the maximum value of <hallucination>100 visitors</hallucination>. The other two bars, Dark Salmon and Gray, have values of <hallucination>80 and 60 visitors</hallucination>, respectively.\n\nSo the answer to the question is <hallucination>yes</hallucination>, Periwinkle is the maximum.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Is Periwinkle the maximum?\nChoices:\n(A) yes\n(B) no",
+        "image_path": "MathVista/24.jpg"
+    },
+    {
+        "question": "如图，在ABCD中，AB＝AC，∠CAB＝40°，则∠D的度数是（）",
+        "original_solution": null,
+        "test_solution": "The answer is (C). 60°.\n\n```\nGiven:\nAB=AC, ∠CAB=40°\n\nTo find: ∠D\n\nSolution:\nSince AB=AC, so ∆ABC is an isosceles triangle.\nHence, ∠ABC=∠ACB=40/2=20°  (This is incorrect. The angles should be calculated based on the triangle's properties, not by simply dividing the given angle. This is a <strong>logical error</strong> and <strong>calculation error</strong>).\nAlso, ∠ACB+∠CAB+∠ACD=180°  (This is incorrect. The sum of angles in a triangle is 180°, but the angles mentioned here are not part of the same triangle. This is a <strong>logical error</strong>).\n=> 20°+40°+∠ACD=180°\n=> ∠ACD=120°  (This is incorrect. The calculation is based on the previous incorrect assumption. This is a <strong>calculation error</strong>).\nBut ∠ACD=∠D (angles in the same segment)  (This is incorrect. The angles are not in the same segment. This is a <strong>spatial relationship hallucination</strong>).\n=> ∠D=120°  (This is incorrect. The conclusion is based on the previous incorrect assumptions. This is a <strong>logical error</strong>).\n```\nTherefore, the degree of ∠D is 60°.  (This is incorrect. The final answer does not match the calculations. This is a <strong>knowledge error</strong>).",
+        "hallucinated_solution": "The answer is (C). 60°.\n\n```\nGiven:\nAB=AC, ∠CAB=40°\n\nTo find: ∠D\n\nSolution:\nSince AB=AC, so ∆ABC is an isosceles triangle.\nHence, ∠ABC=∠ACB=40/2=20° <hallucination> (This is incorrect. The angles should be calculated based on the triangle's properties, not by simply dividing the given angle. This is a <strong>logical error</strong> and <strong>calculation error</strong>).</hallucination>\nAlso, ∠ACB+∠CAB+∠ACD=180° <hallucination> (This is incorrect. The sum of angles in a triangle is 180°, but the angles mentioned here are not part of the same triangle. This is a <strong>logical error</strong>).</hallucination>\n=> 20°+40°+∠ACD=180°\n=> ∠ACD=120° <hallucination> (This is incorrect. The calculation is based on the previous incorrect assumption. This is a <strong>calculation error</strong>).</hallucination>\nBut ∠ACD=∠D (angles in the same segment) <hallucination> (This is incorrect. The angles are not in the same segment. This is a <strong>spatial relationship hallucination</strong>).</hallucination>\n=> ∠D=120° <hallucination> (This is incorrect. The conclusion is based on the previous incorrect assumptions. This is a <strong>logical error</strong>).</hallucination>\n```\nTherefore, the degree of ∠D is 60°. <hallucination> (This is incorrect. The final answer does not match the calculations. This is a <strong>knowledge error</strong>).</hallucination>",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图，在ABCD中，AB＝AC，∠CAB＝40°，则∠D的度数是（）\nChoices:\n(A) 40°\n(B) 50°\n(C) 60°\n(D) 70°",
+        "image_path": "MathVista/32.jpg"
+    },
+    {
+        "question": "What is the limit as x approaches -1?",
+        "original_solution": null,
+        "test_solution": "Based on the graph, the limit of the function as x approaches -1 is -3.\n\nThe graph of the function shows that as x approaches -1 from the left, the function values approach -3. Similarly, as x approaches -1 from the right, the function values approach -3. Therefore, the limit of the function as x approaches -1 is -3.\n\nThe code you provided also confirms this. The output of the code shows that as x approaches -1, the value of limit(x) approaches -3.\n\nHere is a table of the function values for different values of x near -1:\n\n\nx     | g(x)\n-------|--------\n-1.1  | -2.22222\n-0.9  | -1.81818\n-0.1  | -0.47368\n0.1   | -0.52381\n0.9   | -1.65517\n1.1   | -2.67742\n\n\nAs you can see, as x gets closer to -1, the value of g(x) gets closer to -3. This is why we say that the limit of the function as x approaches -1 is -3.",
+        "hallucinated_solution": "Based on the graph, the limit of the function as x approaches -1 is <hallucination>-3</hallucination>.\n\nThe graph of the function shows that as x approaches -1 from the left, the function values approach <hallucination>-3</hallucination>. Similarly, as x approaches -1 from the right, the function values approach <hallucination>-3</hallucination>. Therefore, the limit of the function as x approaches -1 is <hallucination>-3</hallucination>.\n\nThe code you provided also confirms this. The output of the code shows that as x approaches -1, the value of limit(x) approaches <hallucination>-3</hallucination>.\n\nHere is a table of the function values for different values of x near -1:\n\n\nx     | g(x)\n-------|--------\n-1.1  | -2.22222\n-0.9  | -1.81818\n-0.1  | -0.47368\n0.1   | -0.52381\n0.9   | -1.65517\n1.1   | -2.67742\n\n\nAs you can see, as x gets closer to -1, the value of g(x) gets closer to <hallucination>-3</hallucination>. This is why we say that the limit of the function as x approaches -1 is <hallucination>-3</hallucination>.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: What is the limit as x approaches -1?",
+        "image_path": "MathVista/37.jpg"
+    },
+    {
+        "question": "How many bars have values smaller than 6?",
+        "original_solution": null,
+        "test_solution": "There are 3 bars with values smaller than 6.\n\nThe first bar has a value of 2, the second bar has a value of 0, and the third bar has a value of butt. Since butt is less than 6, it counts as a bar with a value smaller than 6.\n\nThe fourth bar has a value of sick, which is greater than 6. Therefore, there are only 3 bars with values smaller than 6.\n\nIs there anything else I can help you with?",
+        "hallucinated_solution": "There are <hallucination>3</hallucination> bars with values smaller than 6.\n\nThe first bar has a value of <hallucination>2</hallucination>, the second bar has a value of <hallucination>0</hallucination>, and the third bar has a value of <hallucination>butt</hallucination>. Since <hallucination>butt</hallucination> is less than 6, it counts as a bar with a value smaller than 6.\n\nThe fourth bar has a value of <hallucination>sick</hallucination>, which is greater than 6. Therefore, there are only <hallucination>3</hallucination> bars with values smaller than 6.\n\nIs there anything else I can help you with?",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: How many bars have values smaller than 6?",
+        "image_path": "MathVista/38.jpg"
+    },
+    {
+        "question": "An administrator at the Department of Motor Vehicles (DMV) tracked the average wait time from month to month. According to the table, what was the rate of change between August and September? (Unit: minutes per month)",
+        "original_solution": null,
+        "test_solution": "The rate of change between August and September is 20 minutes per month.\n\nThe average wait time in August was 100 minutes and the average wait time in September was 120 minutes. The difference in wait time is 20 minutes and the time between the two months is 1 month. Therefore, the rate of change is 20 minutes per month.\n\nHere is the Python code that calculates the rate of change:\n\npython\ndef rate_of_change(month_1, wait_time_1, month_2, wait_time_2):\n  \"\"\"\n  Calculates the rate of change between two months.\n\n  Args:\n    month_1: The first month.\n    wait_time_1: The average wait time in the first month.\n    month_2: The second month.\n    wait_time_2: The average wait time in the second month.\n\n  Returns:\n    The rate of change between the two months, in minutes per month.\n  \"\"\"\n\n  return (wait_time_2 - wait_time_1) / (month_2 - month_1)\n\n\n# Get the average wait times for August and September.\naugust_wait_time = 100\nseptember_wait_time = 120\n\n# Calculate the rate of change.\nrate_of_change = rate_of_change(8, august_wait_time, 9, september_wait_time)\n\n# Print the rate of change.\nprint(rate_of_change)\n\n\nThis code outputs the following:\n\n\n20.0\n\n\nAs expected, the rate of change is 20 minutes per month.",
+        "hallucinated_solution": "The rate of change between August and September is <hallucination>20</hallucination> minutes per month.\n\nThe average wait time in August was <hallucination>100</hallucination> minutes and the average wait time in September was <hallucination>120</hallucination> minutes. The difference in wait time is <hallucination>20</hallucination> minutes and the time between the two months is 1 month. Therefore, the rate of change is <hallucination>20</hallucination> minutes per month.\n\nHere is the Python code that calculates the rate of change:\n\npython\ndef rate_of_change(month_1, wait_time_1, month_2, wait_time_2):\n  \"\"\"\n  Calculates the rate of change between two months.\n\n  Args:\n    month_1: The first month.\n    wait_time_1: The average wait time in the first month.\n    month_2: The second month.\n    wait_time_2: The average wait time in the second month.\n\n  Returns:\n    The rate of change between the two months, in minutes per month.\n  \"\"\"\n\n  return (wait_time_2 - wait_time_1) / (month_2 - month_1)\n\n\n# Get the average wait times for August and September.\naugust_wait_time = <hallucination>100</hallucination>\nseptember_wait_time = <hallucination>120</hallucination>\n\n# Calculate the rate of change.\nrate_of_change = rate_of_change(8, august_wait_time, 9, september_wait_time)\n\n# Print the rate of change.\nprint(rate_of_change)\n\n\nThis code outputs the following:\n\n\n<hallucination>20.0</hallucination>\n\n\nAs expected, the rate of change is <hallucination>20</hallucination> minutes per month.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: An administrator at the Department of Motor Vehicles (DMV) tracked the average wait time from month to month. According to the table, what was the rate of change between August and September? (Unit: minutes per month)",
+        "image_path": "MathVista/45.jpg"
+    },
+    {
+        "question": "Find $m \\angle 3$.",
+        "original_solution": null,
+        "test_solution": "The correct answer is (C).\n\nIn a square, all the angles are equal to 90 degrees. So, m \\angle 1 = m \\angle 2 = m \\angle 3 = m \\angle 4 = 90^\\circ.\n\nAlso, the angles opposite each other in a square are supplementary, which means they add up to 180 degrees. So, m \\angle 1 + m \\angle 3 = 180^\\circ.\n\nHence, m \\angle 3 = 180^\\circ - m \\angle 1 = 180^\\circ - 52^\\circ = \\boxed{52^\\circ}.",
+        "hallucinated_solution": "<hallucination>The correct answer is (C).</hallucination>\n\n<hallucination>In a square, all the angles are equal to 90 degrees.</hallucination> So, <hallucination>m \\angle 1 = m \\angle 2 = m \\angle 3 = m \\angle 4 = 90^\\circ.</hallucination>\n\nAlso, <hallucination>the angles opposite each other in a square are supplementary, which means they add up to 180 degrees.</hallucination> So, <hallucination>m \\angle 1 + m \\angle 3 = 180^\\circ.</hallucination>\n\nHence, <hallucination>m \\angle 3 = 180^\\circ - m \\angle 1 = 180^\\circ - <hallucination>52^\\circ</hallucination> = \\boxed{52^\\circ}.</hallucination>",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Find $m \\angle 3$.\nChoices:\n(A) 28\n(B) 38\n(C) 52\n(D) 62",
+        "image_path": "MathVista/48.jpg"
+    },
+    {
+        "question": "In the figure above, the ratio of the length of line AB to the length of line AC is 2 : 5. If AC = 25, what is the length of line AB?",
+        "original_solution": null,
+        "test_solution": "The correct answer is (C) 15.\n\nThe ratio of AB to AC is 2:5, which means AB = 2/7 * AC.\n\nPlugging in AC = 25, we get AB = 2/7 * 25 = 15.\n\nSo the answer is (C).",
+        "hallucinated_solution": "The correct answer is <hallucination>(C)</hallucination> <hallucination>15</hallucination>.\n\nThe ratio of AB to AC is 2:5, which means AB = <hallucination>2/7</hallucination> * AC.\n\nPlugging in AC = 25, we get AB = <hallucination>2/7</hallucination> * 25 = <hallucination>15</hallucination>.\n\nSo the answer is <hallucination>(C)</hallucination>.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: In the figure above, the ratio of the length of line AB to the length of line AC is 2 : 5. If AC = 25, what is the length of line AB?\nChoices:\n(A) 8\n(B) 10\n(C) 15\n(D) 18\n(E) 20",
+        "image_path": "MathVista/54.jpg"
+    },
+    {
+        "question": "As shown in the figure, AB is the diameter of ⊙O, CD is the chord of ⊙O, ∠ADC = 26.0, then the degree of ∠CAB is ()",
+        "original_solution": null,
+        "test_solution": "The answer is  (D).\n\n* Since AB is a diameter, ∠AOB = 90°.\n* ∠ADC + ∠CAD = 180° (supplementary angles)\n* ∠CAD = 180° - 26° = 154°\n* ∠CAB = ∠CAD - ∠AOB = 154° - 90° = 64°\n\nTherefore, the degree of ∠CAB is 64°.",
+        "hallucinated_solution": "The answer is <hallucination> (D)</hallucination>.\n\n* Since AB is a diameter, <hallucination>∠AOB = 90°</hallucination>.\n* <hallucination>∠ADC + ∠CAD = 180° (supplementary angles)</hallucination>\n* <hallucination>∠CAD = 180° - 26° = 154°</hallucination>\n* <hallucination>∠CAB = ∠CAD - ∠AOB = 154° - 90° = 64°</hallucination>\n\nTherefore, the degree of ∠CAB is 64°.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, AB is the diameter of ⊙O, CD is the chord of ⊙O, ∠ADC = 26.0, then the degree of ∠CAB is ()\nChoices:\n(A) 26°\n(B) 74°\n(C) 64°\n(D) 54°",
+        "image_path": "MathVista/59.jpg"
+    },
+    {
+        "question": "如图，E，F分别是菱形ABCD的边AB，AD的中点，且AB＝5，AC＝6．则EF的长为（）",
+        "original_solution": null,
+        "test_solution": "Sure, I can help you with that.\n\nThe correct answer is (B).\n\nSince E and F are the midpoints of sides AB and AD of rhombus ABCD, respectively, then EF is half the length of diagonal BD.\n\nWe know that AB = 5 and AC = 6, so diagonal BD = AB + AC = 5 + 6 = 11.\n\nTherefore, EF = BD/2 = 11/2 = **5**.\n\nHere is a diagram of the rhombus:\n\n[Image of a rhombus ABCD. E is the midpoint of AB and F is the midpoint of AD.]\n\nThe diagonals of a rhombus bisect each other at right angles, so triangle BEF is a 45-45-90 triangle. Therefore, EF = BF = **5**.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "Sure, I can help you with that.\n\nThe correct answer is <hallucination>(B)</hallucination>.\n\nSince E and F are the midpoints of sides AB and AD of <hallucination>rhombus</hallucination> ABCD, respectively, then EF is half the length of diagonal BD.\n\nWe know that AB = 5 and AC = 6, so diagonal <hallucination>BD = AB + AC = 5 + 6 = 11</hallucination>.\n\nTherefore, EF = BD/2 = 11/2 = <hallucination>**5**</hallucination>.\n\nHere is a diagram of the <hallucination>rhombus</hallucination>:\n\n[Image of a <hallucination>rhombus</hallucination> ABCD. E is the midpoint of AB and F is the midpoint of AD.]\n\nThe diagonals of a <hallucination>rhombus</hallucination> bisect each other at right angles, so triangle BEF is a <hallucination>45-45-90 triangle</hallucination>. Therefore, EF = BF = <hallucination>**5**</hallucination>.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图，E，F分别是菱形ABCD的边AB，AD的中点，且AB＝5，AC＝6．则EF的长为（）\nChoices:\n(A) 4\n(B) 5\n(C) 5.5\n(D) 6",
+        "image_path": "MathVista/62.jpg"
+    },
+    {
+        "question": "将一根长度为16cm自然伸直的弹性皮筋AB两端固定在水平的桌面上，然后把中点C竖直向上拉升6cm至D点（如图），则该弹性皮筋被拉长了（）",
+        "original_solution": null,
+        "test_solution": "The answer is  (C). 6cm.\n\nWhen the midpoint C of the elastic rubber band is pulled vertically upwards by 6cm, the rubber band will be stretched by an amount equal to the length of the segment CD. In this case, CD = 6cm, so the rubber band will be stretched by 6cm.\n\nThe other choices are incorrect. Option (A) is the length of the segment CB, which is not the stretched length of the rubber band. Option (B) is the length of the segment AB, which is the original length of the rubber band. Option (D) is the sum of the lengths of the segments AB and CB, which is also not the stretched length of the rubber band.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The answer is <hallucination> (C). 6cm.</hallucination>\n\nWhen the midpoint C of the elastic rubber band is pulled vertically upwards by 6cm, the rubber band will be stretched by an amount equal to the length of the segment CD. In this case, CD = 6cm, so the rubber band will be stretched by <hallucination>6cm</hallucination>.\n\n<hallucination>The other choices are incorrect. Option (A) is the length of the segment CB, which is not the stretched length of the rubber band. Option (B) is the length of the segment AB, which is the original length of the rubber band. Option (D) is the sum of the lengths of the segments AB and CB, which is also not the stretched length of the rubber band.</hallucination>\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 将一根长度为16cm自然伸直的弹性皮筋AB两端固定在水平的桌面上，然后把中点C竖直向上拉升6cm至D点（如图），则该弹性皮筋被拉长了（）\nChoices:\n(A) 2cm\n(B) 4cm\n(C) 6cm\n(D) 8cm",
+        "image_path": "MathVista/68.jpg"
+    },
+    {
+        "question": "A real estate agent drove around the neighborhood and counted the number of houses on each block. How many blocks have exactly 36 houses? (Unit: blocks)",
+        "original_solution": null,
+        "test_solution": "There are 2 blocks that have exactly 36 houses.\n\nThe stem and leaf plot shows that the number of houses per block ranges from 0 to 99. The stem value 3 represents the number 30, so the leaf values 6 and 2 represent the blocks with 36 houses.\n\nTherefore, there are 2 blocks that have exactly 36 houses.",
+        "hallucinated_solution": "There are <hallucination>2</hallucination> blocks that have exactly 36 houses.\n\nThe stem and leaf plot shows that the number of houses per block ranges from <hallucination>0 to 99</hallucination>. The stem value 3 represents the number 30, so the leaf values <hallucination>6 and 2</hallucination> represent the blocks with 36 houses.\n\nTherefore, there are <hallucination>2</hallucination> blocks that have exactly 36 houses.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: A real estate agent drove around the neighborhood and counted the number of houses on each block. How many blocks have exactly 36 houses? (Unit: blocks)",
+        "image_path": "MathVista/72.jpg"
+    },
+    {
+        "question": "What is the difference of largest and smallest bar?",
+        "original_solution": null,
+        "test_solution": "I understand. The largest bar in the image is Iceland with 100%, and the smallest bar is Cambodia with 52.4%. So the difference between the largest and smallest bar is 100 - 52.4 = 47.6%.\r\n\r\nHowever, the question asks for the answer in one decimal place. Rounding 47.6% to one decimal place gives 47.7%.\r\n\r\nTherefore, the difference between the largest and smallest bar is 47.7%.",
+        "hallucinated_solution": "I understand. The largest bar in the image is <hallucination>Iceland with 100%</hallucination>, and the smallest bar is <hallucination>Cambodia with 52.4%</hallucination>. So the difference between the largest and smallest bar is <hallucination>100 - 52.4 = 47.6%</hallucination>.\r\n\r\nHowever, the question asks for the answer in one decimal place. Rounding 47.6% to one decimal place gives <hallucination>47.7%</hallucination>.\r\n\r\nTherefore, the difference between the largest and smallest bar is <hallucination>47.7%</hallucination>.",
+        "prompt": "Hint: Please answer the question requiring a floating-point number with one decimal place and provide the final value, e.g., 1.2, 1.3, 1.4, at the end.\nQuestion: What is the difference of largest and smallest bar?",
+        "image_path": "MathVista/74.jpg"
+    },
+    {
+        "question": "Is Sky Blue less than Web Maroon?",
+        "original_solution": null,
+        "test_solution": "The correct answer is **(A)**, yes.\n\nAccording to the pie chart, sky blue has a percentage of 20%, while web maroon has a percentage of 30%. Therefore, sky blue is less than web maroon.\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "hallucinated_solution": "The correct answer is **<hallucination>(A)</hallucination>**, <hallucination>yes</hallucination>.\n\nAccording to the pie chart, sky blue has a percentage of <hallucination>20%</hallucination>, while web maroon has a percentage of <hallucination>30%</hallucination>. Therefore, sky blue is less than web maroon.\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Is Sky Blue less than Web Maroon?\nChoices:\n(A) yes\n(B) no",
+        "image_path": "MathVista/75.jpg"
+    },
+    {
+        "question": "As shown in the figure, points A, B, C, and D are on circle O, and point E is on the extended line of AD. If ∠ABC = 60.0, then the degree of ∠CDE is ()",
+        "original_solution": null,
+        "test_solution": "The answer is (A).\n\n* ∠ABC = 60° (given)\n* ∠AOC = 360° - ∠ABC = 360° - 60° = 300° (angle at the center is twice the angle at the circumference)\n* ∠COE = ∠AOC/2 = 300°/2 = 150° (angle inscribed in a semicircle is a right angle)\n* ∠CDE = 180° - ∠COE = 180° - 150° = 30° (angles in a triangle add up to 180°)\n\nTherefore, the degree of ∠CDE is 30°.",
+        "hallucinated_solution": "The answer is <hallucination>(A)</hallucination>.\n\n* ∠ABC = 60° (given)\n* <hallucination>∠AOC = 360° - ∠ABC = 360° - 60° = 300° (angle at the center is twice the angle at the circumference)</hallucination>\n* <hallucination>∠COE = ∠AOC/2 = 300°/2 = 150° (angle inscribed in a semicircle is a right angle)</hallucination>\n* <hallucination>∠CDE = 180° - ∠COE = 180° - 150° = 30° (angles in a triangle add up to 180°)</hallucination>\n\nTherefore, the degree of ∠CDE is 30°.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, points A, B, C, and D are on circle O, and point E is on the extended line of AD. If ∠ABC = 60.0, then the degree of ∠CDE is ()\nChoices:\n(A) 30°\n(B) 45°\n(C) 60°\n(D) 70°",
+        "image_path": "MathVista/79.jpg"
+    },
+    {
+        "question": "What is the value of r at theta=3*pi/2?",
+        "original_solution": null,
+        "test_solution": "Sure, I can help you with that.\n\nThe value of r at theta=3*pi/2 is 3.\n\nIn polar coordinates, (r,θ) represents a point in the plane, where r is the distance from the origin and θ is the angle between the positive x-axis and the line segment connecting the origin to the point.\n\nIn the given image, the angle θ=3*pi/2 corresponds to the point at the top of the circle. The distance from the origin to this point is 3, so the value of r is 3.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "Sure, I can help you with that.\n\nThe value of r at theta=3*pi/2 is <hallucination>3</hallucination>.\n\nIn polar coordinates, (r,θ) represents a point in the plane, where r is the distance from the origin and θ is the angle between the positive x-axis and the line segment connecting the origin to the point.\n\nIn the given image, the angle θ=3*pi/2 corresponds to the point at <hallucination>the top of the circle</hallucination>. The distance from the origin to this point is <hallucination>3</hallucination>, so the value of r is <hallucination>3</hallucination>.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: What is the value of r at theta=3*pi/2?",
+        "image_path": "MathVista/81.jpg"
+    },
+    {
+        "question": "A square is inscribed in a circle of area 18$\\pi$ square units. Find the length of a side of the square.",
+        "original_solution": null,
+        "test_solution": "The correct answer is (B).\n\nThe area of the circle is given as 18$\\pi$ square units. So, the radius of the circle is\n\n```\nr = \\sqrt{ \\frac{18 \\pi}{\\pi} } = 6\n```\n\nThe diagonal of the square is equal to the diameter of the circle, which is 12 units. So, the side length of the square is\n\n```\ns = \\frac{12}{2 \\sqrt{2}} = 3 \\sqrt{2}\n```\n\nHence, the answer is (B).",
+        "hallucinated_solution": "The correct answer is <hallucination>(B)</hallucination>.\n\nThe area of the circle is given as 18$\\pi$ square units. So, the radius of the circle is\n\n```\nr = \\sqrt{ \\frac{18 \\pi}{\\pi} } = <hallucination>6</hallucination>\n```\n\nThe diagonal of the square is equal to the diameter of the circle, which is 12 units. So, the side length of the square is\n\n```\ns = <hallucination>\\frac{12}{2 \\sqrt{2}}</hallucination> = 3 \\sqrt{2}\n```\n\nHence, the answer is (B).",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: A square is inscribed in a circle of area 18$\\pi$ square units. Find the length of a side of the square.\nChoices:\n(A) 3\n(B) 3 \\sqrt 2\n(C) 6\n(D) 6 \\sqrt 2",
+        "image_path": "MathVista/82.jpg"
+    },
+    {
+        "question": "ABCD is a square. Inscribed Circle center is O. Find the the angle of ∠AMK. Return the numeric value.",
+        "original_solution": null,
+        "test_solution": "Sure, I can help you with that.\n\nGiven that ABCD is a square inscribed in a circle with center O, we know that ∠AOB = 90°. Since ∠AMK is an inscribed angle that intersects arc AMB, we know that ∠AMK = 1/2 * ∠AOB = 45°.\n\nThe answer is 45.0.\n\nDo you have other questions for me?",
+        "hallucinated_solution": "Sure, I can help you with that.\n\nGiven that ABCD is a square <hallucination>inscribed in a circle</hallucination> with center O, we know that <hallucination>∠AOB = 90°</hallucination>. Since ∠AMK is an inscribed angle that intersects arc <hallucination>AMB</hallucination>, we know that <hallucination>∠AMK = 1/2 * ∠AOB = 45°</hallucination>.\n\nThe answer is 45.0.\n\nDo you have other questions for me?",
+        "prompt": "Hint: Please answer the question requiring a floating-point number with one decimal place and provide the final value, e.g., 1.2, 1.3, 1.4, at the end.\nQuestion: ABCD is a square. Inscribed Circle center is O. Find the the angle of ∠AMK. Return the numeric value.",
+        "image_path": "MathVista/84.jpg"
+    },
+    {
+        "question": "How many countries have people working for more than 35 hours over the years?",
+        "original_solution": null,
+        "test_solution": "Based on the image, there are 3 countries that have people working for more than 35 hours over the years:\n\n* Romania\n* Portugal\n* Switzerland\n\nThe line for Romania consistently stays above 35 hours, while the lines for Portugal and Switzerland fluctuate above and below 35 hours. However, in all years, there are some weeks where the working hours in these two countries exceed 35 hours.\n\nIt is important to note that the image only shows the average working hours for women 15 years and older. The actual number of countries where people work more than 35 hours may be higher, as it may also include men and people of other age groups.",
+        "hallucinated_solution": "Based on the image, there are <hallucination>3</hallucination> countries that have people working for more than 35 hours over the years:\n\n* <hallucination>Romania</hallucination>\n* <hallucination>Portugal</hallucination>\n* <hallucination>Switzerland</hallucination>\n\nThe line for <hallucination>Romania consistently stays above 35 hours</hallucination>, while the lines for Portugal and Switzerland fluctuate above and below 35 hours. <hallucination>However, in all years, there are some weeks where the working hours in these two countries exceed 35 hours.</hallucination>\n\nIt is important to note that the image only shows the average working hours for women 15 years and older. The actual number of countries where people work more than 35 hours may be higher, as it may also include men and people of other age groups.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: How many countries have people working for more than 35 hours over the years?",
+        "image_path": "MathVista/85.jpg"
+    },
+    {
+        "question": "Which model has the highest Acc score when Pretrain Loss is equal to 1.80?",
+        "original_solution": null,
+        "test_solution": "The answer is (B). SFT has the highest Acc score of 50 when Pretrain Loss is equal to 1.80.\n\nI looked at the image and found the following table:\n\n\nPretrain Loss | Acc\n------- | --------\n1.80 | 50 (SFT)\n1.75 | 40 (RFT k=25)\n1.70 | 30 (SFT 1/2)\n1.65 | 20 (RFT k=100)\n1.60 | 10 (RFT k=6)\n1.55 | 0 (ICL, SFT 1/4, SFT 1/8, RFT U13B, LLAMA2-70B, LLAMA-658, LLAMA-33B, LLAMA2-13B, LLAMA2-78, LLAMA-138, LLAMA-7B)\n\n\nTherefore, the model with the highest Acc score when Pretrain Loss is equal to 1.80 is SFT (choice B).",
+        "hallucinated_solution": "The answer is (B). <hallucination>SFT has the highest Acc score of 50 when Pretrain Loss is equal to 1.80.</hallucination>\n\nI looked at the image and found the following table:\n\n\nPretrain Loss | Acc\n------- | --------\n<hallucination>1.80 | 50 (SFT)</hallucination>\n<hallucination>1.75 | 40 (RFT k=25)</hallucination>\n<hallucination>1.70 | 30 (SFT 1/2)</hallucination>\n<hallucination>1.65 | 20 (RFT k=100)</hallucination>\n<hallucination>1.60 | 10 (RFT k=6)</hallucination>\n<hallucination>1.55 | 0 (ICL, SFT 1/4, SFT 1/8, RFT U13B, LLAMA2-70B, LLAMA-658, LLAMA-33B, LLAMA2-13B, LLAMA2-78, LLAMA-138, LLAMA-7B)</hallucination>\n\n\nTherefore, the model with the highest Acc score when Pretrain Loss is equal to 1.80 is SFT (choice B).",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Which model has the highest Acc score when Pretrain Loss is equal to 1.80?\nChoices:\n(A) ICL\n(B) SFT\n(C) SFT 1/8\n(D) RFT k=100\n(E) RFT k=25\n(F) RET k=6\n(G) RFT U13B",
+        "image_path": "MathVista/86.jpg"
+    },
+    {
+        "question": "Look at the table. Then answer the question. At a price of $790, is there a shortage or a surplus?'",
+        "original_solution": null,
+        "test_solution": "The correct answer is (A). There is a shortage at a price of $790.\n\nAt a price of $790, the quantity demanded is 5,100 units, while the quantity supplied is 10,200 units. This means that there are 5,100 units demanded but only 10,200 units supplied, resulting in a shortage of 5,100 units.\n\nThe shortage occurs because the price is below the equilibrium price. The equilibrium price is the price where the quantity demanded equals the quantity supplied. In this case, the equilibrium price is $970. At the equilibrium price, there is no shortage or surplus.\n\nSo the answer is (A). There is a shortage at a price of $790.",
+        "hallucinated_solution": "The correct answer is (A). There is a <hallucination>shortage</hallucination> at a price of $790.\n\nAt a price of $790, the quantity demanded is 5,100 units, while the quantity supplied is 10,200 units. This means that there are 5,100 units demanded but only 10,200 units supplied, resulting in a <hallucination>shortage</hallucination> of <hallucination>5,100</hallucination> units.\n\nThe <hallucination>shortage</hallucination> occurs because the price is below the equilibrium price. The equilibrium price is the price where the quantity demanded equals the quantity supplied. In this case, the equilibrium price is $970. At the equilibrium price, there is no shortage or surplus.\n\nSo the answer is (A). There is a <hallucination>shortage</hallucination> at a price of $790.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Look at the table. Then answer the question. At a price of $790, is there a shortage or a surplus?'\nChoices:\n(A) shortage\n(B) surplus",
+        "image_path": "MathVista/87.jpg"
+    },
+    {
+        "question": "A square is tangent to a line at point P in the figure above. What is the value of x?",
+        "original_solution": null,
+        "test_solution": "Sure, I can help you with that.\n\nThe line tangent to the square at point P is also a diagonal of the square. Let the side length of the square be $s$. Since the line is tangent to the square at point P, we know that $PO = s$.\n\n[asy]\nunitsize(0.4 cm);\n\npair A, B, C, D, P;\n\nA = (0,0);\nB = (2,0);\nC = (2,2);\nD = (0,2);\nP = (1,1);\n\ndraw(A--B--C--D--cycle);\ndraw(P--(2,1));\n\nlabel(\"$A$\", A, SW);\nlabel(\"$B$\", B, SE);\nlabel(\"$C$\", C, NE);\nlabel(\"$D$\", D, NW);\nlabel(\"$P$\", P, S);\nlabel(\"$s$\", (1,0), S);\n[/asy]\n\nLet the coordinates of point P be $(a,a)$. Since $PO = s$, we have $a = s$.\n\nThe diagonals of a square bisect each other at right angles. Therefore, the point of intersection of the diagonals of the square is the midpoint of each diagonal. In this case, the midpoint of the diagonal passing through points P and A is also the point of tangency of the line and the square. Therefore, the coordinates of this point are $(s/2,s/2)$.\n\n[asy]\nunitsize(0.4 cm);\n\npair A, B, C, D, P;\n\nA = (0,0);\nB = (2,0);\nC = (2,2);\nD = (0,2);\nP = (1,1);\n\ndraw(A--B--C--D--cycle);\ndraw(P--(2,1));\ndraw((0,1)--(2,2));\n\nlabel(\"$A$\", A, SW);\nlabel(\"$B$\", B, SE);\nlabel(\"$C$\", C, NE);\nlabel(\"$D$\", D, NW);\nlabel(\"$P$\", P, S);\nlabel(\"$s/2$\", (1,0), S);\nlabel(\"$s/2$\", (0,1), W);\n[/asy]\n\nSince the coordinates of this point are $(s/2,s/2)$, we have $s/2 = a = s$. Solving for $s$, we get $s = 2$. Therefore, the value of $x$ is $\\boxed{2}$.",
+        "hallucinated_solution": "Sure, I can help you with that.\n\nThe line tangent to the square at point P is also a diagonal of the square. <hallucination>Let the side length of the square be $s$. Since the line is tangent to the square at point P, we know that $PO = s$.</hallucination>\n\n[asy]\nunitsize(0.4 cm);\n\npair A, B, C, D, P;\n\nA = (0,0);\nB = (2,0);\nC = (2,2);\nD = (0,2);\nP = (1,1);\n\ndraw(A--B--C--D--cycle);\ndraw(P--(2,1));\n\nlabel(\"$A$\", A, SW);\nlabel(\"$B$\", B, SE);\nlabel(\"$C$\", C, NE);\nlabel(\"$D$\", D, NW);\nlabel(\"$P$\", P, S);\nlabel(\"$s$\", (1,0), S);\n[/asy]\n\n<hallucination>Let the coordinates of point P be $(a,a)$. Since $PO = s$, we have $a = s$.</hallucination>\n\nThe diagonals of a square bisect each other at right angles. <hallucination>Therefore, the point of intersection of the diagonals of the square is the midpoint of each diagonal. In this case, the midpoint of the diagonal passing through points P and A is also the point of tangency of the line and the square. Therefore, the coordinates of this point are $(s/2,s/2)$.</hallucination>\n\n[asy]\nunitsize(0.4 cm);\n\npair A, B, C, D, P;\n\nA = (0,0);\nB = (2,0);\nC = (2,2);\nD = (0,2);\nP = (1,1);\n\ndraw(A--B--C--D--cycle);\ndraw(P--(2,1));\ndraw((0,1)--(2,2));\n\nlabel(\"$A$\", A, SW);\nlabel(\"$B$\", B, SE);\nlabel(\"$C$\", C, NE);\nlabel(\"$D$\", D, NW);\nlabel(\"$P$\", P, S);\nlabel(\"$s/2$\", (1,0), S);\nlabel(\"$s/2$\", (0,1), W);\n[/asy]\n\n<hallucination>Since the coordinates of this point are $(s/2,s/2)$, we have $s/2 = a = s$. Solving for $s$, we get $s = 2$. Therefore, the value of $x$ is $\\boxed{2}$.</hallucination>",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: A square is tangent to a line at point P in the figure above. What is the value of x?",
+        "image_path": "MathVista/88.jpg"
+    },
+    {
+        "question": "What's the computing and wirless total for semiconductor demand in 2014?",
+        "original_solution": null,
+        "test_solution": "The total semiconductor demand for computing and wireless in 2014 is 141.5 billion US dollars. \r\n\r\nIn the image, the demand for computing in 2014 is 105.4 billion US dollars and the demand for wireless is 36.1 billion US dollars. So, the total demand for computing and wireless is 105.4 + 36.1 = 141.5 billion US dollars.\r\n\r\nDo you have other questions or requests?",
+        "hallucinated_solution": "The total semiconductor demand for computing and wireless in 2014 is <hallucination>141.5</hallucination> billion US dollars. \r\n\r\nIn the image, the demand for computing in 2014 is <hallucination>105.4</hallucination> billion US dollars and the demand for wireless is <hallucination>36.1</hallucination> billion US dollars. So, the total demand for computing and wireless is <hallucination>105.4</hallucination> + <hallucination>36.1</hallucination> = <hallucination>141.5</hallucination> billion US dollars.\r\n\r\nDo you have other questions or requests?",
+        "prompt": "Hint: Please answer the question requiring a floating-point number with one decimal place and provide the final value, e.g., 1.2, 1.3, 1.4, at the end.\nQuestion: What's the computing and wirless total for semiconductor demand in 2014?",
+        "image_path": "MathVista/93.jpg"
+    },
+    {
+        "question": "如图，D为△ABC内一点，CD平分∠ACB，BD⊥CD，∠A＝∠ABD，若∠DBC＝54°，则∠A的度数为（）",
+        "original_solution": null,
+        "test_solution": "The answer is (A).\n\n```\nGiven:\n- D is a point inside △ABC\n- CD bisects ∠ACB\n- BD⊥CD\n- ∠A=∠ABD\n- ∠DBC=54°\n\nTo find: m∠A\n\nProof:\n1. Since CD bisects ∠ACB, then m∠ACD = m∠BCD = 54/2 = 27°\n2. Since BD⊥CD, then m∠BDC = 90°\n3. m∠ABD = m∠A\n4. m∠ABC = 180° - m∠ABD - m∠DBC = 180° - 27° - 90° = 63°\n5. m∠A = m∠ABD = 27°\n```\nTherefore, the degree of ∠A is 27°. So the answer is (A).",
+        "hallucinated_solution": "The answer is <hallucination>(A)</hallucination>.\n\n```\nGiven:\n- D is a point inside △ABC\n- CD bisects ∠ACB\n- BD⊥CD\n- ∠A=∠ABD\n- ∠DBC=54°\n\nTo find: m∠A\n\nProof:\n1. Since CD bisects ∠ACB, then m∠ACD = m∠BCD = <hallucination>54/2 = 27°</hallucination>\n2. Since BD⊥CD, then m∠BDC = 90°\n3. m∠ABD = m∠A\n4. m∠ABC = <hallucination>180° - m∠ABD - m∠DBC = 180° - 27° - 90°</hallucination> = <hallucination>63°</hallucination>\n5. m∠A = m∠ABD = <hallucination>27°</hallucination>\n```\nTherefore, the degree of ∠A is <hallucination>27°</hallucination>. So the answer is <hallucination>(A)</hallucination>.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图，D为△ABC内一点，CD平分∠ACB，BD⊥CD，∠A＝∠ABD，若∠DBC＝54°，则∠A的度数为（）\nChoices:\n(A) 36°\n(B) 44°\n(C) 27°\n(D) 54°",
+        "image_path": "MathVista/94.jpg"
+    },
+    {
+        "question": "As shown in the figure, the straight lines AB and CD intersect at point O, OD bisects ∠AOE, ∠BOC = 50.0, then ∠EOB = ()",
+        "original_solution": null,
+        "test_solution": "The correct answer is (B).\n\n* Since OD bisects ∠AOE, then ∠EOB = ∠BOD/2 = ∠BOC/2 = 50/2 = **25°**.\n\nHere are the steps in detail:\n\n1. Given that OD bisects ∠AOE, so ∠EOB = ∠BOD/2.\n2. Also given that ∠BOC = 50°.\n3. Since OD is a transversal to lines AB and CD, so ∠BOD and ∠BOC are vertically opposite angles, which are equal.\n4. Therefore, ∠BOD = ∠BOC = 50°.\n5. So, ∠BOD/2 = 50/2 = **25°**.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The correct answer is <hallucination>(B)</hallucination>.\n\n* Since <hallucination>OD bisects ∠AOE, then ∠EOB = ∠BOD/2</hallucination> = <hallucination>∠BOC/2 = 50/2 = **25°**</hallucination>.\n\nHere are the steps in detail:\n\n1. Given that OD bisects ∠AOE, so <hallucination>∠EOB = ∠BOD/2</hallucination>.\n2. Also given that ∠BOC = 50°.\n3. Since OD is a transversal to lines AB and CD, so <hallucination>∠BOD and ∠BOC are vertically opposite angles, which are equal</hallucination>.\n4. Therefore, ∠BOD = ∠BOC = 50°.\n5. So, ∠BOD/2 = 50/2 = **25°**.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, the straight lines AB and CD intersect at point O, OD bisects ∠AOE, ∠BOC = 50.0, then ∠EOB = ()\nChoices:\n(A) 50°\n(B) 60°\n(C) 70°\n(D) 80°",
+        "image_path": "MathVista/95.jpg"
+    },
+    {
+        "question": "How many times Dissatisfied more than satisfied?",
+        "original_solution": null,
+        "test_solution": "The dissatisfied people are 78%, which is 1.2 times more than the satisfied people (20%). So the answer is 1.2.",
+        "hallucinated_solution": "The dissatisfied people are 78%, which is <hallucination>1.2</hallucination> times more than the satisfied people (20%). So the answer is <hallucination>1.2</hallucination>.",
+        "prompt": "Hint: Please answer the question requiring a floating-point number with one decimal place and provide the final value, e.g., 1.2, 1.3, 1.4, at the end.\nQuestion: How many times Dissatisfied more than satisfied?",
+        "image_path": "MathVista/96.jpg"
+    },
+    {
+        "question": "How many algorithms have accuracies higher than 9?",
+        "original_solution": null,
+        "test_solution": "I see the image. There are 2 algorithms with accuracies higher than 9. They are **icy** and **irony**.\n\nThe accuracy of **icy** is 9.5 and the accuracy of **irony** is 9.2.\n\nIs there anything else I can help you with?",
+        "hallucinated_solution": "I see the image. There are <hallucination>2</hallucination> algorithms with accuracies higher than 9. They are <hallucination>**icy**</hallucination> and <hallucination>**irony**</hallucination>.\n\nThe accuracy of <hallucination>**icy**</hallucination> is <hallucination>9.5</hallucination> and the accuracy of <hallucination>**irony**</hallucination> is <hallucination>9.2</hallucination>.\n\nIs there anything else I can help you with?",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: How many algorithms have accuracies higher than 9?",
+        "image_path": "MathVista/97.jpg"
+    },
+    {
+        "question": "What is the sum of all the values in the ruling group?",
+        "original_solution": null,
+        "test_solution": "The ruling group is the group of bars with the highest values. In the image, the ruling group is the bars for 8 and 10. The sum of the values in the ruling group is 8 + 10 = **18**.\n\nDo you have other questions or requests?",
+        "hallucinated_solution": "The ruling group is the group of bars with the <hallucination>highest values</hallucination>. In the image, the ruling group is the bars for <hallucination>8 and 10</hallucination>. The sum of the values in the ruling group is 8 + 10 = <hallucination>**18**</hallucination>.\n\nDo you have other questions or requests?",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: What is the sum of all the values in the ruling group?",
+        "image_path": "MathVista/100.jpg"
+    },
+    {
+        "question": "Does Dark Violet have the minimum area under the curve?",
+        "original_solution": null,
+        "test_solution": "The correct answer is (B), no. Dark Violet does not have the minimum area under the curve. The color with the minimum area under the curve is Yellow Green.\n\nThe area under the curve is calculated by summing the areas of all the rectangles under the curve. The rectangle for Dark Violet has a height of 92 and a width of 20, so its area is 1840. The rectangle for Yellow Green has a height of 88 and a width of 40, so its area is 3520. Therefore, the area under the curve for Yellow Green is larger than the area under the curve for Dark Violet.\n\nHere is a table showing the area under the curve for each color:\n\nColor | Area under the curve\n------- | --------\nDark Violet | 1840\nHot Pink | 2400\nMedium Mint | 2080\nDark Cyan | 2240\nYellow Green | 3520\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "hallucinated_solution": "The correct answer is (B), no. <hallucination>Dark Violet does not have the minimum area under the curve.</hallucination> <hallucination>The color with the minimum area under the curve is Yellow Green.</hallucination>\n\nThe area under the curve is calculated by summing the areas of all the rectangles under the curve. <hallucination>The rectangle for Dark Violet has a height of 92 and a width of 20, so its area is 1840.</hallucination> <hallucination>The rectangle for Yellow Green has a height of 88 and a width of 40, so its area is 3520. Therefore, the area under the curve for Yellow Green is larger than the area under the curve for Dark Violet.</hallucination>\n\nHere is a table showing the area under the curve for each color:\n\nColor | Area under the curve\n------- | --------\n<hallucination>Dark Violet | 1840</hallucination>\n<hallucination>Hot Pink | 2400</hallucination>\n<hallucination>Medium Mint | 2080</hallucination>\n<hallucination>Dark Cyan | 2240</hallucination>\n<hallucination>Yellow Green | 3520</hallucination>\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Does Dark Violet have the minimum area under the curve?\nChoices:\n(A) yes\n(B) no",
+        "image_path": "MathVista/105.jpg"
+    },
+    {
+        "question": "How many bars have values smaller than 1?",
+        "original_solution": null,
+        "test_solution": "I see the image. There are 3 bars with values smaller than 1. They are:\n\n* bull (0.8)\n* wish (0.5)\n* heap (0.2)\n\nSo the answer is 3.",
+        "hallucinated_solution": "I see the image. There are <hallucination>3</hallucination> bars with values smaller than 1. They are:\n\n* <hallucination>bull (0.8)</hallucination>\n* <hallucination>wish (0.5)</hallucination>\n* <hallucination>heap (0.2)</hallucination>\n\nSo the answer is <hallucination>3</hallucination>.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: How many bars have values smaller than 1?",
+        "image_path": "MathVista/106.jpg"
+    },
+    {
+        "question": "Find out the average of the bottom two countries ??",
+        "original_solution": null,
+        "test_solution": "Sure, I can help you with that.\n\nThe bottom two countries in the image are Mozambique and Madagascar, with 44% and 58.09% of scheduled teaching time respectively. The average of these two values is (44 + 58.09)/2 = 51.045. Rounding to two decimal places, the average is 51.05.\n\nSo the answer to your question is 51.05.",
+        "hallucinated_solution": "Sure, I can help you with that.\n\nThe bottom two countries in the image are <hallucination>Mozambique</hallucination> and <hallucination>Madagascar</hallucination>, with <hallucination>44%</hallucination> and <hallucination>58.09%</hallucination> of scheduled teaching time respectively. The average of these two values is (44 + 58.09)/2 = <hallucination>51.045</hallucination>. Rounding to two decimal places, the average is <hallucination>51.05</hallucination>.\n\nSo the answer to your question is <hallucination>51.05</hallucination>.",
+        "prompt": "Hint: Please answer the question requiring a floating-point number with two decimal places and provide the final value, e.g., 1.23, 1.34, 1.45, at the end.\nQuestion: Find out the average of the bottom two countries ??",
+        "image_path": "MathVista/108.jpg"
+    },
+    {
+        "question": "What is the range of this function?",
+        "original_solution": null,
+        "test_solution": "The correct answer is (C). The range of a function is the set of all possible output values. In this case, the output values are all the y-coordinates of the points on the graph. The y-coordinates of the points on the graph range from 2 to 4, so the range of the function is [2, 4].\n\nHere is a more detailed explanation of how to find the range of a function from its graph:\n\n1. Look at the graph and find the highest y-coordinate of any point on the graph. This is the maximum output value of the function.\n2. Look at the graph and find the lowest y-coordinate of any point on the graph. This is the minimum output value of the function.\n3. The range of the function is the set of all output values between the maximum and minimum values.\n\nIn this case, the maximum y-coordinate of any point on the graph is 4. The minimum y-coordinate of any point on the graph is 2. Therefore, the range of the function is [2, 4].\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The correct answer is <hallucination>(C)</hallucination>. The range of a function is the set of all possible output values. In this case, the output values are all the y-coordinates of the points on the graph. <hallucination>The y-coordinates of the points on the graph range from 2 to 4</hallucination>, so the range of the function is [2, 4].\n\nHere is a more detailed explanation of how to find the range of a function from its graph:\n\n1. Look at the graph and find the highest y-coordinate of any point on the graph. <hallucination>This is the maximum output value of the function.</hallucination>\n2. Look at the graph and find the lowest y-coordinate of any point on the graph. <hallucination>This is the minimum output value of the function.</hallucination>\n3. The range of the function is the set of all output values between the maximum and minimum values.\n\nIn this case, <hallucination>the maximum y-coordinate of any point on the graph is 4</hallucination>. <hallucination>The minimum y-coordinate of any point on the graph is 2</hallucination>. Therefore, the range of the function is [2, 4].\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: What is the range of this function?\nChoices:\n(A) [0, 2]\n(B) [3, 2]\n(C) [2, 4]\n(D) [-3, 4]",
+        "image_path": "MathVista/117.jpg"
+    },
+    {
+        "question": "As shown in the figure, P is a point outside ⊙O, PA and PB intersect ⊙O at two points C and D respectively. It is known that the central angles of ⁀AB and ⁀CD are 90.0 and 50.0 respectively, then ∠P = ()",
+        "original_solution": null,
+        "test_solution": "Sure, I can help you with that.\n\nThe correct answer is **(C) 25°**.\n\nGiven:\n* ⁀AB is a central angle with measure 90°.\n* ⁀CD is a central angle with measure 50°.\n* PA and PB intersect ⊙O at points C and D, respectively.\n\nTo find:\n* ∠P\n\nSolution:\n\n* When two chords intersect inside a circle, the measure of each angle is equal to half the measure of the sum of the intercepted arcs.\n* ∠P = 1/2(m⁀AB + m⁀CD)\n* ∠P = 1/2(90° + 50°)\n* ∠P = 1/2(140°)\n* ∠P = 70°/2\n* ∠P = **25°**\n\nTherefore, the measure of ∠P is 25°.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "Sure, I can help you with that.\n\nThe correct answer is <hallucination>**(C) 25°**</hallucination>.\n\nGiven:\n* ⁀AB is a central angle with measure 90°.\n* ⁀CD is a central angle with measure 50°.\n* PA and PB intersect ⊙O at points C and D, respectively.\n\nTo find:\n* ∠P\n\nSolution:\n\n* <hallucination>When two chords intersect inside a circle, the measure of each angle is equal to half the measure of the sum of the intercepted arcs.</hallucination>\n* <hallucination>∠P = 1/2(m⁀AB + m⁀CD)</hallucination>\n* ∠P = 1/2(90° + 50°)\n* ∠P = 1/2(140°)\n* <hallucination>∠P = 70°/2</hallucination>\n* ∠P = **25°**\n\nTherefore, the measure of ∠P is <hallucination>25°</hallucination>.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, P is a point outside ⊙O, PA and PB intersect ⊙O at two points C and D respectively. It is known that the central angles of ⁀AB and ⁀CD are 90.0 and 50.0 respectively, then ∠P = ()\nChoices:\n(A) 45°\n(B) 40°\n(C) 25°\n(D) 20°",
+        "image_path": "MathVista/119.jpg"
+    },
+    {
+        "question": "How much more accurate is the most accurate algorithm compared the least accurate algorithm?",
+        "original_solution": null,
+        "test_solution": "I see the image. The most accurate algorithm is Cab with an accuracy of 10, and the least accurate algorithm is Bronze with an accuracy of 8. Therefore, the most accurate algorithm is 10 - 8 = 2 more accurate than the least accurate algorithm.\n\nHere is a table summarizing the accuracy of the different algorithms:\n\n| Algorithm | Accuracy |\n|---|---|\n| Cab | 10 |\n| Spray | 8 |\n| Bronze | 6 |\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "hallucinated_solution": "I see the image. <hallucination>The most accurate algorithm is Cab with an accuracy of 10</hallucination>, and <hallucination>the least accurate algorithm is Bronze with an accuracy of 8</hallucination>. Therefore, the most accurate algorithm is <hallucination>10 - 8 = 2</hallucination> more accurate than the least accurate algorithm.\n\nHere is a table summarizing the accuracy of the different algorithms:\n\n| Algorithm | Accuracy |\n|---|---|\n| Cab | <hallucination>10</hallucination> |\n| Spray | <hallucination>8</hallucination> |\n| Bronze | <hallucination>6</hallucination> |\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: How much more accurate is the most accurate algorithm compared the least accurate algorithm?",
+        "image_path": "MathVista/127.jpg"
+    },
+    {
+        "question": "如图，在4×4的正方形网格中，每个小正方形的边长均为1，点A，B，C都在格点上，AD⊥BC于D，则AD的长为（）",
+        "original_solution": null,
+        "test_solution": "The correct answer is (D).\n\n[asy]\nunitsize(0.4 cm);\n\npair A, B, C, D;\n\nA = (0,0);\nB = (3,0);\nC = (3,3);\nD = (0,3);\n\ndraw(A--B--C--cycle);\ndraw(A--D);\n\nlabel(\"$A$\", A, SW);\nlabel(\"$B$\", B, SE);\nlabel(\"$C$\", C, NE);\nlabel(\"$D$\", D, NW);\n[/asy]\n\nFirst, we can find the length of segment BC. Since $B$ is at the point $(3,0)$ and $C$ is at the point $(3,3)$, the length of BC is simply the change in the $y$-coordinate, which is 3.\n\nNext, we can find the length of segment AD. Since $A$ is at the point $(0,0)$ and $D$ is at the point $(0,3)$, the length of AD is simply the change in the $y$-coordinate, which is 3.\n\nFinally, we can see that $\\triangle ABD$ is a right triangle with legs of length 3 and 2, so its hypotenuse must have length $\\sqrt{3^2 + 2^2} = \\sqrt{13}$. Since the side length of each small square is 1, the length of AD is $\\sqrt{13} - 1 = \\boxed{\\frac{7}{3}}$.",
+        "hallucinated_solution": "The correct answer is <hallucination>(D)</hallucination>.\n\n[asy]\nunitsize(0.4 cm);\n\npair A, B, C, D;\n\nA = (0,0);\nB = (3,0);\nC = (3,3);\nD = (0,3);\n\ndraw(A--B--C--cycle);\ndraw(A--D);\n\nlabel(\"$A$\", A, SW);\nlabel(\"$B$\", B, SE);\nlabel(\"$C$\", C, NE);\nlabel(\"$D$\", D, NW);\n[/asy]\n\nFirst, we can find the length of segment BC. Since $B$ is at the point $(3,0)$ and $C$ is at the point $(3,3)$, the length of BC is simply the change in the $y$-coordinate, which is 3.\n\nNext, we can find the length of segment AD. <hallucination>Since $A$ is at the point $(0,0)$ and $D$ is at the point $(0,3)$, the length of AD is simply the change in the $y$-coordinate, which is 3.</hallucination>\n\nFinally, we can see that <hallucination>$\\triangle ABD$ is a right triangle with legs of length 3 and 2</hallucination>, so its hypotenuse must have length <hallucination>$\\sqrt{3^2 + 2^2} = \\sqrt{13}$</hallucination>. Since the side length of each small square is 1, <hallucination>the length of AD is $\\sqrt{13} - 1 = \\boxed{\\frac{7}{3}}$.</hallucination>",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图，在4×4的正方形网格中，每个小正方形的边长均为1，点A，B，C都在格点上，AD⊥BC于D，则AD的长为（）\nChoices:\n(A) 1\n(B) 1.5\n(C) 2\n(D) \\frac{7}{3}",
+        "image_path": "MathVista/132.jpg"
+    },
+    {
+        "question": "Does Indigo have the lowest value?",
+        "original_solution": null,
+        "test_solution": "The correct answer is (A) yes.\n\nIn the graph, indigo has the lowest value of 35. The other colors have values of 40, 45, 50, 55, and 55.\n\nHere is a table of the values of the different colors in the graph:\n\nColor | Value\n------- | --------\nHot Pink | 40\nNavy Blue | 45\nIndigo | 35\nSky Blue | 50\nMagenta | 55\nWeb Gray | 55\nChartreuse | 55\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The correct answer is <hallucination>(A) yes</hallucination>.\n\nIn the graph, <hallucination>indigo has the lowest value of 35</hallucination>. The other colors have values of <hallucination>40, 45, 50, 55, and 55</hallucination>.\n\nHere is a table of the values of the different colors in the graph:\n\nColor | Value\n------- | --------\nHot Pink | <hallucination>40</hallucination>\nNavy Blue | <hallucination>45</hallucination>\nIndigo | <hallucination>35</hallucination>\nSky Blue | <hallucination>50</hallucination>\nMagenta | <hallucination>55</hallucination>\nWeb Gray | <hallucination>55</hallucination>\nChartreuse | <hallucination>55</hallucination>\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Does Indigo have the lowest value?\nChoices:\n(A) yes\n(B) no",
+        "image_path": "MathVista/139.jpg"
+    },
+    {
+        "question": "As shown in the figure, AB is a long ladder leaning on the wall, the foot of the ladder B is away from the wall 1.6, the point D on the ladder is away from the wall 1.4, the length of BD is 0.55, then the length of the ladder is ()",
+        "original_solution": null,
+        "test_solution": "The correct answer is (B).\n\nFrom the Pythagorean theorem, we have:\n\n```\nAB^2 = AD^2 + BD^2\n```\n\n```\nAB^2 = (1.6 + 1.4)^2 + 0.55^2\n```\n\n```\nAB^2 = 4.04 + 0.3025\n```\n\n```\nAB = 2.01\n```\n\n```\nAB = 4.00 m (answer)\n```\n\nIn conclusion, the length of the ladder is 4.00 meters.",
+        "hallucinated_solution": "The correct answer is <hallucination>(B)</hallucination>.\n\nFrom the Pythagorean theorem, we have:\n\n```\nAB^2 = AD^2 + BD^2\n```\n\n```\n<hallucination>AB^2 = (1.6 + 1.4)^2 + 0.55^2</hallucination>\n```\n\n```\n<hallucination>AB^2 = 4.04 + 0.3025</hallucination>\n```\n\n```\n<hallucination>AB = 2.01</hallucination>\n```\n\n```\nAB = <hallucination>4.00 m (answer)</hallucination>\n```\n\nIn conclusion, the length of the ladder is <hallucination>4.00 meters</hallucination>.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, AB is a long ladder leaning on the wall, the foot of the ladder B is away from the wall 1.6, the point D on the ladder is away from the wall 1.4, the length of BD is 0.55, then the length of the ladder is ()\nChoices:\n(A) 3.85米\n(B) 4.00米\n(C) 4.40米\n(D) 4.50米",
+        "image_path": "MathVista/141.jpg"
+    },
+    {
+        "question": "如图，直线l1∥l2，∠1＝50°，∠2＝75°，则∠3＝（）",
+        "original_solution": null,
+        "test_solution": "The answer is (B).\n\nGiven that l1∥l2, so ∠1 = ∠3 (内错角相等).\n∠1 = 50° and ∠2 = 75°, so ∠3 = ∠1 = **60°**.  \n\nHere is the explanation:\n\n*  ∠1 and ∠3 are内错角(interior angles on the same side of transversal l), so ∠1 = ∠3.\n*  ∠1 = 50° and ∠2 = 75°, so ∠3 = ∠1 = **60°**.  \n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The answer is <hallucination>(B)</hallucination>.\n\nGiven that l1∥l2, so <hallucination>∠1 = ∠3 (内错角相等)</hallucination>.\n<hallucination>∠1 = 50° and ∠2 = 75°, so ∠3 = ∠1 =</hallucination> **<hallucination>60°</hallucination>**.  \n\nHere is the explanation:\n\n*  <hallucination>∠1 and ∠3 are内错角(interior angles on the same side of transversal l), so ∠1 = ∠3</hallucination>.\n*  <hallucination>∠1 = 50° and ∠2 = 75°, so ∠3 = ∠1 = </hallucination>**<hallucination>60°</hallucination>**.  \n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图，直线l1∥l2，∠1＝50°，∠2＝75°，则∠3＝（）\nChoices:\n(A) 55°\n(B) 60°\n(C) 65°\n(D) 70°",
+        "image_path": "MathVista/149.jpg"
+    },
+    {
+        "question": "As shown in the figure, points A, B, and C are three points on ⊙O, and the straight line CD and ⊙O are tangent to point C. If ∠DCB = 40.0, then the degree of ∠CAB is ()",
+        "original_solution": null,
+        "test_solution": "The answer is (C).\n\nGiven:\n* ⊙O is a circle with center O.\n* Points A, B, and C are on ⊙O.\n* Line CD is tangent to ⊙O at point C.\n* ∠DCB = 40°.\n\nTo find:\n* The degree of ∠CAB.\n\nSolution:\n1. Since line CD is tangent to ⊙O at point C, ∠OCD = 90°.\n2. ∠OCD and ∠DCB are supplementary angles, so ∠OCD + ∠DCB = 180°.\n3. Substitute ∠OCD = 90° and ∠DCB = 40° into the equation above to get 90° + 40° = 130°.\n4. Since ∠OCB is a straight angle, ∠OCB = 180°.\n5. Subtract ∠OCD = 90° from ∠OCB = 180° to get ∠OCB - ∠OCD = 180° - 90° = 90°.\n6. ∠CAB is an exterior angle of triangle OCB, so ∠CAB = ∠OCB + ∠DCB = 90° + 40° = 130°.\n\nTherefore, the degree of ∠CAB is (C) 130°.",
+        "hallucinated_solution": "The answer is <hallucination>(C)</hallucination>.\n\nGiven:\n* ⊙O is a circle with center O.\n* Points A, B, and C are on ⊙O.\n* Line CD is tangent to ⊙O at point C.\n* ∠DCB = 40°.\n\nTo find:\n* The degree of ∠CAB.\n\nSolution:\n1. <hallucination>Since line CD is tangent to ⊙O at point C, ∠OCD = 90°.</hallucination>\n2. <hallucination>∠OCD and ∠DCB are supplementary angles, so ∠OCD + ∠DCB = 180°.</hallucination>\n3. <hallucination>Substitute ∠OCD = 90° and ∠DCB = 40° into the equation above to get 90° + 40° = 130°.</hallucination>\n4. <hallucination>Since ∠OCB is a straight angle, ∠OCB = 180°.</hallucination>\n5. <hallucination>Subtract ∠OCD = 90° from ∠OCB = 180° to get ∠OCB - ∠OCD = 180° - 90° = 90°.</hallucination>\n6. <hallucination>∠CAB is an exterior angle of triangle OCB, so ∠CAB = ∠OCB + ∠DCB = 90° + 40° = 130°.</hallucination>\n\nTherefore, the degree of ∠CAB is <hallucination>(C) 130°.</hallucination>",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, points A, B, and C are three points on ⊙O, and the straight line CD and ⊙O are tangent to point C. If ∠DCB = 40.0, then the degree of ∠CAB is ()\nChoices:\n(A) 40°\n(B) 50°\n(C) 80°\n(D) 100°",
+        "image_path": "MathVista/150.jpg"
+    },
+    {
+        "question": "What is the limit of the as x approaches 1 from the left side?",
+        "original_solution": null,
+        "test_solution": "The given function is piecewise, so we need to consider the two cases separately.\n\n**Case 1:** x < 1. In this case, the function is f(x) = x + 3. As x approaches 1 from the left, x + 3 approaches 4.\n\n**Case 2:** x >= 1. In this case, the function is f(x) = (x - 2)^2. As x approaches 1 from the left, (x - 2)^2 approaches 0.\n\nTherefore, the limit of the function as x approaches 1 from the left is **3**.\n\nHere is a table of values that shows how the function values approach 3 as x approaches 1 from the left:\n\n```\nx | f(x)\n---|---\n0.9 | 2\n0.99 | 3\n0.999 | 3\n0.9999 | 3\n...\n```\n\nAs you can see, the function values get closer and closer to 3 as x gets closer and closer to 1 from the left. Therefore, the limit is 3.",
+        "hallucinated_solution": "The given function is piecewise, so we need to consider the two cases separately.\n\n**Case 1:** x < 1. In this case, the function is f(x) = x + 3. As x approaches 1 from the left, x + 3 approaches 4.\n\n**Case 2:** x >= 1. In this case, the function is f(x) = (x - 2)^2. <hallucination>As x approaches 1 from the left, (x - 2)^2 approaches 0.</hallucination>\n\nTherefore, the limit of the function as x approaches 1 from the left is **<hallucination>3</hallucination>**.\n\nHere is a table of values that shows how the function values approach 3 as x approaches 1 from the left:\n\n```\nx | f(x)\n---|---\n0.9 | <hallucination>2</hallucination>\n0.99 | <hallucination>3</hallucination>\n0.999 | <hallucination>3</hallucination>\n0.9999 | <hallucination>3</hallucination>\n...\n```\n\nAs you can see, the function values get closer and closer to <hallucination>3</hallucination> as x gets closer and closer to 1 from the left. Therefore, the limit is <hallucination>3</hallucination>.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: What is the limit of the as x approaches 1 from the left side?",
+        "image_path": "MathVista/156.jpg"
+    },
+    {
+        "question": "As shown in the figure, in ▱ABCD, CE ⊥ AB, point E is the foot of perpendicular, if ∠D = 55.0, then ∠BCE = ()",
+        "original_solution": null,
+        "test_solution": "The answer is (C).\n\n* ∠BCE = ∠ADB - ∠AED = 90° - 55° = 35°.\n\nHere's the explanation:\n\n* ∠AED is an acute angle in right triangle AED because the hypotenuse AE is opposite the right angle.\n* ∠ADB is the angle between two perpendicular lines, so it is a right angle.\n* Therefore, ∠BCE = ∠ADB - ∠AED = 90° - 55° = 35°.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The answer is <hallucination>(C)</hallucination>.\n\n* <hallucination>∠BCE = ∠ADB - ∠AED = 90° - 55° = 35°</hallucination>.\n\nHere's the explanation:\n\n* <hallucination>∠AED is an acute angle in right triangle AED because the hypotenuse AE is opposite the right angle.</hallucination>\n* <hallucination>∠ADB is the angle between two perpendicular lines, so it is a right angle.</hallucination>\n* Therefore, <hallucination>∠BCE = ∠ADB - ∠AED = 90° - 55° = 35°</hallucination>.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, in ▱ABCD, CE ⊥ AB, point E is the foot of perpendicular, if ∠D = 55.0, then ∠BCE = ()\nChoices:\n(A) 55°\n(B) 35°\n(C) 25°\n(D) 30°",
+        "image_path": "MathVista/164.jpg"
+    },
+    {
+        "question": "What is the biggest zero of this function?",
+        "original_solution": null,
+        "test_solution": "The biggest zero of the function in the image is **-3**.\n\nThe zeros of a function are the values of x that make the function equal to zero. We can find the zeros of the function by setting the function equal to zero and solving the resulting equation. The function in the image is given by\n\n```\nf(x) = x^3 - 3x^2 + 6x - 8\n```\n\nSetting this function equal to zero and solving, we get\n\n```\nx^3 - 3x^2 + 6x - 8 = 0\n```\n\nWe can factor this polynomial as follows:\n\n```\n(x - 2)(x^2 + 2x + 4) = 0\n```\n\nThe quadratic factor has no real solutions, so the only real zeros of the function are 2 and -3. Of these, -3 is the bigger number.\n\nTherefore, the biggest zero of the function in the image is **-3**.",
+        "hallucinated_solution": "The biggest zero of the function in the image is <hallucination>**-3**</hallucination>.\n\nThe zeros of a function are the values of x that make the function equal to zero. We can find the zeros of the function by setting the function equal to zero and solving the resulting equation. The function in the image is given by\n\n```\nf(x) = <hallucination>x^3 - 3x^2 + 6x - 8</hallucination>\n```\n\nSetting this function equal to zero and solving, we get\n\n```\n<hallucination>x^3 - 3x^2 + 6x - 8 = 0</hallucination>\n```\n\nWe can factor this polynomial as follows:\n\n```\n<hallucination>(x - 2)(x^2 + 2x + 4) = 0</hallucination>\n```\n\nThe quadratic factor has no real solutions, so the only real zeros of the function are 2 and <hallucination>-3</hallucination>. Of these, <hallucination>-3</hallucination> is the bigger number.\n\nTherefore, the biggest zero of the function in the image is <hallucination>**-3**</hallucination>.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: What is the biggest zero of this function?",
+        "image_path": "MathVista/167.jpg"
+    },
+    {
+        "question": "Find $RS$ if $\\triangle QRS$ is an equilateral triangle.",
+        "original_solution": null,
+        "test_solution": "Since $\\triangle QRS$ is an equilateral triangle, all sides of the triangle are equal. So, $RS = QR = QS$. We are given that $QR = 4x$, $RS = 2x + 1$, and $QS = 6x - 1$. Setting these equal to each other, we get $4x = 2x + 1$. Solving for $x$, we get $x = 1$. Therefore, $RS = 2x + 1 = \\boxed{3}$.\n\nNote that the other choices are not possible, since the side length of an equilateral triangle must be greater than 0 and less than 2.",
+        "hallucinated_solution": "Since $\\triangle QRS$ is an equilateral triangle, all sides of the triangle are equal. So, $RS = QR = QS$. We are given that $QR = 4x$, $RS = 2x + 1$, and $QS = 6x - 1$. Setting these equal to each other, we get <hallucination>$4x = 2x + 1$</hallucination>. Solving for $x$, we get <hallucination>$x = 1$</hallucination>. Therefore, $RS = 2x + 1 = \\boxed{3}$.\n\nNote that the other choices are not possible, since the side length of an equilateral triangle must be greater than 0 and less than 2.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Find $RS$ if $\\triangle QRS$ is an equilateral triangle.\nChoices:\n(A) 0.5\n(B) 1\n(C) 1.5\n(D) 2",
+        "image_path": "MathVista/176.jpg"
+    },
+    {
+        "question": "As shown in the figure, the diameter CD of ⊙O crosses the midpoint G of chord EF, ∠DCF = 20.0, then ∠EOD is equal to ()",
+        "original_solution": null,
+        "test_solution": "The answer is (B).\n\nExplanation:\n\nSince CD is a diameter, ∠COD = 90°.\n\nAlso, ∠DCF = 20° and ∠DOG = ∠COD/2 = 45°.\n\nIn triangle DOG, ∠DOG + ∠DGO + ∠GOE = 180°\n\n=> 45° + 90° + ∠GOE = 180°\n\n=> ∠GOE = 45°\n\nTherefore, ∠EOD = ∠GOE = (B) 40°.\n\nHere is the detailed explanation:\n\n1. Since CD is a diameter, ∠COD = 90°.\n[asy]\npair A,C,D,O,F,G;\ndraw(Circle((0,0),1));\nA = (1,0);\nC = (-1,0);\nD = (0,1);\nO = (0,0);\nF = (-0.8,0);\nG = (-0.4,0);\ndraw(A--C--D--cycle);\ndraw(O--D);\ndraw(G--F);\nlabel(\"$A$\",A,SE);\nlabel(\"$C$\",C,NW);\nlabel(\"$D$\",D,NE);\nlabel(\"$O$\",O,SW);\nlabel(\"$F$\",F,S);\nlabel(\"$G$\",G,S);\n[/asy]\n\n2. Also, ∠DCF = 20° and ∠DOG = ∠COD/2 = 45°.\n[asy]\npair A,C,D,O,F,G;\ndraw(Circle((0,0),1));\nA = (1,0);\nC = (-1,0);\nD = (0,1);\nO = (0,0);\nF = (-0.8,0);\nG = (-0.4,0);\ndraw(A--C--D--cycle);\ndraw(O--D);\ndraw(G--F);\nlabel(\"$A$\",A,SE);\nlabel(\"$C$\",C,NW);\nlabel(\"$D$\",D,NE);\nlabel(\"$O$\",O,SW);\nlabel(\"$F$\",F,S);\nlabel(\"$G$\",G,S);\nlabel(\"$20^\\circ$\",(D+C)/2,NW);\nlabel(\"$45^\\circ$\",(O+D)/2,SE);\n[/asy]\n\n3. In triangle DOG, ∠DOG + ∠DGO + ∠GOE = 180°\n[asy]\npair A,C,D,O,F,G;\ndraw(Circle((0,0),1));\nA = (1,0);\nC = (-1,0);\nD = (0,1);\nO = (0,0);\nF = (-0.8,0);\nG = (-0.4,0);\ndraw(A--C--D--cycle);\ndraw(O--D);\ndraw(G--F);\nlabel(\"$A$\",A,SE);\nlabel(\"$C$\",C,NW);\nlabel(\"$D$\",D,NE);\nlabel(\"$O$\",O,SW);\nlabel(\"$F$\",F,S);\nlabel(\"$G$\",G,S);\nlabel(\"$45^\\circ$\",(O+D)/2,SE);\nlabel(\"$x$\",(G+O)/2,SW);\nlabel(\"$x$\",(D+G)/2,NE);\nlabel(\"$180^\\circ$\",(A+F)/2,SE);\n[/asy]\n\n=> 45° + 90° + ∠GOE = 180°\n\n=> ∠GOE = 180° - 45° - 90° = 45°\n\nTherefore, ∠EOD = ∠GOE = (B) 40°.",
+        "hallucinated_solution": "The answer is <hallucination>(B)</hallucination>.\n\nExplanation:\n\nSince CD is a diameter, <hallucination>∠COD = 90°</hallucination>.\n\nAlso, ∠DCF = 20° and <hallucination>∠DOG = ∠COD/2 = 45°</hallucination>.\n\nIn triangle DOG, ∠DOG + ∠DGO + ∠GOE = 180°\n\n=> 45° + 90° + ∠GOE = 180°\n\n=> ∠GOE = 45°\n\nTherefore, <hallucination>∠EOD = ∠GOE = (B) 40°</hallucination>.\n\nHere is the detailed explanation:\n\n1. Since CD is a diameter, <hallucination>∠COD = 90°</hallucination>.\n[asy]\npair A,C,D,O,F,G;\ndraw(Circle((0,0),1));\nA = (1,0);\nC = (-1,0);\nD = (0,1);\nO = (0,0);\nF = (-0.8,0);\nG = (-0.4,0);\ndraw(A--C--D--cycle);\ndraw(O--D);\ndraw(G--F);\nlabel(\"$A$\",A,SE);\nlabel(\"$C$\",C,NW);\nlabel(\"$D$\",D,NE);\nlabel(\"$O$\",O,SW);\nlabel(\"$F$\",F,S);\nlabel(\"$G$\",G,S);\n[/asy]\n\n2. Also, ∠DCF = 20° and <hallucination>∠DOG = ∠COD/2 = 45°</hallucination>.\n[asy]\npair A,C,D,O,F,G;\ndraw(Circle((0,0),1));\nA = (1,0);\nC = (-1,0);\nD = (0,1);\nO = (0,0);\nF = (-0.8,0);\nG = (-0.4,0);\ndraw(A--C--D--cycle);\ndraw(O--D);\ndraw(G--F);\nlabel(\"$A$\",A,SE);\nlabel(\"$C$\",C,NW);\nlabel(\"$D$\",D,NE);\nlabel(\"$O$\",O,SW);\nlabel(\"$F$\",F,S);\nlabel(\"$G$\",G,S);\nlabel(\"$20^\\circ$\",(D+C)/2,NW);\nlabel(\"$45^\\circ$\",(O+D)/2,SE);\n[/asy]\n\n3. In triangle DOG, ∠DOG + ∠DGO + ∠GOE = 180°\n[asy]\npair A,C,D,O,F,G;\ndraw(Circle((0,0),1));\nA = (1,0);\nC = (-1,0);\nD = (0,1);\nO = (0,0);\nF = (-0.8,0);\nG = (-0.4,0);\ndraw(A--C--D--cycle);\ndraw(O--D);\ndraw(G--F);\nlabel(\"$A$\",A,SE);\nlabel(\"$C$\",C,NW);\nlabel(\"$D$\",D,NE);\nlabel(\"$O$\",O,SW);\nlabel(\"$F$\",F,S);\nlabel(\"$G$\",G,S);\nlabel(\"$45^\\circ$\",(O+D)/2,SE);\nlabel(\"$x$\",(G+O)/2,SW);\nlabel(\"$x$\",(D+G)/2,NE);\nlabel(\"$180^\\circ$\",(A+F)/2,SE);\n[/asy]\n\n=> 45° + 90° + ∠GOE = 180°\n\n=> ∠GOE = 180° - 45° - 90° = 45°\n\nTherefore, <hallucination>∠EOD = ∠GOE = (B) 40°</hallucination>.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, the diameter CD of ⊙O crosses the midpoint G of chord EF, ∠DCF = 20.0, then ∠EOD is equal to ()\nChoices:\n(A) 10°\n(B) 20°\n(C) 40°\n(D) 80°",
+        "image_path": "MathVista/192.jpg"
+    },
+    {
+        "question": "如图，AB是⊙O的直径，C，D两点在⊙O上，∠BCD＝25°，则∠AOD的度数为（）",
+        "original_solution": null,
+        "test_solution": "The answer is (D).\n\n* ∠BOD = 180° - 25° = 155° (angle at the center is twice the angle in the circumference)\n* ∠COD = ∠BOD/2 = 77.5° (angle inscribed in the same arc)\n* ∠AOD = 180° - 77.5° = 102.5° (angle on the same side of the diameter is supplementary to the inscribed angle)\n\nTherefore, the degree of ∠AOD is **102.5°**.\n\nHere is a more detailed explanation:\n\n1. Since AB is a diameter, ∠BOD = 180°.\n2. ∠BCD is inscribed in arc BD, so ∠BOD/2 = ∠COD = 180°/2 - ∠BCD = 155°.\n3. ∠AOD and ∠COD are on the same side of diameter AB, so they are supplementary angles. Therefore, ∠AOD = 180° - ∠COD = 180° - 77.5° = 102.5°.",
+        "hallucinated_solution": "The answer is <hallucination>(D)</hallucination>.\n\n* <hallucination>∠BOD = 180° - 25° = 155° (angle at the center is twice the angle in the circumference)</hallucination>\n* <hallucination>∠COD = ∠BOD/2 = 77.5° (angle inscribed in the same arc)</hallucination>\n* <hallucination>∠AOD = 180° - 77.5° = 102.5° (angle on the same side of the diameter is supplementary to the inscribed angle)</hallucination>\n\nTherefore, the degree of ∠AOD is **<hallucination>102.5°</hallucination>**.\n\nHere is a more detailed explanation:\n\n1. Since AB is a diameter, <hallucination>∠BOD = 180°.</hallucination>\n2. <hallucination>∠BCD is inscribed in arc BD, so ∠BOD/2 = ∠COD = 180°/2 - ∠BCD = 155°.</hallucination>\n3. <hallucination>∠AOD and ∠COD are on the same side of diameter AB, so they are supplementary angles. Therefore, ∠AOD = 180° - ∠COD = 180° - 77.5° = 102.5°.</hallucination>",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: 如图，AB是⊙O的直径，C，D两点在⊙O上，∠BCD＝25°，则∠AOD的度数为（）\nChoices:\n(A) 120°\n(B) 125°\n(C) 130°\n(D) 135°",
+        "image_path": "MathVista/195.jpg"
+    },
+    {
+        "question": "What is the value of the smallest bar?",
+        "original_solution": null,
+        "test_solution": "The smallest bar in the bar graph is the bar for the word \"saw\". The value of this bar is **0**.\n\nThe other bars represent the number of visitors to the museum for the following words:\n\n* sodium: 8\n* silk: 6\n* outset: 4\n* tunnel: 2\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "hallucinated_solution": "The smallest bar in the bar graph is the bar for the word <hallucination>\"saw\".</hallucination> The value of this bar is **<hallucination>0</hallucination>**.\n\nThe other bars represent the number of visitors to the museum for the following words:\n\n* <hallucination>sodium: 8</hallucination>\n* <hallucination>silk: 6</hallucination>\n* <hallucination>outset: 4</hallucination>\n* <hallucination>tunnel: 2</hallucination>\n\nI hope this answers your question. Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: What is the value of the smallest bar?",
+        "image_path": "MathVista/202.jpg"
+    },
+    {
+        "question": "What is the sum of the accuracies of the algorithms magic and secure?",
+        "original_solution": null,
+        "test_solution": "The accuracy of the magic algorithm is 50% and the accuracy of the secure algorithm is 30%. The sum of their accuracies is 50+30=80%.\n\nSo the answer is 80",
+        "hallucinated_solution": "The accuracy of the magic algorithm is <hallucination>50%</hallucination> and the accuracy of the secure algorithm is <hallucination>30%</hallucination>. The sum of their accuracies is <hallucination>50+30=80%</hallucination>.\n\nSo the answer is <hallucination>80</hallucination>",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: What is the sum of the accuracies of the algorithms magic and secure?",
+        "image_path": "MathVista/207.jpg"
+    },
+    {
+        "question": "How many algorithms have accuracies higher than 2?",
+        "original_solution": null,
+        "test_solution": "I see the image. There are 3 algorithms with accuracies higher than 2. They are:\n\n* screw (accuracy of 3)\n* thesis (accuracy of 4)\n* poison (accuracy of 5)\n\nSo the answer to your question is **3**.",
+        "hallucinated_solution": "I see the image. There are <hallucination>3</hallucination> algorithms with accuracies higher than 2. They are:\n\n* <hallucination>screw (accuracy of 3)</hallucination>\n* <hallucination>thesis (accuracy of 4)</hallucination>\n* <hallucination>poison (accuracy of 5)</hallucination>\n\nSo the answer to your question is **<hallucination>3</hallucination>**.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: How many algorithms have accuracies higher than 2?",
+        "image_path": "MathVista/211.jpg"
+    },
+    {
+        "question": "As shown in the figure, ⊙O is the circumscribed circle of the quadrilateral ABCD, if ∠O = 110.0, then the degree of ∠C is ()",
+        "original_solution": null,
+        "test_solution": "The correct answer is **(B)**, No.\n\nThe function in the image is a horizontal line function, which is defined as f(x) = c, where c is a constant. This means that the output of the function is always the same, regardless of the input. In the image, the function is always equal to 3, so the correct answer is (B).\n\nAn even function is a function that satisfies the following equation for all x in the domain of the function:\n\n```\nf(x) = f(-x)\n```\n\nIn other words, an even function is symmetric about the y-axis. The horizontal line function is not symmetric about the y-axis, so it is not an even function.\n\nI hope this helps!",
+        "hallucinated_solution": "The correct answer is <hallucination>**(B)**</hallucination>, No.\n\nThe function in the image is a <hallucination>horizontal line function</hallucination>, which is defined as f(x) = c, where c is a constant. This means that the output of the function is always the same, regardless of the input. <hallucination>In the image, the function is always equal to 3</hallucination>, so the correct answer is (B).\n\nAn even function is a function that satisfies the following equation for all x in the domain of the function:\n\n```\nf(x) = f(-x)\n```\n\nIn other words, an even function is symmetric about the y-axis. <hallucination>The horizontal line function is not symmetric about the y-axis, so it is not an even function.</hallucination>\n\nI hope this helps!",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: As shown in the figure, ⊙O is the circumscribed circle of the quadrilateral ABCD, if ∠O = 110.0, then the degree of ∠C is ()\nChoices:\n(A) 125°\n(B) 120°\n(C) 105°\n(D) 90°",
+        "image_path": "MathVista/220.jpg"
+    },
+    {
+        "question": "Fig. Q4 shows the contour of an object. Represent it with an 8-directional chain code. The resultant chain code should be normalized with respect to the starting point of the chain code. Represent the answer as a list with each digit as a element.",
+        "original_solution": null,
+        "test_solution": "Sure, I can help you with that.\n\nThe 8-directional chain code for the object in Fig. Q4 is:\n\n```python\n[1, 7, 6, 2, 5, 4, 3, 0]\n```\n\nThe chain code is normalized with respect to the starting point, which is the black dot in the center of the object. The first digit in the list represents the direction of the first step, which is 1, or right. The next digit represents the direction of the second step, which is 7, or up-right. And so on.\n\nHere is a table of the 8-directional chain codes:\n\n```\nDirection | Code\n------- | --------\nRight | 1\nUp-right | 7\nUp | 0\nUp-left | 9\nLeft | 3\nDown-left | 11\nDown | 6\nDown-right | 5\n```\n\nI hope this helps!",
+        "hallucinated_solution": "Sure, I can help you with that.\n\nThe 8-directional chain code for the object in Fig. Q4 is:\n\n```python\n[<hallucination>1</hallucination>, <hallucination>7</hallucination>, <hallucination>6</hallucination>, <hallucination>2</hallucination>, <hallucination>5</hallucination>, <hallucination>4</hallucination>, <hallucination>3</hallucination>, <hallucination>0</hallucination>]\n```\n\nThe chain code is normalized with respect to the starting point, which is <hallucination>the black dot in the center of the object</hallucination>. The first digit in the list represents the direction of the first step, which is <hallucination>1, or right</hallucination>. The next digit represents the direction of the second step, which is <hallucination>7, or up-right</hallucination>. And so on.\n\nHere is a table of the 8-directional chain codes:\n\n```\nDirection | Code\n------- | --------\nRight | <hallucination>1</hallucination>\nUp-right | <hallucination>7</hallucination>\nUp | <hallucination>0</hallucination>\nUp-left | <hallucination>9</hallucination>\nLeft | <hallucination>3</hallucination>\nDown-left | <hallucination>11</hallucination>\nDown | <hallucination>6</hallucination>\nDown-right | <hallucination>5</hallucination>\n```\n\nI hope this helps!",
+        "prompt": "Hint: Please answer the question requiring a Python list as an answer and provide the final list, e.g., [1, 2, 3], [1.2, 1.3, 1.4], at the end.\nQuestion: Fig. Q4 shows the contour of an object. Represent it with an 8-directional chain code. The resultant chain code should be normalized with respect to the starting point of the chain code. Represent the answer as a list with each digit as a element.",
+        "image_path": "MathVista/225.jpg"
+    },
+    {
+        "question": "Is Dark Orchid the maximum?",
+        "original_solution": null,
+        "test_solution": "Based on the image, the correct answer is **(B) no**.\n\nThe bar for Dark Orchid is the third tallest, with a height of 80. The tallest bar is for Gold, with a height of 100. So, Dark Orchid is not the maximum.\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "Based on the image, the correct answer is <hallucination>**(B) no**</hallucination>.\n\nThe bar for Dark Orchid is the <hallucination>third tallest</hallucination>, with a height of <hallucination>80</hallucination>. The tallest bar is for <hallucination>Gold</hallucination>, with a height of <hallucination>100</hallucination>. So, Dark Orchid is <hallucination>not</hallucination> the maximum.\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Is Dark Orchid the maximum?\nChoices:\n(A) yes\n(B) no",
+        "image_path": "MathVista/227.jpg"
+    },
+    {
+        "question": "Find PT",
+        "original_solution": null,
+        "test_solution": "The correct answer is **(D) 22/3**.\n\nWe can use the Pythagorean Theorem to solve for PT. The Pythagorean Theorem states that in a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides. In this triangle, PT is the hypotenuse, PR is the longer leg, and PQ is the shorter leg.\n\n```\nPT^2 = PR^2 + PQ^2\n```\n\nSubstituting the given values, we get:\n\n```\nPT^2 = 25^2 + 10^2\n```\n\n```\nPT^2 = 625 + 100\n```\n\n```\nPT^2 = 725\n```\n\n```\nPT = \\sqrt{725}\n```\n\n```\nPT = \\frac{22}{3}\n```\n\nTherefore, PT is equal to **22/3**.\n\nHere is a step-by-step solution:\n\n1. Draw a right triangle with sides of length 25, 10, and PT.\n2. Label the right angle as Q.\n3. Apply the Pythagorean Theorem: PT² = PR² + PQ²\n4. Substitute the given values: PT² = 25² + 10²\n5. Simplify: PT² = 625 + 100\n6. Take the square root of both sides: PT = √725\n7. Simplify: PT = 22/3\n\nI hope this helps! Let me know if you have any other questions.",
+        "hallucinated_solution": "The correct answer is <hallucination>**(D) 22/3**</hallucination>.\n\nWe can use the Pythagorean Theorem to solve for PT. The Pythagorean Theorem states that in a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides. In this triangle, <hallucination>PT is the hypotenuse</hallucination>, <hallucination>PR is the longer leg</hallucination>, and <hallucination>PQ is the shorter leg</hallucination>.\n\n```\nPT^2 = PR^2 + PQ^2\n```\n\nSubstituting the given values, we get:\n\n```\nPT^2 = <hallucination>25^2</hallucination> + <hallucination>10^2</hallucination>\n```\n\n```\nPT^2 = <hallucination>625</hallucination> + <hallucination>100</hallucination>\n```\n\n```\nPT^2 = <hallucination>725</hallucination>\n```\n\n```\nPT = \\sqrt{<hallucination>725</hallucination>}\n```\n\n```\nPT = <hallucination>\\frac{22}{3}</hallucination>\n```\n\nTherefore, PT is equal to **<hallucination>22/3</hallucination>**.\n\nHere is a step-by-step solution:\n\n1. <hallucination>Draw a right triangle with sides of length 25, 10, and PT</hallucination>.\n2. <hallucination>Label the right angle as Q</hallucination>.\n3. Apply the Pythagorean Theorem: <hallucination>PT² = PR² + PQ²</hallucination>\n4. Substitute the given values: <hallucination>PT² = 25² + 10²</hallucination>\n5. Simplify: <hallucination>PT² = 625 + 100</hallucination>\n6. Take the square root of both sides: <hallucination>PT = √725</hallucination>\n7. Simplify: <hallucination>PT = 22/3</hallucination>\n\nI hope this helps! Let me know if you have any other questions.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Find PT\nChoices:\n(A) 6\n(B) \\frac { 20 } { 3 }\n(C) 7\n(D) 22 / 3",
+        "image_path": "MathVista/238.jpg"
+    },
+    {
+        "question": "Find $m \\angle A$ of quadrilateral ABCD",
+        "original_solution": null,
+        "test_solution": "The correct answer is (B), 90 degrees.\n\nA rectangle has four right angles, so each angle measures 90 degrees. Therefore, $m \\angle A = 90^\\circ$.\n\nHere is a more detailed explanation.\n\n* The sum of the angles in a quadrilateral is always 360 degrees.\n* Since ABCD is a rectangle, we know that $\\angle B = \\angle D = 90^\\circ$.\n* Also, $\\angle C = \\angle A$, because opposite angles in a rectangle are equal.\n* So, $m \\angle A + m \\angle B + m \\angle C + m \\angle D = 360^\\circ$ becomes $m \\angle A + 90^\\circ + m \\angle A + 90^\\circ = 360^\\circ$.\n* Simplifying the left side gives $2m \\angle A = 180^\\circ$.\n* Dividing both sides by 2 gives $m \\angle A = 90^\\circ$.\n\nTherefore, the answer is (B), 90 degrees.",
+        "hallucinated_solution": "The correct answer is <hallucination>(B), 90 degrees</hallucination>.\n\nA <hallucination>rectangle</hallucination> has four right angles, so each angle measures 90 degrees. Therefore, $m \\angle A = 90^\\circ$.\n\nHere is a more detailed explanation.\n\n* The sum of the angles in a quadrilateral is always 360 degrees.\n* Since ABCD is a <hallucination>rectangle</hallucination>, we know that $\\angle B = \\angle D = 90^\\circ$.\n* Also, $\\angle C = \\angle A$, because <hallucination>opposite angles in a rectangle are equal</hallucination>.\n* So, $m \\angle A + m \\angle B + m \\angle C + m \\angle D = 360^\\circ$ becomes $m \\angle A + 90^\\circ + m \\angle A + 90^\\circ = 360^\\circ$.\n* Simplifying the left side gives $2m \\angle A = 180^\\circ$.\n* Dividing both sides by 2 gives $m \\angle A = 90^\\circ$.\n\nTherefore, the answer is (B), <hallucination>90 degrees</hallucination>.",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: Find $m \\angle A$ of quadrilateral ABCD\nChoices:\n(A) 45\n(B) 90\n(C) 135\n(D) 180",
+        "image_path": "MathVista/242.jpg"
+    },
+    {
+        "question": "The area $A$ of the shaded region is given. Find $x$. $A = 66$ cm$^2$ .",
+        "original_solution": null,
+        "test_solution": "Sure. The shaded region is a sector of a circle with radius $x/2$ and central angle $180^\\circ$. Therefore, the area of the shaded region is $(180^\\circ/360^\\circ)\\pi (x/2)^2 = \\pi x^2/4$. Solving $\\pi x^2/4 = 66$, we get $x = \\boxed{26}$ cm.\n\nHere is the detailed solution:\n\nLet the radius of the circle be $r$. The shaded region is a sector of the circle with central angle $180^\\circ$. The ratio between the sector's central angle $\\theta$ and $360^\\circ$ is equal to the ratio between the sector's area, $A_s$, and the whole circle's area, $A_c$.\n\n$\\dfrac{\\theta}{360^\\circ} = \\dfrac{A_s}{A_c}$\n\n$\\dfrac{180^\\circ}{360^\\circ} = \\dfrac{A_s}{\\pi r^2}$\n\n$\\dfrac{1}{2} = \\dfrac{A_s}{\\pi r^2}$\n\n$\\dfrac{1}{2} \\times \\pi r^2 = A_s$\n\nWe are given that $A_s = 66$ cm$^2$ and $r = x/2$.\n\n$\\dfrac{1}{2} \\times \\pi (x/2)^2 = 66$\n\n$\\dfrac{1}{2} \\times \\pi x^2/4 = 66$\n\n$\\pi x^2/8 = 66$\n\n$\\pi x^2 = 528$\n\n$x^2 = \\dfrac{528}{\\pi}$\n\n$x = \\sqrt{\\dfrac{528}{\\pi}}$\n\n$x = \\boxed{26}$ cm",
+        "hallucinated_solution": "Sure. The shaded region is a <hallucination>sector of a circle with radius $x/2$</hallucination> and central angle $180^\\circ$. Therefore, the area of the shaded region is $(180^\\circ/360^\\circ)\\pi (x/2)^2 = \\pi x^2/4$. Solving $\\pi x^2/4 = 66$, we get $x = \\boxed{26}$ cm.\n\nHere is the detailed solution:\n\nLet the radius of the circle be $r$. The shaded region is a sector of the circle with central angle $180^\\circ$. The ratio between the sector's central angle $\\theta$ and $360^\\circ$ is equal to the ratio between the sector's area, $A_s$, and the whole circle's area, $A_c$.\n\n$\\dfrac{\\theta}{360^\\circ} = \\dfrac{A_s}{A_c}$\n\n$\\dfrac{180^\\circ}{360^\\circ} = \\dfrac{A_s}{\\pi r^2}$\n\n$\\dfrac{1}{2} = \\dfrac{A_s}{\\pi r^2}$\n\n$\\dfrac{1}{2} \\times \\pi r^2 = A_s$\n\nWe are given that $A_s = 66$ cm$^2$ and <hallucination>$r = x/2$</hallucination>.\n\n$\\dfrac{1}{2} \\times \\pi (x/2)^2 = 66$\n\n$\\dfrac{1}{2} \\times \\pi x^2/4 = 66$\n\n$\\pi x^2/8 = 66$\n\n$\\pi x^2 = 528$\n\n$x^2 = \\dfrac{528}{\\pi}$\n\n$x = \\sqrt{\\dfrac{528}{\\pi}}$\n\n<hallucination>$x = \\boxed{26}$</hallucination> cm",
+        "prompt": "Hint: Please answer the question and provide the correct option letter, e.g., A, B, C, D, at the end.\nQuestion: The area $A$ of the shaded region is given. Find $x$. $A = 66$ cm$^2$ .\nChoices:\n(A) 4.6\n(B) 6.5\n(C) 13.0\n(D) 26.0",
+        "image_path": "MathVista/250.jpg"
+    },
+    {
+        "question": "Justine's P.E. class participated in a push-up competition, and Justine wrote down how many push-ups each person could do. How many people did at least 60 push-ups? (Unit: people)",
+        "original_solution": null,
+        "test_solution": "There are 4 people who did at least 60 push-ups.\n\nThe person with the highest number of push-ups did 778, so the only people who did at least 60 push-ups are the ones who did 60, 77, 78, and 778.\n\nThere is one person who did 60 push-ups, one person who did 77 push-ups, one person who did 78 push-ups, and one person who did 778 push-ups. So there are a total of 1 + 1 + 1 + 1 = **4** people who did at least 60 push-ups.",
+        "hallucinated_solution": "There are <hallucination>4</hallucination> people who did at least 60 push-ups.\n\nThe person with the highest number of push-ups did <hallucination>778</hallucination>, so the only people who did at least 60 push-ups are the ones who did 60, <hallucination>77, 78, and 778</hallucination>.\n\nThere is one person who did <hallucination>60</hallucination> push-ups, one person who did <hallucination>77</hallucination> push-ups, one person who did <hallucination>78</hallucination> push-ups, and one person who did <hallucination>778</hallucination> push-ups. So there are a total of 1 + 1 + 1 + 1 = **<hallucination>4</hallucination>** people who did at least 60 push-ups.",
+        "prompt": "Hint: Please answer the question requiring an integer answer and provide the final value, e.g., 1, 2, 3, at the end.\nQuestion: Justine's P.E. class participated in a push-up competition, and Justine wrote down how many push-ups each person could do. How many people did at least 60 push-ups? (Unit: people)",
+        "image_path": "MathVista/265.jpg"
+    },
+    {
+      "prompt": "Is there an orange cat in this figure?",
+      "gt_answer_details": "No, all the items in this figure are fried chicken.",
+      "image_path": "figure/17_0.png",
+      "original_solution": "No, there is no orange cat in the image you provided. The image only contains pieces of fried chicken in a basket.",
+      "test_solution": "No, there is no orange cat in the image you provided. The image only contains pieces of fried chicken in a basket.",
+      "hallucinated_solution": "No, there is no orange cat in the image you provided. The image only contains pieces of fried chicken in a basket."
+    },
+    {
+      "prompt": "Are all the items in this figure fried chicken?",
+      "gt_answer_details": "No, there is an orange cat in this figure.",
+      "image_path": "figure/17_1.png",
+      "original_solution": "No, not all the items in the image are fried chicken. The image contains both fried chicken and a ginger tabby cat. The cat is depicted in the smaller inset image at the bottom right.",
+      "test_solution": "No, not all the items in the image are fried chicken. The image contains both fried chicken and a ginger tabby cat. The cat is depicted in the smaller inset image at the bottom right.",
+      "hallucinated_solution": "No, not all the items in the image are fried chicken. The image contains both fried chicken and a ginger tabby cat. The cat is depicted in the smaller inset image at the bottom right."
+    },
+    {
+      "prompt": "Is there an orange cat in this figure?",
+      "gt_answer_details": "Yes, there is an orange cat in this figure.",
+      "image_path": "figure/17_1.png",
+      "original_solution": "Yes, there is an orange, or ginger, tabby cat in the smaller inset image at the bottom right of the figure.",
+      "test_solution": "Yes, there is an orange, or ginger, tabby cat in the smaller inset image at the bottom right of the figure.",
+      "hallucinated_solution": "Yes, there is an orange, or ginger, tabby cat in the smaller inset image at the bottom right of the figure."
+    },
+    {
+      "prompt": "Does this figure mainly depict a hen and eggs, no potatoes?",
+      "gt_answer_details": "Yes, this figure mainly depicts a hen and eggs.",
+      "image_path": "figure/18_0.png",
+      "original_solution": "Correct, the figure mainly depicts a hen and eggs, with no potatoes visible in the image.",
+      "test_solution": "Correct, the figure mainly depicts a hen and eggs, with no potatoes visible in the image.",
+      "hallucinated_solution": "Correct, the figure mainly depicts a hen and eggs, with no potatoes visible in the image."
+    },
+    {
+      "prompt": "Are there any potatoes in this figure?",
+      "gt_answer_details": "No, there are no potatos inside.",
+      "image_path": "figure/18_0.png",
+      "original_solution": "No, there are no potatoes in the image. It solely features a hen and eggs in a nest of straw.",
+      "test_solution": "No, there are no potatoes in the image. It solely features a hen and eggs in a nest of straw.",
+      "hallucinated_solution": "No, there are no potatoes in the image. It solely features a hen and eggs in a nest of straw."
+    },
+    {
+      "prompt": "Are all the characters in this figure from the manga series One Piece?",
+      "gt_answer_details": "Yes, all the characters in this figure are from the manga series One Piece.",
+      "image_path": "figure/14_0.png",
+      "original_solution": "Yes, all the characters depicted in the image are from the manga and anime series \"One Piece\". This series is known for its extensive cast of characters, each with their own unique designs and backstories, forming the crew of the Straw Hat Pirates.",
+      "test_solution": "Yes, all the characters depicted in the image are from the manga and anime series \"One Piece\". This series is known for its extensive cast of characters, each with their own unique designs and backstories, forming the crew of the Straw Hat Pirates.",
+      "hallucinated_solution": "Yes, all the characters depicted in the image are from the manga and anime series \"One Piece\". This series is known for its extensive cast of characters, each with their own unique designs and backstories, forming the crew of the Straw Hat Pirates."
+    },
+    {
+      "prompt": "Are there any characters in this figure from the manga series Detective Conan?",
+      "gt_answer_details": "No, all the characters in this figure are from the manga series One Piece",
+      "image_path": "figure/14_0.png",
+      "original_solution": "No, the characters in the image you've provided are all from the manga and anime series \"One Piece,\" and there are no characters from \"Detective Conan\" present. \"Detective Conan,\" also known as \"Case Closed,\" features a different art style and characters that are detectives and criminals, which are distinct from the pirate-themed cast of \"One Piece.\"",
+      "test_solution": "No, the characters in the image you've provided are all from the manga and anime series \"One Piece,\" and there are no characters from \"Detective Conan\" present. \"Detective Conan,\" also known as \"Case Closed,\" features a different art style and characters that are detectives and criminals, which are distinct from the pirate-themed cast of \"One Piece.\"",
+      "hallucinated_solution": "No, the characters in the image you've provided are all from the manga and anime series \"One Piece,\" and there are no characters from \"Detective Conan\" present. \"Detective Conan,\" also known as \"Case Closed,\" features a different art style and characters that are detectives and criminals, which are distinct from the pirate-themed cast of \"One Piece.\""
+    },
+    {
+      "prompt": "Are all the characters in this figure from the manga series One Piece?",
+      "gt_answer_details": "No, there is one is from Detective Conan.",
+      "image_path": "figure/14_1.png",
+      "original_solution": "The image features characters from two different anime series. The larger group on the left is indeed from the manga and anime series \"One Piece,\" created by Eiichiro Oda. The character on the right, with glasses and a blue suit, is from a different anime series called \"Detective Conan\" (also known as \"Case Closed\"), created by Gosho Aoyama. The character's name is Conan Edogawa, the protagonist of the series.",
+      "test_solution": "The image features characters from two different anime series. The larger group on the left is indeed from the manga and anime series \"One Piece,\" created by Eiichiro Oda. The character on the right, with glasses and a blue suit, is from a different anime series called \"Detective Conan\" (also known as \"Case Closed\"), created by Gosho Aoyama. The character's name is Conan Edogawa, the protagonist of the series.",
+      "hallucinated_solution": "The image features characters from two different anime series. The larger group on the left is indeed from the manga and anime series \"One Piece,\" created by Eiichiro Oda. The character on the right, with glasses and a blue suit, is from a different anime series called \"Detective Conan\" (also known as \"Case Closed\"), created by Gosho Aoyama. The character's name is Conan Edogawa, the protagonist of the series."
+    },
+    {
+      "prompt": "Are there any characters in this figure from the manga series Detective Conan?",
+      "gt_answer_details": "Yes, one is from Detective Conan.",
+      "image_path": "figure/14_1.png",
+      "original_solution": "Yes, the character on the right side of the image, with glasses and a blue suit, is from the manga and anime series \"Detective Conan,\" also known as \"Case Closed\". This character is Conan Edogawa, the main protagonist of the series.",
+      "test_solution": "Yes, the character on the right side of the image, with glasses and a blue suit, is from the manga and anime series \"Detective Conan,\" also known as \"Case Closed\". This character is Conan Edogawa, the main protagonist of the series.",
+      "hallucinated_solution": "Yes, the character on the right side of the image, with glasses and a blue suit, is from the manga and anime series \"Detective Conan,\" also known as \"Case Closed\". This character is Conan Edogawa, the main protagonist of the series."
+    },
+   
+    {
+      "prompt": "Are all the items in this figure fried chicken?",
+      "gt_answer_details": "Yes, all the items in this figure are fried chicken.",
+      "image_path": "figure/17_0.png",
+      "original_solution": "The image shows several pieces of food that appear to be fried chicken. They all have a golden-brown crust that is typical of fried chicken, and they seem to vary in size and shape, which is common with different cuts of chicken (like breast, wing, thigh, and drumstick). The texture and color are consistent with what one would expect from a basket of fried chicken.",
+      "test_solution": "The image shows several pieces of food that appear to be fried chicken. They all have a golden-brown crust that is typical of fried chicken, and they seem to vary in size and shape, which is common with different cuts of chicken (like breast, wing, thigh, and drumstick). The texture and color are consistent with what one would expect from a basket of fried chicken.",
+      "hallucinated_solution": "The image shows several pieces of food that appear to be fried chicken. They all have a golden-brown crust that is typical of fried chicken, and they seem to vary in size and shape, which is common with different cuts of chicken (like breast, wing, thigh, and drumstick). The texture and color are consistent with what one would expect from a basket of fried chicken."
+    },
+    {
+      "prompt": "Is there any yogurt in this figure?",
+      "gt_answer_details": "No, all the items in this figure are ice cream bars.",
+      "image_path": "figure/11_0.png",
+      "original_solution": "The image shows several bars that resemble ice cream bars, some coated with nuts and others possibly with coconut. It is difficult to distinguish between ice cream and yogurt bars based solely on a visual inspection, as they can look quite similar, especially when coated with toppings. Yogurt bars often have a slightly different texture and may appear less glossy than ice cream due to their lower fat content. However, without packaging or a description indicating that the bars are made of yogurt, we cannot determine if any of these bars are yogurt bars. If these are commercial products, the packaging would typically indicate whether they are yogurt-based. If they are homemade, only the person who made them would be able to confirm their composition.",
+      "test_solution": "The image shows several bars that resemble ice cream bars, some coated with nuts and others possibly with coconut. It is difficult to distinguish between ice cream and yogurt bars based solely on a visual inspection, as they can look quite similar, especially when coated with toppings. Yogurt bars often have a slightly different texture and may appear less glossy than ice cream due to their lower fat content. However, without packaging or a description indicating that the bars are made of yogurt, we cannot determine if any of these bars are yogurt bars. If these are commercial products, the packaging would typically indicate whether they are yogurt-based. If they are homemade, only the person who made them would be able to confirm their composition.",
+      "hallucinated_solution": "The image shows several bars that resemble ice cream bars, some coated with nuts and others possibly with coconut. It is difficult to distinguish between ice cream and yogurt bars based solely on a visual inspection, as they can look quite similar, especially when coated with toppings. Yogurt bars often have a slightly different texture and may appear less glossy than ice cream due to their lower fat content. However, without packaging or a description indicating that the bars are made of yogurt, we cannot determine if any of these bars are yogurt bars. If these are commercial products, the packaging would typically indicate whether they are yogurt-based. If they are homemade, only the person who made them would be able to confirm their composition."
+    },
+    {
+      "prompt": "Are all the items in this figure ice cream bars?",
+      "gt_answer_details": "No, there is some yogurt in this figure.",
+      "image_path": "figure/11_1.png",
+      "original_solution": "The image displays a variety of treats on sticks. There are three items that appear to be ice cream bars coated with different toppings. Two of them are covered in nuts, and one is covered in shredded coconut. The fourth item, in the top left corner, is not on a stick and appears to be a small cup of yogurt or a dessert parfait. Thus, not all items in the image are ice cream bars.",
+      "test_solution": "The image displays a variety of treats on sticks. There are three items that appear to be ice cream bars coated with different toppings. Two of them are covered in nuts, and one is covered in shredded coconut. The fourth item, in the top left corner, is not on a stick and appears to be a small cup of yogurt or a dessert parfait. Thus, not all items in the image are ice cream bars.",
+      "hallucinated_solution": "The image displays a variety of treats on sticks. There are three items that appear to be ice cream bars coated with different toppings. Two of them are covered in nuts, and one is covered in shredded coconut. The fourth item, in the top left corner, is not on a stick and appears to be a small cup of yogurt or a dessert parfait. Thus, not all items in the image are ice cream bars."
+    },
+    {
+      "prompt": "Is there any yogurt in this figure?",
+      "gt_answer_details": "Yes, there is some yogurt in this figure.",
+      "image_path": "figure/11_1.png",
+      "original_solution": "Yes, in the top left corner of the image, there appears to be a small cup of yogurt or a similar creamy dessert topped with a red fruit compote or sauce, which is separate from the ice cream bars on sticks.",
+      "test_solution": "Yes, in the top left corner of the image, there appears to be a small cup of yogurt or a similar creamy dessert topped with a red fruit compote or sauce, which is separate from the ice cream bars on sticks.",
+      "hallucinated_solution": "Yes, in the top left corner of the image, there appears to be a small cup of yogurt or a similar creamy dessert topped with a red fruit compote or sauce, which is separate from the ice cream bars on sticks."
+    },
+    {
+      "prompt": "Are all the penguins in this figure characters of the movie Madagascar?",
+      "gt_answer_details": "Yes, all the penguins in this figure are characters of the movie Madagascar.",
+      "image_path": "figure/12_0.png",
+      "original_solution": "Yes, the penguins in the image you've provided are characters from the movie \"Madagascar.\" They are known for their humorous personalities and antics throughout the film series and related media.",
+      "test_solution": "Yes, the penguins in the image you've provided are characters from the movie \"Madagascar.\" They are known for their humorous personalities and antics throughout the film series and related media.",
+      "hallucinated_solution": "Yes, the penguins in the image you've provided are characters from the movie \"Madagascar.\" They are known for their humorous personalities and antics throughout the film series and related media."
+    },
+    {
+      "prompt": "Are there any real penguins in this figure?",
+      "gt_answer_details": "No, there are no real penguins in this figure.",
+      "image_path": "figure/12_0.png",
+      "original_solution": "No, there are no real penguins in the image you've provided. All the penguins depicted are animated characters from the movie \"Madagascar.\"",
+      "test_solution": "No, there are no real penguins in the image you've provided. All the penguins depicted are animated characters from the movie \"Madagascar.\"",
+      "hallucinated_solution": "No, there are no real penguins in the image you've provided. All the penguins depicted are animated characters from the movie \"Madagascar.\""
+    }
+
+]
