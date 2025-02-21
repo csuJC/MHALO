@@ -16,7 +16,7 @@ from config import (
     REASON_AND_TAG_SYSTEM_MESSAGE,
     MATH_REASON_AND_TAG_SYSTEM_MESSAGE
 )
-from utils_basic import (
+from utils import (
     encode_image,
     prepare_evaluation_sample,
     calculate_f1m_score,
@@ -283,23 +283,73 @@ def evaluate_single_sample(args):
                 },
                 {
                     "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": dataset_config.user_prompt_template.format(
-                                prompt=result['prompt'],
-                                test_description=result['test_solution']
-                            )
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/jpeg;base64,{encode_image(result['image_path'])}"
-                            }
-                        }
-                    ]
+                    "content": []
                 }
             ]
+            
+            # 根据prompt_method选择不同的提示词
+            if prompt_method == "vanilla":
+                messages[1]["content"].append({
+                    "type": "text",
+                    "text": dataset_config.user_prompt_template.format(
+                        prompt=result['prompt'],
+                        test_description=result['test_solution']
+                    )
+                })
+            elif prompt_method == "Criteria":  # 对应hallucnation_type
+                original_system_message = dataset_config.system_message
+                if dataset_config.name in ["geo_170k"]:
+                    dataset_config.system_message = MATH_HALLUCINATION_TYPE_SYSTEM_MESSAGE
+                else:
+                    dataset_config.system_message = HALLUCINATION_TYPE_SYSTEM_MESSAGE
+                
+                messages[1]["content"].append({
+                    "type": "text",
+                    "text": dataset_config.user_prompt_template.format(
+                        prompt=result['prompt'],
+                        test_description=result['test_solution']
+                    )
+                })
+                dataset_config.system_message = original_system_message  # 恢复原始系统消息
+            elif prompt_method == "2-shot":
+                original_system_message = dataset_config.system_message
+                if dataset_config.name in ["geo_170k"]:
+                    dataset_config.system_message = BASIC_MATH_COMPRESSED_SYSTEM_MESSAGE_2_SHOT
+                else:
+                    dataset_config.system_message = BASIC_COMPRESSED_SYSTEM_MESSAGE_2_SHOT
+                
+                messages[1]["content"].append({
+                    "type": "text",
+                    "text": dataset_config.user_prompt_template.format(
+                        prompt=result['prompt'],
+                        test_description=result['test_solution']
+                    )
+                })
+                dataset_config.system_message = original_system_message  # 恢复原始系统消息
+            elif prompt_method == "Analyze-then-judge":  # 对应reason_and_tag
+                original_system_message = dataset_config.system_message
+                if dataset_config.name == "geo_170k":
+                    dataset_config.system_message = MATH_REASON_AND_TAG_SYSTEM_MESSAGE
+                else:
+                    dataset_config.system_message = REASON_AND_TAG_SYSTEM_MESSAGE
+                
+                messages[1]["content"].append({
+                    "type": "text",
+                    "text": dataset_config.user_prompt_template.format(
+                        prompt=result['prompt'],
+                        test_description=result['test_solution']
+                    )
+                })
+                dataset_config.system_message = original_system_message  # 恢复原始系统消息
+            else:
+                raise ValueError(f"未知的提示词方法: {prompt_method}")
+            
+            messages[1]["content"].append({
+                "type": "image_url",
+                "image_url": {
+                    "url": f"data:image/jpeg;base64,{encode_image(result['image_path'])}"
+                }
+            })
             
             # 修改API调用部分
             response = call_api_with_retry(client, model, messages, max_retries=api_retry_limit)

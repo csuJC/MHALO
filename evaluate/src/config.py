@@ -8,68 +8,6 @@ class DatasetConfig:
     system_message: str  # 系统提示词
     user_prompt_template: str  # 用户提示词模板
 
-# 系统提示词
-SYSTEM_MESSAGE = """You are a precise hallucination detector for multimodal large language models. Your task is to:
-1. Carefully examine the image
-2. Read the model's response of the query related to image
-3. First provide your analysis of hallucinations in <Analyze>...</Analyze> tags, including:
-   - List each hallucinated detail
-   - Explain why it's a hallucination
-4. Then in <pre_output>...</pre_output> tags:
-   - Simply output the original response with <hallucination> tags added
-   - Add <hallucination> tags to EACH specific word or phrase that contains hallucinations
-   - Be as specific and granular as possible in your tagging
-   - Do not include any analysis or explanatory text
-   - If no hallucinations, output the original text unchanged
-
-Example:
-<Analyze>
-The description contains several hallucinations:
-1. "bright red" - The car is actually blue
-2. "sports car" - It's a regular sedan
-3. "racing" - The car is parked
-4. "lake" - There is no water body in the image
-5. "dragons" - No mythical creatures present
-</Analyze>
-<pre_output>
-The <hallucination>bright red</hallucination> <hallucination>sports</hallucination> car is <hallucination>quickly racing</hallucination> past a <hallucination>beautiful lake</hallucination> with <hallucination>three</hallucination> <hallucination>flying</hallucination> <hallucination>dragons</hallucination>.
-</pre_output>"""
-
-
-COMPRESSED_SYSTEM_MESSAGE = """You are a hallucination detector for multimodal large language models. Your task is to:
-1. Analyze the image and the model's response to an image-related query.
-2. In <Analyze>...</Analyze> tags:
-   - List hallucinations: 
-     - Identify each hallucinated detail
-     - Explain why it's a hallucination
-3. In <pre_output>...</pre_output> tags:
-   - Output the <b>original model's response unchanged</b> with <hallucination> tags
-   - Tag hallucinated words/phrases with <hallucination>
-   - If no hallucinations, output the original text unchanged
-
-Example Input:
-prompt given to the model: describe the image
-model's response: The bright red sports car...
-
-Example Output Format:
-<Analyze>
-1. "bright red" - Car is blue
-2. "sports car" - It's a sedan
-</Analyze>
-<pre_output>
-The <hallucination>bright red</hallucination> <hallucination>sports</hallucination> car...
-</pre_output>
-
-"""
-
-# 用户提词模板
-USER_PROMPT_TEMPLATE = """Here is the prompt given to the model:
-{prompt}
-
-Here is the model's response:
-{test_description}
-
-Please analyze the image and add <hallucination> tags to any hallucinated content in the model's response. Remember to tag each hallucinated concept separately!"""
 
 BASIC_USER_PROMPT_TEMPLATE = """Here is the prompt given to the model:
 {prompt}
@@ -78,117 +16,6 @@ Here is the model's response:
 {test_description}
 
 Please analyze the image and add <hallucination> tags to any hallucinated content in the model's response. Remember to tag each hallucinated content separately!"""
-
-# 数学题专用的系统提示词
-MATH_SYSTEM_MESSAGE = """You are a precise hallucination detector specialized in mathematical reasoning and geometric problem solving. Your task is to identify and tag both direct and indirect hallucinations in mathematical solutions.
-
-Hallucination Types:
-1. Direct Hallucinations (Visual Misinterpretation):
-   - Incorrect reading of numerical values from the image
-   - Misinterpretation of geometric relationships
-   - Wrong understanding of geometric conditions
-   - Misidentification of geometric shapes or angles
-
-2. Indirect Hallucinations (Consequential Errors):
-   - Calculations using incorrectly read values
-   - Deductions based on misinterpreted geometric relationships
-   - Conclusions drawn from incorrect premises
-   - Any subsequent errors caused by direct hallucinations
-
-Your Task:
-1. Carefully examine the geometric figure in the image
-2. Read the question and the model's solution
-3. First provide your analysis in <Analyze>...</Analyze> tags:
-   - List each hallucinated detail (both direct and indirect)
-   - Identify whether it's a direct or indirect hallucination
-   - Explain the relationship between indirect and direct hallucinations
-
-4. Then in <pre_output>...</pre_output> tags:
-   - ONLY output the original solution with added <hallucination> tags
-   - DO NOT add any additional text, analysis, or explanations
-   - DO NOT modify the original text structure or wording
-   - Tag EACH specific mathematical detail that contains hallucinations
-   - Be as granular as possible in tagging:
-     * Individual numbers and measurements
-     * Mathematical relationships and equations
-     * Geometric properties and conditions
-     * Reasoning steps and conclusions
-   - Include confidence scores (1-10):
-     * 10: Absolute certainty of hallucination
-     * 8-9: Clear visual evidence contradicts this
-     * 6-7: Significant discrepancy with image
-     * 4-5: Moderate uncertainty
-     * 1-3: Slight suspicion of error
-
-Example:
-<Analyze>
-The solution contains both direct and indirect hallucinations:
-
-Direct Hallucinations:
-1. "angle ABC = 60°" - Direct visual error, angle is clearly 45°
-2. "length AB = 8" - Misread value, actually marked as 6
-
-Indirect Hallucinations:
-3. "cos(60°) = 0.5" - Based on wrong angle
-4. "AB × cos(60°) = 4" - Uses both wrong angle and length
-5. "final answer is 4" - Conclusion based on previous errors
-</Analyze>
-
-<pre_output>
-In triangle ABC, <hallucination>angle ABC = 60°</hallucination> and <hallucination>length AB = 8</hallucination>. Using these values, <hallucination>cos(60°) = 0.5</hallucination>, so <hallucination>AB × cos(60°) = 4</hallucination>. Therefore, <hallucination>the answer is 4</hallucination>.
-</pre_output>
-
-Note: The <pre_output> section should ONLY contain the original solution with added hallucination tags. DO NOT include any additional text or explanations within the <pre_output> tags. Keep the content of the original solution text strictly unchanged!!!!"""
-
-# 数学题专用的用户提示词模板
-MATH_USER_PROMPT_TEMPLATE = """Please analyze this geometry problem and its solution:
-
-Question:
-{prompt}
-
-Model's Solution:
-{test_description}
-
-Your task:
-1. Carefully examine the geometric figure
-2. Identify and tag ALL hallucinations in the solution:
-   - Direct hallucinations from visual misinterpretation
-   - Indirect hallucinations caused by earlier errors
-3. Use <hallucination> tags with appropriate confidence scores
-4. Be as specific and granular as possible in your tagging
-5. Consider both numerical values and geometric relationships
-6. If the solution is correct, output the original text unchanged
-
-Remember to analyze the entire solution chain and tag both initial errors and their consequences!
-"""
-
-MATH_COMPRESSED_SYSTEM_MESSAGE = """You are a hallucination detector specializing in mathematical reasoning and geometry. Your task is to identify and tag hallucinations in solutions.
-
-**Your Task:**
-1. Examine the geometric figure and the model's solution.
-2. Provide analysis in <Analyze>...</Analyze> tags:
-   - List hallucinations and explain why they are hallucinations
-
-3. In <pre_output>...</pre_output> tags:
-   - Output the <b>original model's solution unchanged</b> with added <hallucination> tags
-   - Tag each mathematical detail with hallucinations
-   - Be specific: numbers, measurements, equations, reasoning, conclusions
-   - Do not modify original text or structure
-
-**Example Input:**
-Question: What is the cosine value of angle ABC in triangle ABC?
-Model's Solution: In triangle ABC, angle ABC = 60°. Using this, cos(60°) = 0.5.
-
-**Example Output:**
-<Analyze>
-1. "angle ABC = 60°" - Actually 45°
-2. "cos(60°) = 0.5" - Based on wrong angle
-</Analyze>
-
-<pre_output>
-In triangle ABC, <hallucination>angle ABC = 60°</hallucination>. Using this, <hallucination>cos(60°) = 0.5</hallucination>.
-</pre_output>
-"""
 
 # vanilla系统提示词
 BASIC_MATH_COMPRESSED_SYSTEM_MESSAGE = """You are a hallucination detector specializing in mathematical reasoning and geometry. Your task is to tag hallucinations in mathematical solutions.
@@ -437,7 +264,7 @@ INCORRECT Outputs (DO NOT DO THESE):
 ❌ Any additional formatting or tags besides <hallucination>
 """
 
-# 推理和标记系统提示词
+
 REASON_AND_TAG_SYSTEM_MESSAGE = """You are a hallucination detector for multimodal large language models. Your task is to:
 1. Analyze the image and the model's response to an image-related query.
 2. First provide your analysis in <Analysis>...</Analysis> tags:
@@ -500,14 +327,7 @@ In triangle ABC, <hallucination>angle ABC = 60°</hallucination>. Using this, <h
 
 # 数据集配置
 DATASET_CONFIGS = {
-    # "multimath_300k": DatasetConfig(
-    #     name="multimath_300k",
-    #     data_path="data/processed_multimath_300k.json",
-    #     output_path="results/evaluation_results_multimath_300k.json",
-    #     system_message=MULTIMATH_SYSTEM_MESSAGE,
-    #     user_prompt_template=MULTIMATH_USER_PROMPT_TEMPLATE
-    # ),
-    
+
     "rlhfv": DatasetConfig(
         name="rlhfv",
         data_path="data/processed_rlhfv_dataset.json",

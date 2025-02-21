@@ -63,8 +63,8 @@ python build/src/process_rlhfv_dataset.py,
 主要的评测脚本位于 `evaluate/src/evaluate.py`。你可以通过以下命令运行评测：
 
 ```bash
-cd evaluate
-python src/evaluate.py [参数]
+cd mhalo/evaluate
+python src/evaluate.py  --model qwen-vl-max-0809 --sample_limit 10 --prompt_method Analyze-then-judge --api_retry_limit 1 --max_annotation_retries 1
 ```
 
 ### 可用参数
