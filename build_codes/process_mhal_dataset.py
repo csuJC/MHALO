@@ -17,43 +17,43 @@ from utils.diff_lib import get_diff_ids, split_into_words
 from utils.text_utils import get_word_spans
 
 def encode_image(image_path: str) -> str:
-    """将图片转换为base64编码"""
+    """Convert image to base64 encoding"""
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
 def download_coco_val2014_images(image_dir: str, image_ids: List[str]):
-    """下载COCO 2014验证集的图片
+    """Download COCO 2014 validation images
     
     Args:
-        image_dir: 图片保存目录
-        image_ids: 需要下载的图片ID列表
+        image_dir: Directory to save images
+        image_ids: List of image IDs to download
     """
     os.makedirs(image_dir, exist_ok=True)
     
-    # COCO 2014验证集的基础URL
+    # Base URL for COCO 2014 validation set
     base_url = "http://images.cocodataset.org/val2014/"
     
-    print(f"\n开始下载COCO验证集图片...")
+    print(f"\nStarting to download COCO validation images...")
     successful_downloads = 0
     failed_downloads = []
     
-    for img_path in tqdm(image_ids, desc="下载图片"):
-        if not img_path:  # 跳过空路径
+    for img_path in tqdm(image_ids, desc="Downloading images"):
+        if not img_path:  # Skip empty paths
             continue
             
         img_filename = os.path.basename(img_path)
         save_path = os.path.join(image_dir, img_filename)
         
-        # 如果文件已存在，跳过下载
+        # Skip download if file already exists
         if os.path.exists(save_path):
             successful_downloads += 1
             continue
             
-        # 构建完整的URL
+        # Construct full URL
         url = base_url + img_filename
         
         try:
-            # 使用curl下载图片，设置超时和重试
+            # Use curl to download the image, set timeout and retries
             cmd = f'curl -L --retry 3 --retry-delay 2 --connect-timeout 10 -o "{save_path}" "{url}"'
             result = subprocess.run(cmd, shell=True, capture_output=True)
             
@@ -62,58 +62,58 @@ def download_coco_val2014_images(image_dir: str, image_ids: List[str]):
             else:
                 failed_downloads.append(img_path)
                 if os.path.exists(save_path):
-                    os.remove(save_path)  # 删除可能的不完整文件
+                    os.remove(save_path)  # Remove possibly incomplete file
                     
         except Exception as e:
-            print(f"下载图片 {img_filename} 时出错: {str(e)}")
+            print(f"Error downloading image {img_filename}: {str(e)}")
             failed_downloads.append(img_path)
             if os.path.exists(save_path):
                 os.remove(save_path)
     
-    print(f"\n图片下载完成:")
-    print(f"成功下载: {successful_downloads} 张图片")
-    print(f"下载失败: {len(failed_downloads)} 张图片")
+    print(f"\nImage download completed:")
+    print(f"Successfully downloaded: {successful_downloads} images")
+    print(f"Download failed: {len(failed_downloads)} images")
     if failed_downloads:
-        print("\n以下图片下载失败:")
-        for img in failed_downloads[:10]:  # 只显示前10个
+        print("\nThe following images failed to download:")
+        for img in failed_downloads[:10]:  # Only show the first 10
             print(f"- {img}")
         if len(failed_downloads) > 10:
-            print(f"... 还有 {len(failed_downloads) - 10} 张图片未显示")
+            print(f"... and {len(failed_downloads) - 10} more images not displayed")
 
 def extract_hallucination_spans_mhal(original: str, corrected: str) -> List[Dict[str, int]]:
-    """提取mhal-detect数据集中幻觉文本的起始和结束位置"""
-    # 获取差异ID
+    """Extract start and end positions of hallucinated text in mhal-detect dataset"""
+    # Get difference IDs
     original_diff_ids, _ = get_diff_ids(original, corrected)
     
     if not original_diff_ids:
         return []
     
-    # 将文本分割成单词，用于构建spans
+    # Split text into words to build spans
     original_words = split_into_words(original)
     
-    # 按顺序处理差异ID，合并连续的差异
+    # Process difference IDs in order, merging consecutive differences
     spans = []
     start = original_diff_ids[0]
     current_end = start + 1
     
     for i in range(1, len(original_diff_ids)):
         current_id = original_diff_ids[i]
-        # 只有当差异ID完全连续时才合并
+        # Only merge if difference IDs are consecutive
         if current_id == current_end:
             current_end += 1
         else:
-            # 添加当前span
+            # Add current span
             if current_end > start:
                 spans.append({
                     "start": start,
                     "end": current_end,
                     "text": " ".join(original_words[start:current_end])
                 })
-            # 开始新的span
+            # Start new span
             start = current_id
             current_end = start + 1
     
-    # 添加最后一个span
+    # Add the last span
     if current_end > start and start < len(original_words):
         spans.append({
             "start": start,
@@ -124,7 +124,7 @@ def extract_hallucination_spans_mhal(original: str, corrected: str) -> List[Dict
     return spans
 
 def add_hallucination_tags_mhal(text: str, spans: List[Dict[str, int]]) -> str:
-    """在mhal-detect数据集的文本中添加幻觉标记"""
+    """Add hallucination tags to text in mhal-detect dataset"""
     if not spans:
         return text
         
@@ -132,13 +132,13 @@ def add_hallucination_tags_mhal(text: str, spans: List[Dict[str, int]]) -> str:
     tagged_text = ""
     last_end = 0
     
-    # 合并重叠或紧邻的spans
+    # Merge overlapping or adjacent spans
     merged_spans = []
     sorted_spans = sorted(spans, key=lambda x: x["start"])
     current_span = sorted_spans[0]
     
     for next_span in sorted_spans[1:]:
-        # 只有当两个span完全相邻或重叠时才合并
+        # Only merge if spans are adjacent or overlapping
         if next_span["start"] <= current_span["end"]:
             current_span = {
                 "start": current_span["start"],
@@ -150,36 +150,36 @@ def add_hallucination_tags_mhal(text: str, spans: List[Dict[str, int]]) -> str:
             current_span = next_span
     merged_spans.append(current_span)
     
-    # 使用合并后的spans添加标记
+    # Use merged spans to add tags
     for span in merged_spans:
-        # 添加span前的正常文本
+        # Add normal text before the span
         if span["start"] > last_end:
             tagged_text += " ".join(words[last_end:span["start"]]) + " "
         
-        # 添加带标记的文本
+        # Add tagged text
         hallucinated_text = " ".join(words[span["start"]:span["end"]])
-        if hallucinated_text.strip():  # 只有当文本非空时才添加标记
+        if hallucinated_text.strip():  # Only add tag if text is not empty
             tagged_text += f"<hallucination>{hallucinated_text}</hallucination> "
         
         last_end = span["end"]
     
-    # 添加最后剩余的正常文本
+    # Add remaining normal text
     if last_end < len(words):
         tagged_text += " ".join(words[last_end:])
     
     return tagged_text.strip()
 
 def process_mhal_sample(sample: Dict, index: int) -> Dict:
-    """处理mhal-detect数据集的单个数据样本"""
+    """Process a single sample from mhal-detect dataset"""
     original = sample["response"]
     annotations = sample["annotations"]
     prompt = sample["question"]
     
-    # 提取幻觉span（只使用INACCURATE标签）
+    # Extract hallucination spans (only using INACCURATE label)
     char_spans = []
     for ann in annotations:
         if ann["label"] == "INACCURATE":
-            # 确保span的文本与原始文本匹配
+            # Ensure span text matches original text
             span_text = original[ann["start"]:ann["end"]]
             if span_text == ann["text"]:
                 char_spans.append({
@@ -188,18 +188,18 @@ def process_mhal_sample(sample: Dict, index: int) -> Dict:
                     "text": span_text
                 })
             else:
-                print(f"警告: span文本不匹配:\n预期: {ann['text']}\n实际: {span_text}")
+                print(f"Warning: span text does not match:\nExpected: {ann['text']}\nActual: {span_text}")
     
-    # 按起始位置排序
+    # Sort by start position
     char_spans.sort(key=lambda x: x["start"])
     
-    # 合并重叠的spans
+    # Merge overlapping spans
     merged_char_spans = []
     if char_spans:
         current_span = char_spans[0]
         for next_span in char_spans[1:]:
             if next_span["start"] <= current_span["end"]:
-                # 合并重叠的spans
+                # Merge overlapping spans
                 current_span = {
                     "start": min(current_span["start"], next_span["start"]),
                     "end": max(current_span["end"], next_span["end"]),
@@ -211,7 +211,7 @@ def process_mhal_sample(sample: Dict, index: int) -> Dict:
                 current_span = next_span
         merged_char_spans.append(current_span)
     
-    # 添加标记
+    # Add tags
     result = original
     offset = 0
     for span in merged_char_spans:
@@ -222,7 +222,7 @@ def process_mhal_sample(sample: Dict, index: int) -> Dict:
         result = result[:start] + marked_text + result[end:]
         offset += len(marked_text) - len(hallucination_text)
     
-    # 构造图片路径
+    # Construct image path
     image_path = ""
     if sample.get('image'):
         image_name = sample['image']
@@ -239,68 +239,68 @@ def process_mhal_sample(sample: Dict, index: int) -> Dict:
     }
 
 def process_dataset(num_samples: int = 500):
-    """处理mhal-detect数据集
+    """Process mhal-detect dataset
     
     Args:
-        num_samples (int): 要处理的数据条数，默认为500。
-                          其中90%为有幻觉样本，10%为无幻觉样本。
+        num_samples (int): Number of samples to process, default is 500.
+                           90% are hallucinated samples, 10% are clean samples.
     """
-    print("开始加载mhal-detect数据集...")
+    print("Starting to load mhal-detect dataset...")
     
-    # 计算需要的有幻觉和无幻觉样本数量
+    # Calculate required number of hallucinated and clean samples
     required_hallucination_samples = int(num_samples * 0.9)
     required_clean_samples = num_samples - required_hallucination_samples
     
-    print(f"目标总样本数: {num_samples}")
-    print(f"目标有幻觉样本数: {required_hallucination_samples}")
-    print(f"目标无幻觉样本数: {required_clean_samples}")
+    print(f"Target total samples: {num_samples}")
+    print(f"Target hallucinated samples: {required_hallucination_samples}")
+    print(f"Target clean samples: {required_clean_samples}")
     
-    # 使用绝对路径加载数据集
+    # Load dataset using absolute path
     dataset_path = os.path.join(build_dir, 'data', 'mhal-detect', 'val_raw.json')
-    print(f"尝试从以下路径加载数据集: {dataset_path}")
+    print(f"Attempting to load dataset from: {dataset_path}")
     
     try:
         with open(dataset_path, 'r', encoding='utf-8') as f:
             dataset = json.load(f)
     except Exception as e:
-        print(f"加载数据集失败: {str(e)}")
+        print(f"Failed to load dataset: {str(e)}")
         return
     
-    print(f"原始数据集共有 {len(dataset)} 条数据")
+    print(f"The original dataset has {len(dataset)} entries")
     
-    # 筛选包含图片的数据
+    # Filter samples that contain images
     dataset_with_images = [sample for sample in dataset if sample.get('image')]
-    print(f"其中包含图片的数据有 {len(dataset_with_images)} 条")
+    print(f"Among them, {len(dataset_with_images)} entries contain images")
     
     if len(dataset_with_images) < num_samples:
-        print(f"警告：包含图片的数据数量({len(dataset_with_images)})少于请求的样本数量({num_samples})")
+        print(f"Warning: The number of entries containing images ({len(dataset_with_images)}) is less than the requested sample size ({num_samples})")
         dataset = dataset_with_images
     else:
-        # 随机选择指定数量的包含图片的数据
+        # Randomly select the specified number of samples containing images
         random.seed(42)
         dataset = random.sample(dataset_with_images, num_samples)
     
-    # 处理数据
+    # Process data
     processed_data = []
-    for index, sample in enumerate(tqdm(dataset, desc="处理数据")):
+    for index, sample in enumerate(tqdm(dataset, desc="Processing data")):
         processed_sample = process_mhal_sample(sample, index)
-        # 对于无幻觉样本，设置original_solution
+        # For clean samples, set original_solution
         if not processed_sample['hallucination_spans']:
             processed_sample['original_solution'] = processed_sample['test_solution']
         processed_data.append(processed_sample)
     
-    # 分离有幻觉和无幻觉的样本
+    # Separate samples with and without hallucinations
     samples_with_hallucination = [s for s in processed_data if s['hallucination_spans']]
     samples_without_hallucination = [s for s in processed_data if not s['hallucination_spans']]
     
-    print(f"\n初步处理完成，发现:")
-    print(f"有幻觉样本: {len(samples_with_hallucination)} 条")
-    print(f"无幻觉样本: {len(samples_without_hallucination)} 条")
+    print(f"\nPreliminary processing completed, found:")
+    print(f"Hallucinated samples: {len(samples_with_hallucination)} entries")
+    print(f"Clean samples: {len(samples_without_hallucination)} entries")
     
-    # 设置随机种子以确保可重复性
+    # Set random seed for reproducibility
     random.seed(42)
     
-    # 根据比例选择样本
+    # Select samples based on ratio
     final_hallucination_samples = []
     if len(samples_with_hallucination) > required_hallucination_samples:
         final_hallucination_samples = random.sample(samples_with_hallucination, required_hallucination_samples)
@@ -319,35 +319,35 @@ def process_dataset(num_samples: int = 500):
             k=required_clean_samples - len(samples_without_hallucination)
         )
     
-    # 合并最终数据
+    # Merge final data
     final_processed_data = final_hallucination_samples + final_clean_samples
-    random.shuffle(final_processed_data)  # 随机打乱顺序
+    random.shuffle(final_processed_data)  # Shuffle order randomly
     
-    print(f"\n最终数据统计:")
-    print(f"有幻觉样本: {len(final_hallucination_samples)} 条")
-    print(f"无幻觉样本: {len(final_clean_samples)} 条")
-    print(f"总样本数: {len(final_processed_data)} 条")
+    print(f"\nFinal data statistics:")
+    print(f"Hallucinated samples: {len(final_hallucination_samples)} entries")
+    print(f"Clean samples: {len(final_clean_samples)} entries")
+    print(f"Total samples: {len(final_processed_data)} entries")
     
-    # 设置本地图片目录和输出目录
+    # Set local image directory and output directory
     local_image_dir = os.path.join(build_dir, 'images', 'mhal')
     image_output_dir = os.path.join(build_dir, '..', 'evaluate', 'images', 'mhal')
     os.makedirs(image_output_dir, exist_ok=True)
     
-    # 清空图片输出目录
+    # Clear image output directory
     for filename in os.listdir(image_output_dir):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
             file_path = os.path.join(image_output_dir, filename)
             try:
                 os.remove(file_path)
             except Exception as e:
-                print(f"删除文件 {file_path} 时出错: {str(e)}")
+                print(f"Error deleting file {file_path}: {str(e)}")
     
-    # 从本地目录复制图片到输出目录
-    print("\n开始从本地目录复制图片...")
+    # Start copying images from local directory to output directory
+    print("\nStarting to copy images from local directory...")
     successful_copies = 0
     failed_copies = []
     
-    for sample in tqdm(final_processed_data, desc="复制图片"):
+    for sample in tqdm(final_processed_data, desc="Copying images"):
         if not sample.get('image_path'):
             continue
             
@@ -356,7 +356,7 @@ def process_dataset(num_samples: int = 500):
         dst_path = os.path.join(image_output_dir, img_filename)
         
         if not os.path.exists(src_path):
-            print(f"警告：本地图片不存在: {src_path}")
+            print(f"Warning: Local image does not exist: {src_path}")
             failed_copies.append(img_filename)
             continue
             
@@ -365,35 +365,35 @@ def process_dataset(num_samples: int = 500):
             shutil.copy2(src_path, dst_path)
             successful_copies += 1
         except Exception as e:
-            print(f"复制图片 {img_filename} 时出错: {str(e)}")
+            print(f"Error copying image {img_filename}: {str(e)}")
             failed_copies.append(img_filename)
     
-    print(f"\n图片复制完成:")
-    print(f"成功复制: {successful_copies} 张图片")
-    print(f"复制失败: {len(failed_copies)} 张图片")
+    print(f"\nImage copy completed:")
+    print(f"Successfully copied: {successful_copies} images")
+    print(f"Copy failed: {len(failed_copies)} images")
     if failed_copies:
-        print("\n以下图片复制失败:")
+        print("\nThe following images failed to copy:")
         for img in failed_copies[:10]:
             print(f"- {img}")
         if len(failed_copies) > 10:
-            print(f"... 还有 {len(failed_copies) - 10} 张图片未显示")
+            print(f"... and {len(failed_copies) - 10} more images not displayed")
     
-    # 修改输出路径
+    # Modify output path
     output_path = os.path.join(build_dir, '..', 'evaluate', 'data', 'processed_mhal_dataset_new.json')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(final_processed_data, f, ensure_ascii=False, indent=2)
     
-    print(f"\n处理完成！")
-    print(f"数据已保存至: {output_path}")
-    print(f"图片已保存至: {image_output_dir}")
+    print(f"\nProcessing completed!")
+    print(f"Data has been saved to: {output_path}")
+    print(f"Images have been saved to: {image_output_dir}")
 
 def test_hallucination_tagging():
-    """测试幻觉标记的添加逻辑"""
+    """Test the logic for adding hallucination tags"""
     test_cases = [
         {
-            "name": "基础测试 - 使用原始和修正文本",
+            "name": "Basic Test - Using original and corrected text",
             "original": "The couch is situated in the center of the room.",
             "corrected": "The couch is in the room.",
             "expected_spans": [
@@ -402,7 +402,7 @@ def test_hallucination_tagging():
             ]
         },
         {
-            "name": "连续幻觉测试 - 使用原始和修正文本",
+            "name": "Continuous Hallucination Test - Using original and corrected text",
             "original": "The image shows a living room with a large window. The walls are painted blue.",
             "corrected": "The image contains a window. The walls are white.",
             "expected_spans": [
@@ -412,7 +412,7 @@ def test_hallucination_tagging():
             ]
         },
         {
-            "name": "直接使用spans测试",
+            "name": "Directly Using Spans Test",
             "text": "The kitchen features modern appliances and granite countertops. The cabinets are wooden.",
             "spans": [
                 {"start": 2, "end": 5, "text": "kitchen features modern"},
@@ -422,35 +422,35 @@ def test_hallucination_tagging():
     ]
     
     for test_case in test_cases:
-        print(f"\n测试用例: {test_case['name']}")
+        print(f"\nTest case: {test_case['name']}")
         
         if "original" in test_case and "corrected" in test_case:
-            # 使用extract_hallucination_spans_mhal提取spans
-            print("原始文本:", test_case["original"])
-            print("修正文本:", test_case["corrected"])
+            # Use extract_hallucination_spans_mhal to extract spans
+            print("Original text:", test_case["original"])
+            print("Corrected text:", test_case["corrected"])
             spans = extract_hallucination_spans_mhal(test_case["original"], test_case["corrected"])
             text = test_case["original"]
         else:
-            # 直接使用提供的spans
-            print("文本:", test_case["text"])
+            # Directly use provided spans
+            print("Text:", test_case["text"])
             spans = test_case["spans"]
             text = test_case["text"]
             
-        print("幻觉spans:", spans)
+        print("Hallucination spans:", spans)
         
-        # 使用标记方法
+        # Use tagging method
         tagged = add_hallucination_tags_mhal(text, spans)
-        print("\n标记结果:", tagged)
+        print("\nTagged result:", tagged)
         
-        # 验证结果
+        # Verify results
         words = split_into_words(text)
         for span in spans:
             hallucinated_text = " ".join(words[span["start"]:span["end"]])
             if hallucinated_text.strip() and f"<hallucination>{hallucinated_text}</hallucination>" not in tagged:
-                print(f"警告: 未找到预期的标记文本: {hallucinated_text}")
+                print(f"Warning: Expected tagged text not found: {hallucinated_text}")
         
         if "expected_spans" in test_case:
-            # 验证提取的spans是否符合预期
+            # Verify extracted spans match expectations
             for expected_span in test_case["expected_spans"]:
                 found = False
                 for span in spans:
@@ -458,11 +458,11 @@ def test_hallucination_tagging():
                         found = True
                         break
                 if not found:
-                    print(f"警告: 未找到预期的span: {expected_span}")
+                    print(f"Warning: Expected span not found: {expected_span}")
 
 def test_specific_case():
-    """测试特定样本的处理逻辑"""
-    # 测试样本
+    """Test the processing logic for a specific sample"""
+    # Test sample
     test_sample = {
         "question": "<image>\nCompose a comprehensive description of the image...",
         "response": "The image features a wooden bench placed on the side of a boat, which is docked near a body of water. The bench is adorned with stripes, giving it a unique appearance. There are two people sitting on the bench, enjoying the scenic view of the water and possibly engaging in conversation or relaxation. The overall atmosphere of the image is peaceful and serene, with the sound of the water and the presence of the boat adding to the tranquil setting.",
@@ -495,61 +495,61 @@ def test_specific_case():
         ]
     }
     
-    # 处理样本
+    # Process sample
     processed = process_mhal_sample(test_sample, 0)
     
-    # 打印处理结果
-    print("\n原始文本:")
+    # Print processing results
+    print("\nOriginal text:")
     print(test_sample["response"])
-    print("\n标注信息:")
+    print("\nAnnotation information:")
     for ann in test_sample["annotations"]:
         print(f"Label: {ann['label']}")
         print(f"Text: {ann['text']}")
         print(f"Range: {ann['start']}-{ann['end']}")
     
-    print("\n处理后的文本:")
+    print("\nProcessed text:")
     print(processed["hallucinated_solution"])
-    print("\n幻觉spans:")
+    print("\nHallucination spans:")
     for span in processed["hallucination_spans"]:
         print(f"Start: {span['start']}, End: {span['end']}, Text: {span['text']}")
     
-    # 验证处理结果
-    # 1. 检查是否只处理了INACCURATE标签
+    # Verify processing results
+    # 1. Check if only INACCURATE labels were processed
     inaccurate_texts = [ann["text"] for ann in test_sample["annotations"] if ann["label"] == "INACCURATE"]
-    print("\n验证结果:")
-    print("1. INACCURATE标签文本:")
+    print("\nVerification results:")
+    print("1. INACCURATE label texts:")
     for text in inaccurate_texts:
         print(f"- {text}")
-        # 检查是否都被正确标记
+        # Check if all were correctly tagged
         if f"<hallucination>{text}</hallucination>" not in processed["hallucinated_solution"]:
-            print(f"警告: 未找到预期的标记文本: {text}")
+            print(f"Warning: Expected tagged text not found: {text}")
     
-    # 2. 检查其他标签的文本是否被错误标记
+    # 2. Check if other label texts were incorrectly tagged
     other_texts = [ann["text"] for ann in test_sample["annotations"] if ann["label"] != "INACCURATE"]
-    print("\n2. 非INACCURATE标签文本:")
+    print("\n2. Non-INACCURATE label texts:")
     for text in other_texts:
         print(f"- {text}")
         if f"<hallucination>{text}</hallucination>" in processed["hallucinated_solution"]:
-            print(f"警告: 发现不应该被标记的文本: {text}")
+            print(f"Warning: Found text that should not be tagged: {text}")
     
-    # 3. 检查spans的连续性
-    print("\n3. 检查spans的连续性:")
+    # 3. Check continuity of spans
+    print("\n3. Check continuity of spans:")
     for i in range(len(processed["hallucination_spans"]) - 1):
         current_span = processed["hallucination_spans"][i]
         next_span = processed["hallucination_spans"][i + 1]
         if current_span["end"] > next_span["start"]:
-            print(f"警告: 发现重叠的spans: {current_span} 和 {next_span}")
+            print(f"Warning: Found overlapping spans: {current_span} and {next_span}")
 
 if __name__ == "__main__":
     import argparse
     
-    parser = argparse.ArgumentParser(description='处理mhal-detect数据集')
+    parser = argparse.ArgumentParser(description='Process mhal-detect dataset')
     parser.add_argument('--num_samples', type=int, default=500,
-                      help='要处理的数据条数（默认：500）')
+                      help='Number of samples to process (default: 500)')
     parser.add_argument('--test', action='store_true',
-                      help='运行标记测试')
+                      help='Run tagging test')
     parser.add_argument('--test_specific', action='store_true',
-                      help='运行特定样本测试')
+                      help='Run specific sample test')
     
     args = parser.parse_args()
     

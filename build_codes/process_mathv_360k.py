@@ -13,7 +13,7 @@ from queue import Queue
 import time
 from typing import List, Dict, Any
 
-# 定义生成CoT并注入幻觉的prompt
+# Define the prompt for generating CoT and injecting hallucinations
 system_prompt_360k = """You are an expert at mathematical reasoning and visual hallucination injection. Your task has three parts:
 
 Part 1 - Generate Original Solution:
@@ -115,13 +115,16 @@ Requirements:
 6. Start solutions with "Let's solve this step by step:" or "Let's analyze the image step by step:"
 
 Remember: Success depends on proper tagging of EVERY hallucinated span and maintaining the solution structure!"""
+
+# Convert the image to base64 encoding
 def encode_image(image_path: str) -> str:
-    """将图片转换为base64编码"""
+    """Convert image to base64 encoding"""
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
+# Generate hallucinated answers with reasoning chains using GPT-4-Vision
 def generate_solution(client: OpenAI, question: str, answer: str, image_path: str) -> tuple[str, str, str, str]:
-    """使用GPT-4-Vision生成带有思维链条的幻觉解答"""
+    """Generate hallucinated answers with reasoning chains using GPT-4-Vision"""
     messages = [
         {
             "role": "system",
@@ -155,52 +158,53 @@ def generate_solution(client: OpenAI, question: str, answer: str, image_path: st
         original, with_tag, without_tag = extract_solutions(api_response)
         return original, with_tag, without_tag, api_response
     except Exception as e:
-        print(f"生成解答时出错: {str(e)}")
+        print(f"Error generating solution: {str(e)}")
         return None, None, None, None
 
+# Extract original answers and tagged/untagged hallucinated answers from GPT response
 def extract_solutions(response: str) -> tuple[str, str, str]:
-    """从GPT响应中提取原始解答和带标签/不带标签的幻觉解答"""
-    # 提取原始解答
+    """Extract original answers and tagged/untagged hallucinated answers from GPT response"""
+    # Extract original solution
     pattern_original = r'<original_solution>(.*?)</original_solution>'
     match_original = re.search(pattern_original, response, re.DOTALL)
     
     if not match_original:
-        print("没有找到原始解答")
+        print("Original solution not found")
         print(response)
         return None, None, None
     
     original_solution = match_original.group(1).strip()
     
-    # 提取带标签的幻觉解答
+    # Extract tagged hallucinated solution
     pattern_with_tag = r'<hallucinated_solution>(.*?)</hallucinated_solution>'
     match_with_tag = re.search(pattern_with_tag, response, re.DOTALL)
     
     if not match_with_tag:
-        print("没有找到带标签的幻觉解答")
+        print("Tagged hallucinated solution not found")
         print(response)
         return None, None, None
     
     solution_with_tag = match_with_tag.group(1).strip()
     
     if '<hallucination>' not in solution_with_tag:
-        print("没有找到幻觉标签")
+        print("Hallucination tags not found")
         print(response)
         return None, None, None
     
-    # 生成不带标签的版本
+    # Generate version without tags
     solution_without_tag = re.sub(r'<hallucination>(.*?)</hallucination>', r'\1', solution_with_tag)
     
     return original_solution, solution_with_tag, solution_without_tag
 
 def generate_with_retry(client, question, answer, src_image):
-    """带重试机制的生成函数"""
+    """Generate function with retry mechanism"""
     max_retries = 3
     retry_count = 0
     
-    print(f"\n开始处理数据:")
-    print(f"问题: {question[:100]}...")
-    print(f"答案: {answer[:100]}...")
-    print(f"图片路径: {src_image}")
+    print(f"\nStarting data processing:")
+    print(f"Question: {question[:100]}...")
+    print(f"Answer: {answer[:100]}...")
+    print(f"Image path: {src_image}")
     
     while retry_count < max_retries:
         try:
@@ -209,49 +213,50 @@ def generate_with_retry(client, question, answer, src_image):
             )
             
             if original_solution and hallucinated_solution and test_solution:
-                print("✓ 解答生成成功!")
+                print("✓ Generation successful!")
                 return original_solution, hallucinated_solution, test_solution, api_response, True
             
-            print(f"✗ 第 {retry_count + 1} 次生成失败，正在重试...")
+            print(f"✗ Generation attempt {retry_count + 1} failed, retrying...")
             retry_count += 1
             
             if retry_count == max_retries:
-                print(f"! 已达到最大重试次数 ({max_retries})，跳过该数据\n")
+                print(f"! Maximum retry count ({max_retries}) reached, skipping this data\n")
                 return None, None, None, None, False
                 
         except Exception as e:
-            print(f"\n✗ 第 {retry_count + 1} 次生成失败:")
-            print(f"错误信息: {str(e)}")
+            print(f"\n✗ Generation attempt {retry_count + 1} failed:")
+            print(f"Error message: {str(e)}")
             retry_count += 1
             if retry_count == max_retries:
                 return None, None, None, None, False
     
     return None, None, None, None, False
 
+# Function to process a single data item
 def process_single_item(item: Dict[str, Any], 
                        client: OpenAI,
                        input_images_dir: Path,
                        output_images_dir: Path,
                        lock: threading.Lock) -> tuple[Dict[str, Any], Dict[str, Any]]:
-    """处理单个数据项的函数
+    """Process a single data item
     
     Args:
-        item: 要处理的数据项
-        client: OpenAI客户端
-        input_images_dir: 输入图片目录
-        output_images_dir: 输出图片目录
-        lock: 线程锁
+        item: Data item to process
+        client: OpenAI client
+        input_images_dir: Input images directory
+        output_images_dir: Output images directory
+        lock: Thread lock
         
     Returns:
-        tuple: (处理后的数据, 失败信息)
+        tuple: (Processed data, Failed info)
     """
     try:
         if 'image' not in item:
-            raise ValueError("缺少image字段")
+            raise ValueError("Missing image field")
         
         src_image = input_images_dir / item['image']
         if not src_image.exists():
-            raise FileNotFoundError(f"图片文件不存在: {src_image}")
+            raise FileNotFoundError(f"Image file does not exist: {src_image}")
         
         question = item['conversations'][0]['value'] if item.get('conversations') else ''
         answer = item['conversations'][1]['value'] if len(item.get('conversations', [])) > 1 else ''
@@ -261,9 +266,9 @@ def process_single_item(item: Dict[str, Any],
         )
         
         if not success:
-            raise Exception("生成失败")
+            raise Exception("Generation failed")
         
-        # 使用线程锁保护文件复制操作
+        # Use thread lock to protect file copying operation
         with lock:
             relative_image_path = item['image']
             dst_image = output_images_dir / relative_image_path
@@ -290,65 +295,66 @@ def process_single_item(item: Dict[str, Any],
         }
         return None, failed_info
 
+# Process the dataset and generate versions with hallucinations
 def process_dataset(num_samples: int = 10, num_threads: int = 4):
-    """处理数据集并生成带有幻觉的版本
+    """Process the dataset and generate versions with hallucinations
     
     Args:
-        num_samples (int): 要生成的数据条数，默认为10
-        num_threads (int): 使用的线程数，默认为4
+        num_samples (int): Number of samples to generate, default 10
+        num_threads (int): Number of threads to use, default 4
     """
-    # 设置OpenAI客户端
+    # Set OpenAI client
     client = OpenAI(
         base_url="https://one-api.glm.ai/v1",
         api_key = 'sk-ECLer7uvOSXsLd9fC7110b72A15f47848e418b2049C69361'
     )
     
-    # 设置输入输出路径
+    # Set input/output paths
     input_file = Path('build/data/mathv/train_samples_all_tuning.json')
     input_images_dir = Path('build/images/mathv')
     output_images_dir = Path('evaluate/images/mathv_360k')
     output_file = Path('evaluate/data/processed_mathv_360k.json')
     
-    # 如果输出文件已存在，则删除它
+    # If output file exists, delete it
     if output_file.exists():
         output_file.unlink()
     
-    # 如果输出图片目录已存在，则删除它
+    # If output image directory exists, delete it
     if output_images_dir.exists():
         shutil.rmtree(output_images_dir)
     
-    # 创建输出目录
+    # Create output directory
     output_images_dir.mkdir(parents=True, exist_ok=True)
     output_file.parent.mkdir(parents=True, exist_ok=True)
     
-    # 读取原始数据集
+    # Read original dataset
     with open(input_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
-    # 获取总样本数
+    # Get total sample count
     total_samples = len(data)
-    print(f"原始数据集共有 {total_samples} 条数据")
-    print(f"目标生成 {num_samples} 条数据")
-    print(f"使用 {num_threads} 个线程并行处理")
+    print(f"Original dataset contains {total_samples} entries")
+    print(f"Target to generate {num_samples} entries")
+    print(f"Using {num_threads} threads in parallel processing")
     
-    # 初始化数据结构
+    # Initialize data structure
     processed_data = []
     failed_samples = []
     lock = threading.Lock()
     
-    # 创建进度条
-    pbar = tqdm(total=num_samples, desc="处理MathV数据集")
+    # Create progress bar
+    pbar = tqdm(total=num_samples, desc="Processing MathV dataset")
     
-    # 当前处理的数据索引
+    # Current processing data index
     current_index = 0
-    batch_size = min(num_threads * 2, num_samples)  # 初始批次大小为线程数的2倍
+    batch_size = min(num_threads * 2, num_samples)  # Initial batch size is 2 times the thread count
     
     while len(processed_data) < num_samples and current_index < total_samples:
-        # 计算这一批次需要处理的数量
+        # Calculate the number of entries to process in this batch
         remaining_samples = num_samples - len(processed_data)
         current_batch_size = min(batch_size, remaining_samples)
         
-        # 确保有足够的数据可以处理
+        # Ensure there is enough data to process
         if current_index + current_batch_size > total_samples:
             current_batch_size = total_samples - current_index
             
@@ -357,13 +363,13 @@ def process_dataset(num_samples: int = 10, num_threads: int = 4):
             
         current_batch = data[current_index:current_index + current_batch_size]
         
-        print(f"\n当前处理进度：")
-        print(f"已成功处理：{len(processed_data)}/{num_samples}")
-        print(f"累计失败数：{len(failed_samples)}")
-        print(f"当前批次大小：{len(current_batch)}")
-        print(f"当前处理索引：{current_index}")
+        print(f"\nCurrent processing progress:")
+        print(f"Successfully processed: {len(processed_data)}/{num_samples}")
+        print(f"Cumulative failed count: {len(failed_samples)}")
+        print(f"Current batch size: {len(current_batch)}")
+        print(f"Current processing index: {current_index}")
         
-        # 使用线程池处理数据
+        # Use thread pool to process data
         successful_in_batch = 0
         with ThreadPoolExecutor(max_workers=num_threads) as executor:
             future_to_item = {
@@ -389,62 +395,62 @@ def process_dataset(num_samples: int = 10, num_threads: int = 4):
                     elif failed_info:
                         failed_info["idx"] = current_index + len(failed_samples)
                         failed_samples.append(failed_info)
-                        print(f"\n处理样本时出错: {failed_info['error']}")
+                        print(f"\nError processing sample: {failed_info['error']}")
         
-        # 更新当前索引，确保向前移动
+        # Update current index to ensure forward movement
         current_index += current_batch_size
         
-        # 动态调整批次大小
+        # Dynamically adjust batch size
         if successful_in_batch == 0:
-            # 如果这个批次完全失败，减小批次大小以减少资源浪费
+            # If this batch completely fails, reduce batch size to reduce resource waste
             batch_size = max(num_threads, batch_size // 2)
         elif successful_in_batch == current_batch_size:
-            # 如果这个批次完全成功，适当增加批次大小
+            # If this batch completely succeeds, slightly increase batch size
             batch_size = min(batch_size * 2, num_samples - len(processed_data))
         
-        # 如果已经到达数据集末尾但还未达到目标数量
+        # If reached end of dataset but target count not reached
         if len(processed_data) < num_samples and current_index >= total_samples:
-            print(f"\n警告：已到达数据集末尾，但仍未达到目标数量！")
-            print(f"目标数量: {num_samples}")
-            print(f"实际生成: {len(processed_data)}")
+            print(f"\nWarning: Reached end of dataset but target count not reached!")
+            print(f"Target count: {num_samples}")
+            print(f"Actually generated: {len(processed_data)}")
             break
     
     pbar.close()
     
-    # 输出处理统计信息
-    print(f"\n成功处理样本数: {len(processed_data)}")
-    print(f"失败样本数: {len(failed_samples)}")
-    print(f"总共尝试处理的数据条数: {current_index}")
+    # Print processing statistics
+    print(f"\nSuccessfully processed samples: {len(processed_data)}")
+    print(f"Failed samples: {len(failed_samples)}")
+    print(f"Total attempted data entries: {current_index}")
     
-    # 保存处理后的数据
+    # Save processed data
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
     
-    # 如果有失败的样本，保存失败记录
+    # Save failed samples if any
     if failed_samples:
         failed_samples_path = "evaluate/data/failed_mathv_360k_samples.json"
         with open(failed_samples_path, "w", encoding="utf-8") as f:
             json.dump(failed_samples, f, ensure_ascii=False, indent=2)
-        print(f"失败样本信息已保存至: {failed_samples_path}")
+        print(f"Failed sample information saved to: {failed_samples_path}")
     
     if len(processed_data) < num_samples:
-        print(f"\n警告：未能达到目标数量！")
-        print(f"目标数量: {num_samples}")
-        print(f"实际生成: {len(processed_data)}")
-        print(f"可能原因: 数据集中的样本不足或失败率过高")
+        print(f"\nWarning: Target count not reached!")
+        print(f"Target count: {num_samples}")
+        print(f"Actually generated: {len(processed_data)}")
+        print(f"Possible reasons: Insufficient samples in dataset or high failure rate")
     else:
-        print(f"处理完成！")
-        print(f"数据已保存至: {output_file}")
-        print(f"图片已保存至: {output_images_dir}")
+        print(f"Processing completed!")
+        print(f"Data saved to: {output_file}")
+        print(f"Images saved to: {output_images_dir}")
 
 if __name__ == '__main__':
     import argparse
     
-    parser = argparse.ArgumentParser(description='处理数学数据集并生成带有幻觉的版本')
+    parser = argparse.ArgumentParser(description='Process math dataset and generate versions with hallucinations')
     parser.add_argument('--num_samples', type=int, default=500,
-                      help='要生成的数据条数（默认：500）')
+                      help='Number of samples to generate (default: 500)')
     parser.add_argument('--num_threads', type=int, default=8,
-                      help='使用的线程数（默认：8）')
+                      help='Number of threads to use (default: 8)')
     
     args = parser.parse_args()
     process_dataset(args.num_samples, args.num_threads) 

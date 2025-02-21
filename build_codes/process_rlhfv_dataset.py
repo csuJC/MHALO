@@ -8,7 +8,7 @@ import random
 from tqdm import tqdm
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
-# 添加build目录到Python路径
+# Add build directory to Python path
 current_dir = os.path.dirname(os.path.abspath(__file__))  # /path/to/build/src
 build_dir = os.path.dirname(current_dir)  # /path/to/build
 sys.path.insert(0, build_dir)
@@ -16,16 +16,16 @@ sys.path.insert(0, build_dir)
 from utils.diff_lib import get_diff_ids, split_into_words
 
 def extract_hallucination_spans(rejected: str, chosen: str) -> List[Dict[str, int]]:
-    """提取rejected文本中的幻觉片段的span"""
-    # 将文本分割成单词
+    """Extract spans of hallucinated text from rejected text"""
+    # Split text into words
     rejected_words = split_into_words(rejected)
     chosen_words = split_into_words(chosen)
     
-    # 使用difflib来获取差异
+    # Use difflib to get differences
     matcher = difflib.SequenceMatcher(None, rejected_words, chosen_words)
     rejected_diff_indices = set(range(len(rejected_words)))
     
-    # 移除匹配的部分
+    # Remove matched parts
     for match in matcher.get_matching_blocks():
         for i in range(match.size):
             if match.a + i in rejected_diff_indices:
@@ -33,28 +33,28 @@ def extract_hallucination_spans(rejected: str, chosen: str) -> List[Dict[str, in
     
     rejected_diff_ids = sorted(list(rejected_diff_indices))
     
-    # 将连续的索引组合成span
+    # Combine consecutive indices into spans
     spans = []
     if not rejected_diff_ids:
         return spans
     
-    # 初始化第一个span
+    # Initialize the first span
     current_span_start = rejected_diff_ids[0]
     current_words = []
     
-    # 遍历所有差异索引
+    # Iterate through all difference indices
     for i, idx in enumerate(rejected_diff_ids):
         current_words.append(rejected_words[idx])
         
-        # 如果是最后一个索引或者下一个索引不连续
+        # If it's the last index or the next index is not consecutive
         if i == len(rejected_diff_ids) - 1 or rejected_diff_ids[i + 1] != idx + 1:
-            # 保存当前span
+            # Save the current span
             spans.append({
                 "start": current_span_start,
                 "end": idx + 1,
                 "text": " ".join(current_words)
             })
-            # 如果不是最后一个索引，开始新的span
+            # If not the last index, start a new span
             if i < len(rejected_diff_ids) - 1:
                 current_span_start = rejected_diff_ids[i + 1]
                 current_words = []
@@ -62,11 +62,11 @@ def extract_hallucination_spans(rejected: str, chosen: str) -> List[Dict[str, in
     return spans
 
 def add_hallucination_tags(text: str, spans: List[Dict[str, int]]) -> str:
-    """在文本中添加幻觉标记"""
+    """Add hallucination tags to text"""
     words = split_into_words(text)
     tagged_words = words.copy()
     
-    # 从后向前添加标记，避免索引变化
+    # Add tags from back to front to avoid index changes
     for span in reversed(spans):
         start, end = span["start"], span["end"]
         tagged_words[start:end] = [f"<hallucination>{' '.join(words[start:end])}</hallucination>"]
@@ -74,74 +74,72 @@ def add_hallucination_tags(text: str, spans: List[Dict[str, int]]) -> str:
     return " ".join(tagged_words)
 
 def process_sample(sample: Dict) -> Dict:
-    """处理单个数据样本"""
+    """Process a single data sample"""
     text_data = json.loads(sample["text"])
     rejected = text_data["rejected"]
     chosen = text_data["chosen"]
-    prompt = text_data.get("question", "What do you observe in this image?")  # 添加默认prompt
+    prompt = text_data.get("question", "What do you observe in this image?")  # Add default prompt
     
-    # 提取幻觉span
+    # Extract hallucination spans
     hallucination_spans = extract_hallucination_spans(rejected, chosen)
     
-    # 添加标记
+    # Add tags
     tagged_text = add_hallucination_tags(rejected, hallucination_spans)
     
-    
-
     return {
-        "id": sample.get("idx", "unknown"),  # 从原始数据集的idx字段获取id
+        "id": sample.get("idx", "unknown"),  # Get id from the original dataset's idx field
         "image_path": sample["image_path"],
         "original_solution": chosen,
         "hallucinated_solution": tagged_text,
         "test_solution": rejected,
-        "prompt": prompt  # 添加prompt字段
+        "prompt": prompt  # Add prompt field
     }
 
 def process_dataset(num_samples: int = 500):
-    """处理RLHF-V数据集
+    """Process RLHF-V dataset
     
     Args:
-        num_samples (int): 要生成的数据条数，默认为500
+        num_samples (int): Number of data entries to generate, default is 500
     """
-    print("开始加载RLHF-V数据集...")
+    print("Starting to load RLHF-V dataset...")
     dataset = load_dataset("HaoyeZhang/RLHF-V-Dataset")
     train_data = list(dataset['train'])
 
-    # 只取前num_samples条数据
+    # Only take the first num_samples data
     train_data = train_data[:num_samples]
     
-    # 确保图片输出目录存在
+    # Ensure the image output directory exists
     image_output_dir = "evaluate/images/rlhfv"
     os.makedirs(image_output_dir, exist_ok=True)
     
-    # 清空图片输出目录
+    # Clear the image output directory
     for filename in os.listdir(image_output_dir):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
             file_path = os.path.join(image_output_dir, filename)
             try:
                 os.remove(file_path)
             except Exception as e:
-                print(f"删除文件 {file_path} 时出错: {str(e)}")
+                print(f"Error deleting file {file_path}: {str(e)}")
     
     processed_data = []
     failed_samples = []
-    pbar = tqdm(total=num_samples, desc="处理RLHF-V数据集")
+    pbar = tqdm(total=num_samples, desc="Processing RLHF-V dataset")
     
     for sample in train_data:
         try:
             processed_sample = process_sample(sample)
             
-            # 处理图片
+            # Process image
             if sample.get('image_path'):
                 src_image_path = os.path.join('build/images/rlhfv', sample['image_path'])
                 dst_image_path = os.path.join(image_output_dir, os.path.basename(sample['image_path']))
                 
                 if os.path.exists(src_image_path):
                     os.system(f'cp "{src_image_path}" "{dst_image_path}"')
-                    # 只保存文件名
+                    # Only save the filename
                     processed_sample['image_path'] = os.path.basename(sample['image_path'])
                 else:
-                    raise FileNotFoundError(f"图片文件不存在: {src_image_path}")
+                    raise FileNotFoundError(f"Image file does not exist: {src_image_path}")
             
             processed_data.append(processed_sample)
             pbar.update(1)
@@ -151,36 +149,36 @@ def process_dataset(num_samples: int = 500):
                 "sample_id": sample.get("idx", "unknown"),
                 "error": str(e)
             })
-            print(f"\n处理样本 {sample.get('idx', 'unknown')} 时出错: {str(e)}")
+            print(f"\nError processing sample {sample.get('idx', 'unknown')}: {str(e)}")
             continue
     
     pbar.close()
     
-    # 输出处理统计信息
-    print(f"\n成功处理样本数: {len(processed_data)}")
-    print(f"失败样本数: {len(failed_samples)}")
+    # Output processing statistics
+    print(f"\nSuccessfully processed samples: {len(processed_data)}")
+    print(f"Failed samples: {len(failed_samples)}")
     
-    # 修改输出路径
+    # Modify output path
     output_path = "evaluate/data/processed_rlhfv_dataset.json"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
-    # 保存处理后的数据
+    # Save processed data
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(processed_data, f, ensure_ascii=False, indent=2)
     
-    # 如果有失败的样本，保存失败记录
+    # If there are failed samples, save failure records
     if failed_samples:
         failed_samples_path = "evaluate/data/failed_rlhfv_samples.json"
         with open(failed_samples_path, "w", encoding="utf-8") as f:
             json.dump(failed_samples, f, ensure_ascii=False, indent=2)
-        print(f"失败样本信息已保存至: {failed_samples_path}")
+        print(f"Failed sample information has been saved to: {failed_samples_path}")
 
 if __name__ == "__main__":
     import argparse
     
-    parser = argparse.ArgumentParser(description='处理RLHF-V数据集')
+    parser = argparse.ArgumentParser(description='Process RLHF-V dataset')
     parser.add_argument('--num_samples', type=int, default=2000,
-                      help='要生成的数据条数（默认2000）')
+                      help='Number of data entries to generate (default 2000)')
     
     args = parser.parse_args()
     process_dataset(args.num_samples) 

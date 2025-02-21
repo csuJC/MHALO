@@ -2,11 +2,12 @@ from dataclasses import dataclass
 
 @dataclass
 class DatasetConfig:
-    name: str  # 数据集名称
-    data_path: str  # 数据文件路径
-    output_path: str  # 输出文件路径
-    system_message: str  # 系统提示词
-    user_prompt_template: str  # 用户提示词模板
+    name: str  # Dataset name
+    data_path: str  # Data file path
+    output_path: str  # Output file path
+    system_message: str  # System prompt
+    user_prompt_template: str  # User prompt template
+    tmp_dir: str = ""  # Temporary directory path
 
 
 BASIC_USER_PROMPT_TEMPLATE = """Here is the prompt given to the model:
@@ -17,7 +18,7 @@ Here is the model's response:
 
 Please analyze the image and add <hallucination> tags to any hallucinated content in the model's response. Remember to tag each hallucinated content separately!"""
 
-# vanilla系统提示词
+# Vanilla system prompt
 BASIC_MATH_COMPRESSED_SYSTEM_MESSAGE = """You are a hallucination detector specializing in mathematical reasoning and geometry. Your task is to tag hallucinations in mathematical solutions.
 
 IMPORTANT OUTPUT FORMAT REQUIREMENTS:
@@ -84,7 +85,7 @@ INCORRECT Outputs (DO NOT DO THESE):
 ❌ Any additional formatting or tags besides <hallucination>
 """
 
-# 2-shot系统提示词
+# 2-shot system prompt
 BASIC_COMPRESSED_SYSTEM_MESSAGE_2_SHOT = """You are a hallucination detector for multimodal large language models. Your task is to tag hallucinations in the model's response.
 
 IMPORTANT OUTPUT FORMAT REQUIREMENTS:
@@ -172,7 +173,7 @@ INCORRECT Outputs (DO NOT DO THESE):
 """
 
 # 幻觉类型系统提示词
-HALLUCINATION_TYPE_SYSTEM_MESSAGE = """You are a hallucination detector for multimodal large language models. Your task is to tag hallucinations in the model's response.
+Criteria_SYSTEM_MESSAGE = """You are a hallucination detector for multimodal large language models. Your task is to tag hallucinations in the model's response.
 
 IMPORTANT OUTPUT FORMAT REQUIREMENTS:
 1. Start with EXACTLY this line: "Here is the response with hallucinated content tagged:"
@@ -218,7 +219,7 @@ INCORRECT Outputs (DO NOT DO THESE):
 ❌ Any additional formatting or tags besides <hallucination>
 """
 
-MATH_HALLUCINATION_TYPE_SYSTEM_MESSAGE = """You are a hallucination detector specializing in mathematical reasoning and geometry. Your task is to tag hallucinations in mathematical solutions.
+MATH_Criteria_SYSTEM_MESSAGE = """You are a hallucination detector specializing in mathematical reasoning and geometry. Your task is to tag hallucinations in mathematical solutions.
 
 IMPORTANT OUTPUT FORMAT REQUIREMENTS:
 1. Start with EXACTLY this line: "Here is the response with hallucinated content tagged:"
@@ -265,7 +266,7 @@ INCORRECT Outputs (DO NOT DO THESE):
 """
 
 
-REASON_AND_TAG_SYSTEM_MESSAGE = """You are a hallucination detector for multimodal large language models. Your task is to:
+Analyze_then_judge_SYSTEM_MESSAGE = """You are a hallucination detector for multimodal large language models. Your task is to:
 1. Analyze the image and the model's response to an image-related query.
 2. First provide your analysis in <Analysis>...</Analysis> tags:
    - Analyze what is actually present in the image
@@ -293,7 +294,7 @@ The <hallucination>bright red</hallucination> <hallucination>sports</hallucinati
 </Tagged_Text>
 """
 
-MATH_REASON_AND_TAG_SYSTEM_MESSAGE = """You are a hallucination detector specializing in mathematical reasoning and geometry. Your task is to identify and tag hallucinations in solutions.
+MATH_Analyze_then_judge_SYSTEM_MESSAGE = """You are a hallucination detector specializing in mathematical reasoning and geometry. Your task is to identify and tag hallucinations in solutions.
 
 **Your Task:**
 1. Examine the geometric figure and the model's solution.
@@ -325,7 +326,7 @@ In triangle ABC, <hallucination>angle ABC = 60°</hallucination>. Using this, <h
 </Tagged_Text>
 """
 
-# 数据集配置
+# Dataset configuration
 DATASET_CONFIGS = {
 
     "rlhfv": DatasetConfig(

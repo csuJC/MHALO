@@ -9,19 +9,19 @@ import numpy as np
 
 
 def extract_hallucination_spans(text: str) -> List[Dict[str, Union[int, str]]]:
-    """从文本中提取幻觉片段
+    """Extract hallucination spans from text
     
     Args:
-        text (str): 输入文本
+        text (str): Input text
         
     Returns:
-        list: 包含字典的列表,每个字典包含:
-            - start: 起始位置(按单词计数)
-            - end: 结束位置(按单词计数)
-            - text: 幻觉文本内容
+        list: List of dictionaries containing:
+            - start: Start position (word count)
+            - end: End position (word count)
+            - text: Hallucinated text content
     """
     if not isinstance(text, str):
-        print(f"Warning: 输入text不是字符串类型: {type(text)}")
+        print(f"Warning: Input text is not string type: {type(text)}")
         return []
 
     pattern = r'<hallucination>(.*?)</hallucination>'
@@ -47,12 +47,12 @@ def extract_hallucination_spans(text: str) -> List[Dict[str, Union[int, str]]]:
 
 
 def call_api_with_retry(client, model_name, messages, max_retries=3, retry_delay=5, temperature=0):
-    """带重试机制的API调用"""
+    """API call with retry mechanism"""
     for attempt in range(max_retries):
         try:
-            print(f"\n尝试调用API (第{attempt + 1}次)...")
-            print(f"模型: {model_name}")
-            print(f"消息长度: {len(str(messages))} 字符")
+            print(f"\nAttempting to call API ({attempt + 1} times)...")
+            print(f"Model: {model_name}")
+            print(f"Message length: {len(str(messages))} characters")
             
             response = client.chat.completions.create(
                 model=model_name,
@@ -64,106 +64,106 @@ def call_api_with_retry(client, model_name, messages, max_retries=3, retry_delay
                 frequency_penalty=0.3
             )
             
-            # 验证响应格式
+            # Verify response format
             if not response:
-                raise ValueError("API返回空响应")
+                raise ValueError("API returned empty response")
                 
             if not hasattr(response, 'choices') or not response.choices:
-                raise ValueError("API响应中缺少choices字段")
+                raise ValueError("API response missing choices field")
                 
             if not hasattr(response.choices[0], 'message'):
-                raise ValueError("API响应中缺少message字段")
+                raise ValueError("API response missing message field")
                 
             if not response.choices[0].message.content:
-                raise ValueError("API响应中content为空")
+                raise ValueError("API response content is empty")
                 
-            print(f"API调用成功!")
+            print(f"API call successful!")
             return response
             
         except Exception as e:
             error_type = type(e).__name__
             error_msg = str(e)
             
-            print(f"\n第 {attempt + 1} 次调用失败:")
-            print(f"错误类型: {error_type}")
-            print(f"错误信息: {error_msg}")
+            print(f"\n {attempt + 1} times call failed:")
+            print(f"Error type: {error_type}")
+            print(f"Error message: {error_msg}")
             
-            if attempt == max_retries - 1:  # 最后一次尝试
+            if attempt == max_retries - 1:  # The last attempt
                 raise Exception(
-                    f"API调用失败 (已重试{max_retries}次):\n"
-                    f"- 错误类型: {error_type}\n"
-                    f"- 错误信息: {error_msg}\n"
-                    f"- 模型: {model_name}\n"
-                    f"- 请求内容长度: {len(str(messages))} 字符"
+                    f"API call failed (has retried {max_retries} times):\n"
+                    f"- Error type: {error_type}\n"
+                    f"- Error message: {error_msg}\n"
+                    f"- Model: {model_name}\n"
+                    f"- Request content length: {len(str(messages))} characters"
                 )
             
-            print(f"{retry_delay}秒后进行第{attempt + 2}次尝试...")
+            print(f"{retry_delay} seconds later, attempt {attempt + 2}...")
             time.sleep(retry_delay)
             continue
 
 
 def encode_image(image_path: str) -> str:
-    """将图片编码为base64字符串"""
+    """encode image to base64 string"""
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
 def prepare_evaluation_sample(sample: Dict, dataset_type: str) -> Optional[Dict]:
-    """准备评估样本"""
-    if dataset_type in ["geo_170k", "mathv_360k", "multimath_300k"]:  # 数学题数据集的处理逻辑
-        # 检查数学题数据集必要字段
+    """prepare evaluation sample"""
+    if dataset_type in ["geo_170k", "mathv_360k", "multimath_300k"]:  # math problem dataset processing logic
+        # Check required fields for math problem dataset
         required_fields = ['image', 'hallucinated_solution', 'test_solution']
         if dataset_type == "multimath_300k":
-            required_fields.append('title')  # multimath_300k 使用 title
+            required_fields.append('title')  # multimath_300k use title
         else:
-            required_fields.append('question')  # 其他数据集使用 question
+            required_fields.append('question')  # other datasets use question
             
         if not all(field in sample for field in required_fields):
-            print(f"样本缺少必要字段: {[f for f in required_fields if f not in sample]}")
+            print(f"Sample missing required fields: {[f for f in required_fields if f not in sample]}")
             return None
         
-        # 构建图片路径
+        # Build image path
         image_path = os.path.join('images', dataset_type, sample['image'])
         
         # 检查图片是否存在
         if not os.path.exists(image_path):
-            print(f"图片不存在: {image_path}")
+            print(f"Image not found: {image_path}")
             return None
         
-        # 对于multimath_300k数据集的特殊处理
+        # Special processing for multimath_300k dataset
         if dataset_type == "multimath_300k":
             return {
-                "sample_id": sample['image'],  # 使用image路径作为id
+                "sample_id": sample['image'],  # Use image path as id
                 "image_path": image_path,
                 "original_solution": sample['original_solution'] if isinstance(sample, dict) else None,
                 "gt_solution": sample['hallucinated_solution'],
                 "test_solution": sample['test_solution'],
-                "prompt": sample['title']  # multimath_300k 使用 title
+                "prompt": sample['title']  # multimath_300k use title
             }
         else:
             return {
-                "sample_id": sample['image'],  # 使用image路径作为id
+                "sample_id": sample['image'],  # Use image path as id
                 "image_path": image_path,
                 "original_solution": sample.get('original_solution'),
                 "gt_solution": sample['hallucinated_solution'],
                 "test_solution": sample['test_solution'],
-                "prompt": sample['question']  # 其他数据集使用 question
+                "prompt": sample['question']  # other datasets use question
             }
-    elif dataset_type in ["test", "mhal"]:  # test和mhal数据集使用相同的处理逻辑
-        # 检查必要字段
+    elif dataset_type in ["test", "mhal"]:  # test and mhal datasets use the same processing logic
+        # Check required fields
         required_fields = ['image_path', 'hallucinated_solution', 'test_solution', 'prompt']
         if not all(field in sample for field in required_fields):
-            print(f"样本缺少必要字段: {[f for f in required_fields if f not in sample]}")
+            print(f"Sample missing required fields: {[f for f in required_fields if f not in sample]}")
             return None
         
-        # 构建图片路径
+        # Build image path
         image_path = os.path.join('images', dataset_type, sample['image_path'])
         
-        # 检查图片是否存在
+        # Check if image exists
         if not os.path.exists(image_path):
-            print(f"图片不存在: {image_path}")
+            print(f"Image not found: {image_path}")
             return None
         
-        # 对于test数据集，使用图片路径和提示词的组合作为ID
+        # For test dataset, use the combination of image path and prompt as ID
         if dataset_type == "test":
             sample_id = f"{sample['image_path']}_{sample['prompt']}"
         else:
@@ -178,18 +178,18 @@ def prepare_evaluation_sample(sample: Dict, dataset_type: str) -> Optional[Dict]
             "prompt": sample['prompt']
         }
     else:
-        # 其他数据集的处理逻辑
+        # Other datasets processing logic
         required_fields = ['id', 'image_path', 'hallucinated_solution', 'prompt']
         if not all(field in sample for field in required_fields):
-            print(f"样本缺少必要字段: {[f for f in required_fields if f not in sample]}")
+            print(f"Sample missing required fields: {[f for f in required_fields if f not in sample]}")
             return None
         
-        # 构建图片路径
+        # Build image path
         image_path = os.path.join('images', dataset_type, sample['image_path'])
         
         # 检查图片是否存在
         if not os.path.exists(image_path):
-            print(f"图片不存在: {image_path}")
+            print(f"Image not found: {image_path}")
             return None
         
         return {
@@ -202,28 +202,28 @@ def prepare_evaluation_sample(sample: Dict, dataset_type: str) -> Optional[Dict]
         }
 
 def normalize_text_for_comparison(text: str) -> str:
-    """标准化文本用于比较
+    """Normalize text for comparison
     
     Args:
-        text: 输入文本
+        text: Input text
         
     Returns:
-        标准化后的文本
+        Normalized text
     """
-    # 1. 移除标点符号
+    # 1. Remove punctuation
     text = re.sub(r'[^\w\s°]', '', text)
-    # 2. 标准化空白字符
+    # 2. Normalize whitespace characters
     text = ' '.join(text.split())
     return text
 
 def calculate_partial_match_precision(pred_span: Dict, gt_spans: List[Dict]) -> float:
-    """计算单个预测跨度的部分匹配精确率，基于单词索引"""
+    """Calculate the partial match precision of a single prediction span, based on word index"""
     pred_indices = set(range(pred_span["start"], pred_span["end"]))
     
     if not pred_indices:
         return 0.0
     
-    # 标准化预测文本
+    # Normalize predicted text
     pred_text = normalize_text_for_comparison(pred_span["text"])
     pred_words = set(pred_text.split())
     
@@ -232,7 +232,7 @@ def calculate_partial_match_precision(pred_span: Dict, gt_spans: List[Dict]) -> 
     
     max_overlap = 0
     for gt_span in gt_spans:
-        # 标准化真实文本
+        # Normalize ground truth text
         gt_text = normalize_text_for_comparison(gt_span["text"])
         gt_words = set(gt_text.split())
         
@@ -245,13 +245,13 @@ def calculate_partial_match_precision(pred_span: Dict, gt_spans: List[Dict]) -> 
     return max_overlap / len(pred_words)
 
 def calculate_partial_match_recall(gt_span: Dict, pred_spans: List[Dict]) -> float:
-    """计算单个Ground Truth跨度的部分匹配召回率，基于单词索引"""
+    """Calculate the partial match recall of a single ground truth span, based on word index"""
     gt_indices = set(range(gt_span["start"], gt_span["end"]))
     
     if not gt_indices:
         return 0.0
     
-    # 标准化真实文本
+    # Normalize ground truth text
     gt_text = normalize_text_for_comparison(gt_span["text"])
     gt_words = set(gt_text.split())
     
@@ -260,7 +260,7 @@ def calculate_partial_match_recall(gt_span: Dict, pred_spans: List[Dict]) -> flo
     
     max_overlap = 0
     for pred_span in pred_spans:
-        # 标准化预测文本
+        # Normalize predicted text
         pred_text = normalize_text_for_comparison(pred_span["text"])
         pred_words = set(pred_text.split())
         
@@ -273,45 +273,45 @@ def calculate_partial_match_recall(gt_span: Dict, pred_spans: List[Dict]) -> flo
     return max_overlap / len(gt_words)
 
 def calculate_f1m_score(ground_truth: str, prediction: str, pred_spans: List[Dict] = None) -> dict:
-    """计算F1M分数
+    """Calculate F1M score
     
     Args:
-        ground_truth: 真实文本
-        prediction: 预测文本
-        pred_spans: 预先提取的预测spans(可选)
+        ground_truth: Ground truth text
+        prediction: Prediction text
+        pred_spans: Pre-extracted prediction spans (optional)
         
     Returns:
-        dict: 包含precision, recall, f1m等指标的字典
+        dict: Dictionary containing precision, recall, f1m, etc.
     """
-    # 提取预测文本中的幻觉片段
+    # Extract hallucination spans from prediction text
     if pred_spans is None:
         pred_spans = extract_hallucination_spans(prediction)
     
-    # 提取真实文本中的幻觉片段
+    # Extract hallucination spans from ground truth text
     gt_spans = extract_hallucination_spans(ground_truth)
     
-    # 计算精确率和召回率
+    # Calculate precision and recall
     total_precision = 0
     total_recall = 0
     
-    # 计算每个预测span的精确率
+    # Calculate precision for each prediction span
     for pred_span in pred_spans:
         precision = calculate_partial_match_precision(pred_span, gt_spans)
         total_precision += precision
     
-    # 计算每个真实span的召回率
+    # Calculate recall for each ground truth span
     for gt_span in gt_spans:
         recall = calculate_partial_match_recall(gt_span, pred_spans)
         total_recall += recall
     
-    # 计算最终的精确率和召回率
+    # Calculate final precision and recall
     precision = total_precision / len(pred_spans) if pred_spans else 0.0
     recall = total_recall / len(gt_spans) if gt_spans else 0.0
     
-    # 计算F1分数
+    # Calculate F1 score
     f1m = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
     
-    # 计算IOU精确率
+    # Calculate F1M_iou
     iou_precision_g = calculate_iou_precision(pred_spans, gt_spans)
     iou_h = calculate_iou_precision(gt_spans, pred_spans)
     
@@ -328,13 +328,16 @@ def calculate_f1m_score(ground_truth: str, prediction: str, pred_spans: List[Dic
     }
 
 def extract_step_hallucinations(text: str) -> List[Dict[str, Union[int, str]]]:
-    """从标签的文本中提取步骤级别的幻觉
+    """Extract step-level hallucinations from text with <hallucination confidence=X> tags
     
     Args:
-        text: 带有<hallucination confidence=X>标签的文本
+        text: Text with <hallucination confidence=X> tags
         
     Returns:
-        包含每个幻觉步骤信息的列表
+        List of dictionaries containing:
+            - step: Step number
+            - text: Hallucinated step text
+            - confidence: Confidence score
     """
     spans = []
     # 修改正则表式以只匹配Step N部分
@@ -344,11 +347,11 @@ def extract_step_hallucinations(text: str) -> List[Dict[str, Union[int, str]]]:
         confidence = int(match.group(1))
         step_text = match.group(2)
         
-        # 提取步骤号
+        # Extract step number
         step_num = int(re.search(r'Step (\d+)', step_text).group(1))
         
-        # 获取完整的步骤内容
-        full_step_pattern = f"{step_text}[^S]*?"  # 匹配到下一个Step之前的内容
+        # Get complete step content
+        full_step_pattern = f"{step_text}[^S]*?"  # Match content before next Step
         full_step_match = re.search(full_step_pattern, text)
         if full_step_match:
             full_step_text = full_step_match.group(0).strip()
@@ -364,22 +367,22 @@ def extract_step_hallucinations(text: str) -> List[Dict[str, Union[int, str]]]:
     return spans
 
 def calculate_step_f1m_score(gt_solution: str, pred_solution: str, confidence_threshold: int = 0) -> Dict:
-    """计算步骤级别的F1M分数
+    """Calculate step-level F1M score
     
     Args:
-        gt_solution: 真实解答(带有<hallucination>标签)
-        pred_solution: 预测解答(带有<hallucination confidence=X>标签)
-        confidence_threshold: 置信度阈值，只考虑confidence大于此值的span
+        gt_solution: Ground truth solution (with <hallucination> tags)
+        pred_solution: Predicted solution (with <hallucination confidence=X> tags)
+        confidence_threshold: Confidence threshold, only consider spans with confidence greater than this value
         
     Returns:
-        包含F1M分数和其他指标的字典
+        Dictionary containing F1M score and other metrics
     """
-    # 提取实幻觉步骤
+    # Extract hallucinated steps from ground truth solution
     gt_pattern = r'<hallucination>(Step \d+)</hallucination>'
     gt_steps = []
     for match in re.finditer(gt_pattern, gt_solution):
         step_text = match.group(1)
-        # 获取完整的步骤内容
+        # Get complete step content
         full_step_pattern = f"{step_text}[^S]*?"
         full_step_match = re.search(full_step_pattern, gt_solution)
         if full_step_match:
@@ -388,13 +391,13 @@ def calculate_step_f1m_score(gt_solution: str, pred_solution: str, confidence_th
             gt_steps.append(step_text)
     gt_steps = set(gt_steps)
     
-    # 提取预测幻觉步骤，并根据置信度阈值过滤
+    # Extract predicted hallucinated steps, and filter based on confidence threshold
     pred_steps = set()
     for step in extract_step_hallucinations(pred_solution):
         if step.get('confidence', 0) > confidence_threshold:
             pred_steps.add(step["text"])
     
-    # 计算精确率和召回率
+    # Calculate precision and recall
     if not gt_steps and not pred_steps:
         return {
             "f1m": 1.0,
@@ -428,13 +431,13 @@ def calculate_step_f1m_score(gt_solution: str, pred_solution: str, confidence_th
             }
         }
     
-    # 计算交集
+    # Calculate intersection
     correct_steps = gt_steps & pred_steps
     
     precision = len(correct_steps) / len(pred_steps)
     recall = len(correct_steps) / len(gt_steps)
     
-    # 计算F1M
+    # Calculate F1M
     if precision + recall == 0:
         f1m = 0.0
     else:
@@ -452,48 +455,48 @@ def calculate_step_f1m_score(gt_solution: str, pred_solution: str, confidence_th
 
 
 def print_evaluation_result(result: Dict, dataset_type: str):
-    """打印单个样本的评估结果"""
-    print(f"\n样本 {result['sample_id']} 评估结果:")
+    """Print evaluation result for a single sample"""
+    print(f"\nSample {result['sample_id']} evaluation result:")
     print(f"Ground Truth: {result['gt_solution']}")
-    print(f"GPT-4V标注: {result['gpt4v_response']}")
+    print(f"GPT-4V: {result['gpt4v_response']}")
     
-    # 打印基础指标
+        # Print basic metrics
     metrics = result['metrics']
     print(f"F1M: {metrics['f1m']:.4f}")
-    print(f"精确率: {metrics['precision']:.4f}")
-    print(f"召回率: {metrics['recall']:.4f}")
-    print(f"IOU精确率(h): {metrics['iou_h']:.4f}")
-    print(f"IOU精确率(g): {metrics['iou_precision_g']:.4f}")
+    print(f"Precision: {metrics['precision']:.4f}")
+    print(f"Recall: {metrics['recall']:.4f}")
+    print(f"F1M_iou (h): {metrics['iou_h']:.4f}")
+    print(f"F1M_iou (g): {metrics['iou_precision_g']:.4f}")
 
 def print_evaluation_summary(results: List[Dict], total_f1m: float, success_count: int, dataset_config: Dict):
-    """打印评估总结"""
+    """Print evaluation summary"""
     if not results:
-        print("\n没有评估结果")
+        print("\nNo evaluation results")
         return
         
-    print("\n评估统计:")
+    print("\nEvaluation statistics:")
     status_counts = {}
     for result in results:
         if "status" in result:
             status = result["status"]
-            if status != "summary":  # 不统计summary条目
+            if status != "summary":  # Do not count summary items
                 status_counts[status] = status_counts.get(status, 0) + 1
     
     for status, count in status_counts.items():
         print(f"- {status}: {count}")
-    print(f"- 总样本数: {len(results) - 1}")  # 减去summary条目
+    print(f"- Total sample count: {len(results) - 1}")  # Do not count summary items
     
-    # 获取最后一个结果中的整体指标
+    # Get overall metrics from the last result
     if len(results) > 0 and results[-1].get("overall_metrics"):
         overall_metrics = results[-1]["overall_metrics"]
-        print("\n整体评估指标:")
+        print("\nOverall evaluation metrics:")
         print(f"- F1M: {overall_metrics['f1m']:.4f}")
-        print(f"- IOU精确率(h): {overall_metrics['iou_h']:.4f}")
+        print(f"- F1M_iou (h): {overall_metrics['iou_h']:.4f}")
         print(f"- DSR: {overall_metrics['dsr']:.4f}")
-        print(f"\n样本数量: {overall_metrics['sample_count']}")
+        print(f"\nSample count: {overall_metrics['sample_count']}")
 
 def calculate_iou(span1: Dict[str, int], span2: Dict[str, int]) -> float:
-    """计算两个span的IOU值"""
+    """Calculate the IOU value of two spans"""
     intersection_start = max(span1['start'], span2['start'])
     intersection_end = min(span1['end'], span2['end'])
     
@@ -506,30 +509,30 @@ def calculate_iou(span1: Dict[str, int], span2: Dict[str, int]) -> float:
     return intersection / union if union > 0 else 0.0
 
 def calculate_iou_matches_greedy(pred_spans: List[Dict], gt_spans: List[Dict], iou_threshold: float = 0.5) -> List[tuple]:
-    """使用贪心算法计算预测spans和真实spans的匹配
+    """Calculate the matches between predicted spans and ground truth spans using greedy algorithm
     
     Args:
-        pred_spans: 预测的spans列表
-        gt_spans: 真实的spans列表
-        iou_threshold: IOU阈值，默认0.5
+        pred_spans: List of predicted spans
+        gt_spans: List of ground truth spans
+        iou_threshold: IOU threshold, default 0.5
         
     Returns:
-        List[tuple]: 匹配的(pred_idx, gt_idx)列表
+        List[tuple]: List of (pred_idx, gt_idx) matches
     """
     matches = []
     used_gt = set()
     
-    # 按置信度降序排序预测spans的索引
+    # Sort predicted spans by confidence in descending order
     pred_indices = list(range(len(pred_spans)))
     pred_indices.sort(key=lambda x: pred_spans[x].get('confidence', 0), reverse=True)
     
-    # 按置信度顺序遍历预测框
+    # Iterate through predicted spans in descending order of confidence
     for pred_idx in pred_indices:
         pred_span = pred_spans[pred_idx]
         best_iou = iou_threshold
         best_gt_idx = -1
         
-        # 寻找最佳匹配的真实框
+        # Find the best match for the ground truth span
         for gt_idx, gt_span in enumerate(gt_spans):
             if gt_idx in used_gt:
                 continue
@@ -546,40 +549,40 @@ def calculate_iou_matches_greedy(pred_spans: List[Dict], gt_spans: List[Dict], i
     return matches
 
 def calculate_iou_matches_hungarian(pred_spans: List[Dict], gt_spans: List[Dict], iou_threshold: float = 0.5) -> List[tuple]:
-    """使用匈牙利算法计算预测spans和真实spans的匹配
+    """Calculate the matches between predicted spans and ground truth spans using Hungarian algorithm
     
     Args:
-        pred_spans: 预测的spans列表
-        gt_spans: 真实的spans列表
-        iou_threshold: IOU阈值，默认0.5
+        pred_spans: List of predicted spans
+        gt_spans: List of ground truth spans
+        iou_threshold: IOU threshold, default 0.5
         
     Returns:
-        List[tuple]: 匹配的(pred_idx, gt_idx)列表
+        List[tuple]: List of (pred_idx, gt_idx) matches
     """
     if not pred_spans or not gt_spans:
         return []
     
-    # 构建成本矩阵
+    # Build cost matrix
     cost_matrix = np.zeros((len(pred_spans), len(gt_spans)))
     for i, pred_span in enumerate(pred_spans):
         for j, gt_span in enumerate(gt_spans):
             iou = calculate_iou(pred_span, gt_span)
-            # 将IOU转换为成本（1-IOU），并处理低于阈值的情况
+            # Convert IOU to cost (1-IOU) and handle cases below threshold
             cost_matrix[i][j] = 1000 if iou < iou_threshold else (1 - iou)
     
-    # 使用匈牙利算法计算最优匹配
+    # Calculate optimal matches using Hungarian algorithm
     pred_indices, gt_indices = linear_sum_assignment(cost_matrix)
     
-    # 过滤掉IOU低于阈值的匹配
+    # Filter out matches with IOU below threshold
     matches = []
     for pred_idx, gt_idx in zip(pred_indices, gt_indices):
-        if cost_matrix[pred_idx][gt_idx] < 1000:  # 只保留有效匹配
+        if cost_matrix[pred_idx][gt_idx] < 1000:  # Only keep valid matches
             matches.append((pred_idx, gt_idx))
     
     return matches
 
 def calculate_iou_precision(pred_spans: List[Dict], gt_spans: List[Dict]) -> float:
-    """计算IOU精确率"""
+    """Calculate F1M_iou"""
     if not pred_spans or not gt_spans:
         return 0.0
     
@@ -594,16 +597,16 @@ def calculate_iou_precision(pred_spans: List[Dict], gt_spans: List[Dict]) -> flo
     return total_iou / len(pred_spans)
 
 def calculate_span_iou(span1: Dict, span2: Dict) -> float:
-    """计算两个文本span的IOU（交并比）
+    """Calculate the IOU (intersection over union) of two text spans
     
     Args:
-        span1: 第一个span，包含start和end字段(按单词计数)
-        span2: 第二个span，包含start和end字段(按单词计数)
+        span1: First span, contains start and end fields (word count)
+        span2: Second span, contains start and end fields (word count)
         
     Returns:
-        float: IOU值
+        float: IOU value
     """
-    # 计算交集
+    # Calculate intersection
     intersection_start = max(span1['start'], span2['start'])
     intersection_end = min(span1['end'], span2['end'])
     
@@ -612,76 +615,75 @@ def calculate_span_iou(span1: Dict, span2: Dict) -> float:
     
     intersection = intersection_end - intersection_start
     
-    # 计算并集
+    # Calculate union
     union = (span1['end'] - span1['start']) + (span2['end'] - span2['start']) - intersection
     
     return intersection / union if union > 0 else 0.0
 
 def non_maximum_suppression(spans: List[Dict], iou_threshold: float = 0.5) -> List[Dict]:
-    """对文本spans进行非极大值抑制
+    """Use non-maximum suppression to filter out overlapping spans
     
     Args:
-        spans: 包含多个预测span的列表，每个span包含start、end、text和confidence字段
-        iou_threshold: IOU阈值，超过此值的重叠span将被抑制
+        spans: List of predicted spans, each span contains start, end, text and confidence fields
+        iou_threshold: IOU threshold, overlapping spans above this value will be suppressed
         
     Returns:
-        List[Dict]: 经过NMS处理后的spans列表
+        List[Dict]: List of spans after NMS processing
     """
     if not spans:
         return []
     
-    print("\nNMS处理开始...")
-    print(f"初始spans数量: {len(spans)}")
+    print("\nNMS processing started...")
+    print(f"Initial spans number: {len(spans)}")
     
-    # 按置信度降序排序，对于相同置信度的span，按长度降序排序（优先选择较长的span）
+    # Sort by confidence in descending order, for spans with the same confidence, sort by length in descending order (prefer longer spans)
     # spans = sorted(spans, key=lambda x: (x['confidence'], -(x['end'] - x['start'])), reverse=True)
     spans = sorted(spans, key=lambda x: (x['confidence']), reverse=True)
-    print("\n按置信度和长度排序后的spans:")
+    print("\nSorted spans by confidence and length:")
     for span in spans:
-        print(f"文本: {span['text']}, 置信度: {span['confidence']}, 长度: {span['end'] - span['start']}, 位置: [{span['start']}, {span['end']}]")
+        print(f"Text: {span['text']}, Confidence: {span['confidence']}, Length: {span['end'] - span['start']}, Position: [{span['start']}, {span['end']}]")
     
-    # 用于存储保留的spans
+    # Store spans to be kept
     kept_spans = []
     
-    # 遍历所有spans
+    # Iterate through all spans
     while spans:
-        # 取出置信度最高（或相同置信度中最短）的span
         current_span = spans[0]
         kept_spans.append(current_span)
-        print(f"\n选择span: {current_span['text']} (置信度: {current_span['confidence']}, 长度: {current_span['end'] - current_span['start']})")
+        print(f"\nSelected span: {current_span['text']} (Confidence: {current_span['confidence']}, Length: {current_span['end'] - current_span['start']})")
         
-        # 移除当前span
+        # Remove current span
         spans = spans[1:]
         
-        # 过滤掉与当前span重叠或存在包含关系的spans
+        # Filter out spans that overlap with the current span or have an inclusion relationship
         filtered_spans = []
         for span in spans:
-            # 检查是否存在重叠或包含关系
+            # Check if there is an overlap or inclusion relationship
             has_overlap = False
             
-            # 检查位置重叠
+            # Check if there is an overlap
             if (current_span['start'] <= span['end'] and current_span['end'] >= span['start']):
                 has_overlap = True
-                print(f"移除重叠span: {span['text']} (位置重叠)")
+                print(f"Removing overlapping span: {span['text']} (overlapping position)")
                 continue
             
-            # 检查包含关系
+            # Check for inclusion relationship
             if (current_span['start'] <= span['start'] and current_span['end'] >= span['end']) or \
                (span['start'] <= current_span['start'] and span['end'] >= current_span['end']):
                 has_overlap = True
-                print(f"移除包含关系span: {span['text']} (包含关系)")
+                print(f"Removing inclusion span: {span['text']} (inclusion relationship)")
                 continue
             
-            # 如果没有重叠和包含关系，保留该span
+            # If there is no overlap and inclusion relationship, keep the span
             if not has_overlap:
                 filtered_spans.append(span)
         
         spans = filtered_spans
     
-    # 按起始位置排序
+    # Sort by start position
     kept_spans.sort(key=lambda x: x['start'])
     
-    print(f"\nNMS处理完成，保留spans数量: {len(kept_spans)}")
+    print(f"\nNMS processing completed, {len(kept_spans)} spans retained")
     return kept_spans
 
 if __name__ == "__main__":
