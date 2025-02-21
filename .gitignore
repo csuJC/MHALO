@@ -3,3 +3,5 @@
 /evaluate/results/
 
 .env
+.env.*
+.DS_Store
