@@ -59,6 +59,25 @@ The main evaluation script is located in `evaluate/src/evaluate.py`. You can run
 cd mhalo/evaluate
 python src/evaluate.py   
 ```
+### Explanation of the evaluation results
+
+The evaluation results are stored in the `evaluate/results` directory with naming format: `evaluate/results/YYYY_MM_DD_HH_MM_SS_model-name_prompt-method_sample-limit`.
+
+Each result directory contains:
+- Five dataset-specific folders with detailed evaluation results
+- An `evaluation_summary.csv` file with overall metrics
+
+Example of evaluation summary:
+
+| Metric | RLHF-V | M-HalDetect | Geo170K | MathV360K | MC | Average |
+|--------|---------|-------------|----------|------------|-----|---------|
+| Total Samples | 10 | 10 | 10 | 10 | 10 | 50 |
+| Successful Samples | 10 | 10 | 9 | 9 | 9 | 47 |
+| DSR | 1.0 | 1.0 | 0.9 | 0.9 | 0.9 | 0.94 |
+| F1M | 0.250 | 0.0 | 0.301 | 0.287 | 0.549 | 0.278 |
+| IOU_H | 0.156 | 0.0 | 0.091 | 0.203 | 0.483 | 0.187 |
+
+
 
 ### Available Parameters
 
