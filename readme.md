@@ -174,7 +174,7 @@ This dataset is merged from the following three source datasets:
 3. Math-Vision dataset (5,000 samples)
    - Source file: `ft_mathv_dataset_20250115_063847_n5000_p127_new.json`
 
-To finetune your model,you should download the images from the google drive and put them in the `ft_data/images` directory using the link "https://drive.google.com/drive/folders/19MB3Tf2YRJ0sNBFzLyuVhbNXvSfmYN5j?usp=drive_link"
+To finetune your model,you should download the images from the google drive and put them in the `ft_data/images` directory using the [link](https://drive.google.com/drive/folders/19MB3Tf2YRJ0sNBFzLyuVhbNXvSfmYN5j?usp=drive_link)
 
 Data processing instructions:
 - Each data contains image path (image_path), prompt (prompt), dialog history (history) and reference answer (reference)
