@@ -1,7 +1,43 @@
 # MHALO: Evaluating MLLMs as Fine-grained Hallucination Detectors
 
-这是一个用于评测多模态大语言模型(MLLM)的项目。目前主要包含评测相关代码。
-生成的带幻觉数据集在evaluate/data目录下,生成他们的代码在build/src下.
+This repo consists of core scripts for reproducing the main results of the paper **"MHALO: Evaluating MLLMs as Fine-grained Hallucination Detectors"**.
+
+## Contributors
+
+ Yishuo Cai $^1$ , Renjie Gu $^2$ 
+
+$^1$ Peking University, $^2$ Central South University
+
+If you have any questions or issues with the code, please send us an issue directly.
+
+## Introduction
+
+## Quick Start
+
+Quick install the environment:
+
+```
+git clone https://github.com/csuJC/MHALO.git
+cd MHALO 
+conda create -n mhalo python=3.10
+pip install -r requirements.txt
+```
+### File Structure
+
+The project is divided into three independent parts"
+
+> `build` Folder - Corresponding to the process of generating hallucinated data
+> 
+> `evaluate` Folder - Corresponding to the evaluation of hallucination detection of different models
+> 
+> `ft_data` Folder - Corresponding to the data for fine-tuning
+
+## Evaluating Hallucination Detection Performance
+
+
+```
+cd evaluate
+```
 
 ## 环境配置
 
