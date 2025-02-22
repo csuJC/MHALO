@@ -1,4 +1,4 @@
-# MLLM Meta Evaluation
+# MHALO: Evaluating MLLMs as Fine-grained Hallucination Detectors
 
 这是一个用于评测多模态大语言模型(MLLM)的项目。目前主要包含评测相关代码。
 生成的带幻觉数据集在evaluate/data目录下,生成他们的代码在build/src下.
