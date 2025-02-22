@@ -39,6 +39,10 @@ The project is divided into three independent parts"
 ```
 cd evaluate
 ```
+### Download the images for evaluation
+
+Because the images are too large, we store them in google drive. You can download them from [here](https://drive.google.com/drive/folders/1C9Zdk4zZycJBRDU--Mo48Hk4TZG-Hn8S?usp=drive_link).
+Then put the directory in the `evaluate` directory.
 
 ### Configure Environment Variables:
 Create a `.env` file in the project root directory and add the following content:
@@ -46,6 +50,61 @@ Create a `.env` file in the project root directory and add the following content
 OPENAI_API_KEY=your_api_key
 OPENAI_API_BASE=your_api_base_url
 ```
+
+### Evaluating the Performance of Hallucination Detection
+
+The main evaluation script is located in `evaluate/src/evaluate.py`. You can run the evaluation with the following command:
+
+```bash
+cd mhalo/evaluate
+python src/evaluate.py   
+```
+
+### Available Parameters
+
+- `--dataset`: The dataset to evaluate
+  - Available options: ['all'] + all dataset names in DATASET_CONFIGS
+  - Default: 'all'
+
+- `--sample_limit`: The number of samples to evaluate
+  - For example: `--sample_limit 50`
+  - Default: 500
+
+- `--model`: Select the model to use
+  - Available options: ['gpt-4o-2024-11-20', 'claude-3-5-sonnet-20241022', 'gemini-1.5-pro-002', 'qwen-vl-max-0809', 'abab7-chat-preview', 'meta-llama/Llama-3.2-90B-Vision-Instruct-Turbo', 'glm-4v', 'local/MiniCPM-V-2_6', 'local/InternVL2-Llama3-76B']
+  - Default: 'gpt-4o-2024-11-20'
+
+- `--prompt_method`: Select the prompt method to use
+  - Available options: ['vanilla', 'Criteria', '2-shot', 'Analyze-then-judge']
+  - Default: 'vanilla'
+
+- `--max_workers`: Maximum number of worker threads
+  - Default: 20
+
+- `--max_annotation_retries`: Maximum number of annotation retries
+  - Default: 3
+
+- `--api_retry_limit`: Maximum number of API call retries
+  - Default: 3
+
+### Example Commands
+
+1. Evaluate all datasets:
+```bash
+python src/evaluate.py
+```
+
+2. Evaluate a specific dataset (e.g., mathv_360k) and limit the number of samples:
+```bash
+python src/evaluate.py --dataset mathv_360k --sample_limit 100
+python src/evaluate.py --dataset rlhfv --sample_limit 10 
+```
+
+3. Use different models and prompt methods:
+```bash
+python src/evaluate.py --model qwen-vl-max-0809 --dataset MathV360K --prompt_method Analyze-then-judge
+```
+
 
 ## Building Hallucinated Data
 
@@ -82,81 +141,23 @@ for example:
 python build/src/process_geo_170k.py --num_samples 1000
 ```
 
-
-
-## 评测使用方法
-
-主要的评测脚本位于 `evaluate/src/evaluate.py`。你可以通过以下命令运行评测：
-
-```bash
-cd mhalo/evaluate
-python src/evaluate.py  --model qwen-vl-max-0809 --sample_limit 10 --prompt_method Analyze-then-judge --api_retry_limit 1 --max_annotation_retries 1
-```
-
-### 可用参数
-
-- `--dataset`: 选择要评测的数据集
-  - 可选值: ['all', 'mathv_360k', 'geo_170k', 'mhal', 'rlhfv', 'multimath_300k']
-  - 默认值: 'all'（评测所有数据集）
-
-- `--sample_limit`: 评测样本数量限制（必须是10的倍数）
-  - 例如: `--sample_limit 100`
-  - 默认值: None（评测所有样本）
-
-- `--restart`: 是否重新进行评测
-  - 可选值: True/False
-  - 默认值: True
-
-- `--model`: 选择使用的模型
-  - 可选值: ['gpt-4o', 'claude-3.5']
-  - 默认值: 'gpt-4o'
-
-- `--prompt_method`: 选择使用的提示词方法
-  - 可选值: ['vanilla', 'cot', 'few-shot']
-  - 默认值: 'vanilla'
-
-- `--max_workers`: 最大工作线程数
-  - 默认值: 8
-
-### 示例命令
-
-1. 评测所有数据集：
-```bash
-python src/evaluate.py
-```
-
-2. 评测特定数据集（如 mathv_360k）并限制样本数：
-```bash
-python src/evaluate.py --dataset mathv_360k --sample_limit 100
-python src/evaluate.py --dataset rlhfv --sample_limit 10 --model tp_model
-```
-
-3. 使用不同的模型和提示词方法：
-```bash
-python src/evaluate.py --model claude-3.5 --prompt_method cot
-```
-
-## 评测结果
-
-评测结果将保存在以下位置：
-- 各数据集的详细结果：`evaluate/results/evaluation_results_{dataset_name}.json`
-- 评测总结：`evaluate/results/evaluation_summary.csv`
-
-## 微调数据集说明
+## Fine-tuning Data Set Description
 
 ### target_data.jsonl
-该数据集由以下三个源数据集合并处理而成：
+This dataset is merged from the following three source datasets:
 
-1. RLHF-Vision数据集 (4,733条数据)
-   - 来源文件：`ft_rlhfv_dataset_20250111_201136_new.json`
+1. RLHF-Vision dataset (4,733 samples)
+   - Source file: `ft_rlhfv_dataset_20250111_201136_new.json`
 
-2. MHAL数据集 (7,387条数据)
-   - 来源文件：`ft_mhal_dataset_20250124_145127.json`
+2. MHAL dataset (7,387 samples)
+   - Source file: `ft_mhal_dataset_20250124_145127.json`
 
-3. Math-Vision数据集 (5,000条数据)
-   - 来源文件：`ft_mathv_dataset_20250115_063847_n5000_p127_new.json`
+3. Math-Vision dataset (5,000 samples)
+   - Source file: `ft_mathv_dataset_20250115_063847_n5000_p127_new.json`
 
-数据处理说明：
-- 每条数据包含图片路径(image_path)、提示词(prompt)、对话历史(history)和参考答案(reference)
-- 提示词包含了专门用于检测幻觉的系统消息和用户提示模板
-- 图片按数据集类型分别存储在 images/rlhfv/、images/mhal/ 和 images/mathv/ 目录下
+To finetune your model,you should download the images from the google drive and put them in the `ft_data/images` directory using the link "https://drive.google.com/drive/folders/19MB3Tf2YRJ0sNBFzLyuVhbNXvSfmYN5j?usp=drive_link"
+
+Data processing instructions:
+- Each data contains image path (image_path), prompt (prompt), dialog history (history) and reference answer (reference)
+- The prompt contains a system message specially designed for hallucination detection and a user prompt template
+- Images are stored in the images/rlhfv/、images/mhal/  and images/mathv/ directories according to the dataset type

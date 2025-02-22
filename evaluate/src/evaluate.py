@@ -6,6 +6,7 @@ from typing import Optional, Dict, List, Union
 import sys
 import argparse
 from dotenv import load_dotenv
+import csv
 from config import (
     DATASET_CONFIGS, 
     DatasetConfig, 
@@ -70,10 +71,6 @@ def save_results_to_csv(all_results: Dict[str, List[Dict]], model: str, prompt_m
     
     # Calculate metrics for each dataset
     dataset_metrics = {}
-    total_samples = 0
-    total_success = 0
-    weighted_f1m_sum = 0
-    weighted_iou_h_sum = 0
     
     # Collect metrics for each dataset
     for dataset_name, results in all_results.items():
@@ -94,27 +91,43 @@ def save_results_to_csv(all_results: Dict[str, List[Dict]], model: str, prompt_m
                     iou_h_values.append(item.get('metrics', {}).get('iou_h', 0.0))
         
         dataset_total = len(results)
-        total_samples += dataset_total
-        total_success += dataset_success
         
-        # Calculate weighted metrics
-        if dataset_total > 0:
-            weighted_f1m_sum += (dataset_success / dataset_total) * sum(f1m_values) / len(f1m_values) if f1m_values else 0
-            weighted_iou_h_sum += (dataset_success / dataset_total) * sum(iou_h_values) / len(iou_h_values) if iou_h_values else 0
-        
+        # Calculate metrics
         dataset_metrics[dataset_name] = {
             'total': dataset_total,
             'success': dataset_success,
+            'dsr': dataset_success / dataset_total if dataset_total > 0 else 0,
             'f1m': sum(f1m_values) / len(f1m_values) if f1m_values else 0,
             'iou_h': sum(iou_h_values) / len(iou_h_values) if iou_h_values else 0
         }
     
-    # Save metrics to CSV
+    # Calculate averages
+    total_samples = sum(metrics['total'] for metrics in dataset_metrics.values())
+    total_success = sum(metrics['success'] for metrics in dataset_metrics.values())
+    avg_dsr = sum(metrics['dsr'] for metrics in dataset_metrics.values()) / len(dataset_metrics) if dataset_metrics else 0
+    avg_f1m = sum(metrics['f1m'] for metrics in dataset_metrics.values()) / len(dataset_metrics) if dataset_metrics else 0
+    avg_iou_h = sum(metrics['iou_h'] for metrics in dataset_metrics.values()) / len(dataset_metrics) if dataset_metrics else 0
+    
+    # Add average metrics
+    dataset_metrics['average'] = {
+        'total': total_samples,
+        'success': total_success,
+        'dsr': avg_dsr,
+        'f1m': avg_f1m,
+        'iou_h': avg_iou_h
+    }
+    
+    # Save metrics to CSV in column format
     with open(output_path, 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(['Dataset', 'Total Samples', 'Successful Samples', 'F1M', 'IOU_H'])
-        for dataset_name, metrics in dataset_metrics.items():
-            writer.writerow([dataset_name, metrics['total'], metrics['success'], metrics['f1m'], metrics['iou_h']])
+        # Write header
+        writer.writerow(['Metric'] + list(dataset_metrics.keys()))
+        # Write each metric as a row
+        writer.writerow(['Total Samples'] + [metrics['total'] for metrics in dataset_metrics.values()])
+        writer.writerow(['Successful Samples'] + [metrics['success'] for metrics in dataset_metrics.values()])
+        writer.writerow(['DSR'] + [metrics['dsr'] for metrics in dataset_metrics.values()])
+        writer.writerow(['F1M'] + [metrics['f1m'] for metrics in dataset_metrics.values()])
+        writer.writerow(['IOU_H'] + [metrics['iou_h'] for metrics in dataset_metrics.values()])
     
     print(f"Results saved to {output_path}")
 
@@ -394,7 +407,6 @@ def evaluate_single_sample(args):
 def evaluate_dataset(
     dataset_config: DatasetConfig,
     sample_limit: Optional[int] = None,
-    restart: bool = True,
     model: str = "gpt-4o-2024-11-20",
     max_workers: int = 16,
     max_annotation_retries: int = 3,
@@ -426,12 +438,8 @@ def evaluate_dataset(
     if sample_limit is not None:
         dataset = dataset[:sample_limit]
     
-    # Initialize or load result file
-    if restart or not os.path.exists(detailed_output_path):
-        evaluation_results = []
-    else:
-        with open(detailed_output_path, 'r') as f:
-            evaluation_results = json.load(f)
+    # Initialize result file
+    evaluation_results = []
     
     # Create progress bar
     total_samples = len(dataset)
@@ -488,7 +496,6 @@ def evaluate_dataset(
 
 def evaluate_all_datasets(
     sample_limit: Optional[int] = None,
-    restart: bool = True,
     model: str = "gpt-4o-2024-11-20",
     prompt_method: str = "vanilla",
     max_workers: int = 16,
@@ -512,7 +519,6 @@ def evaluate_all_datasets(
         results = evaluate_dataset(
             dataset_config=dataset_config,
             sample_limit=sample_limit,
-            restart=restart,
             model=model,
             max_workers=max_workers,
             max_annotation_retries=max_annotation_retries,
@@ -534,10 +540,8 @@ def main():
     parser.add_argument('--dataset', type=str, default='all',
                       choices=['all'] + list(DATASET_CONFIGS.keys()),
                       help='The dataset to evaluate, default is "all" to evaluate all datasets')
-    parser.add_argument('--sample_limit', type=int, default=50,
+    parser.add_argument('--sample_limit', type=int, default=500,
                       help='Limit on the number of samples for evaluation (must be a multiple of 10)')
-    parser.add_argument('--restart', type=bool, default=True,
-                      help='Whether to restart evaluation. If False, read data from existing result files')
     parser.add_argument('--model', type=str, default='gpt-4o-2024-11-20',
                       choices=['gpt-4o-2024-11-20',
                                'claude-3-5-sonnet-20241022', 
@@ -577,7 +581,6 @@ def main():
         # Evaluate all datasets
         evaluate_all_datasets(
             sample_limit=args.sample_limit,
-            restart=args.restart,
             model=args.model,
             prompt_method=args.prompt_method,
             max_workers=args.max_workers,
@@ -597,7 +600,6 @@ def main():
         evaluate_dataset(
             dataset_config=dataset_config,
             sample_limit=args.sample_limit,
-            restart=args.restart,
             model=args.model,
             max_workers=args.max_workers,
             max_annotation_retries=args.max_annotation_retries,

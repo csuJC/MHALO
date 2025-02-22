@@ -329,35 +329,35 @@ In triangle ABC, <hallucination>angle ABC = 60°</hallucination>. Using this, <h
 # Dataset configuration
 DATASET_CONFIGS = {
 
-    "rlhfv": DatasetConfig(
+    "RLHF-V": DatasetConfig(
         name="rlhfv",
         data_path="data/processed_rlhfv_dataset.json",
         output_path="results/tmp/evaluation_results_rlhfv.json",
         system_message=BASIC_COMPRESSED_SYSTEM_MESSAGE,
         user_prompt_template=BASIC_USER_PROMPT_TEMPLATE
     ),
-    "mhal": DatasetConfig(
+    "M-HalDetect": DatasetConfig(
         name="mhal",
         data_path="data/processed_mhal_dataset.json",
         output_path="results/tmp/evaluation_results_mhal.json",
         system_message=BASIC_COMPRESSED_SYSTEM_MESSAGE,
         user_prompt_template=BASIC_USER_PROMPT_TEMPLATE
     ),
-    "geo_170k": DatasetConfig(
+    "Geo170K": DatasetConfig(
         name="geo_170k",
         data_path="data/processed_geo_170k.json",
         output_path="results/tmp/evaluation_results_geo_170k.json",
         system_message=BASIC_MATH_COMPRESSED_SYSTEM_MESSAGE,
         user_prompt_template=BASIC_USER_PROMPT_TEMPLATE
     ),
-    "mathv_360k": DatasetConfig(
+    "MathV360K": DatasetConfig(
         name="mathv_360k",
         data_path="data/processed_mathv_360k.json",
         output_path="results/tmp/evaluation_results_mathv_360k.json",
         system_message=BASIC_COMPRESSED_SYSTEM_MESSAGE,
         user_prompt_template=BASIC_USER_PROMPT_TEMPLATE
     ),
-    "test": DatasetConfig(
+    "MC": DatasetConfig(
         name="test",
         data_path="data/processed_test.json",
         output_path="results/tmp/evaluation_results_test.json",
