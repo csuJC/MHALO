@@ -20,6 +20,7 @@ Quick install the environment:
 git clone https://github.com/csuJC/MHALO.git
 cd MHALO 
 conda create -n mhalo python=3.10
+conda activate mhalo
 pip install -r requirements.txt
 ```
 ### File Structure
@@ -39,59 +40,48 @@ The project is divided into three independent parts"
 cd evaluate
 ```
 
-## 环境配置
-
-1. 克隆仓库：
-```bash
-git clone https://github.com/YOUR_USERNAME/mllm_meta_eval.git
-cd mllm_meta_eval
-```
-
-2. 创建并激活 conda 环境：
-```bash
-conda create -n mllm_eval python=3.9
-conda activate mllm_eval
-```
-
-3. 安装依赖：
-```bash
-pip install -r requirements.txt
-```
-
-4. 配置环境变量：
-在项目根目录创建 `.env` 文件，添加以下内容：
+### Configure Environment Variables:
+Create a `.env` file in the project root directory and add the following content:
 ```
 OPENAI_API_KEY=your_api_key
 OPENAI_API_BASE=your_api_base_url
 ```
 
-## 幻觉数据集构建部分
+## Building Hallucinated Data
 
-1.下载原数据集并放在项目的buld/data目录下，下载相应图片并放在build/images目录下
+1.Download the original dataset and put it in the build/data directory, download the corresponding images and put them in the build/images directory
 
-1.1 对于geo170k，需要从[Geo170K数据集](https://huggingface.co/datasets/Luckyjhg/Geo170K/tree/main)
-下载qa_tuning.json文件，并放在build/data/Geo170K目录下,图片文件夹下载并解压后放在build/images目录下并改名为170k.
+1.1 For geo170k, you need to download the qa_tuning.json file from the [Geo170K dataset](https://huggingface.co/datasets/Luckyjhg/Geo170K/tree/main) and put it in the build/data/Geo170K directory, download the image folder and unzip it to the build/images directory and rename it to 170k.
 
-1.2 对于mathv360k，需要从[MathV360K数据集](https://huggingface.co/datasets/Zhiqiang007/MathV360K/tree/main)
-下载train_samples_all_tuning.json，并放在build/data/mathv目录下,图片文件夹下载并解压后放在build/images目录下并改名为mathv
+1.2 For mathv360k, you need to download the train_samples_all_tuning.json file from the [MathV360K dataset](https://huggingface.co/datasets/Zhiqiang007/MathV360K/tree/main) and put it in the build/data/mathv directory, download the image folder and unzip it to the build/images directory and rename it to mathv
 
-1.3 对于mhal，需要从[mhal-detect数据集](https://github.com/hendryx-scale/mhal-detect)
-下载train_raw.json，并放在build/data/mhal-detect目录下,图片文件夹直接下载coco数据集并放在build/images目录下并改名为mhal.
+1.3 For mhal, you need to download the train_raw.json file from the [mhal-detect dataset](https://github.com/hendryx-scale/mhal-detect) and put it in the build/data/mhal-detect directory, download the image folder and unzip it to the build/images directory and rename it to mhal.
 
-1.4 对于[RLHF-V-Dataset](https://huggingface.co/datasets/openbmb/RLHF-V-Dataset/tree/main):
-下载图片，数据集直接从代码里加载
+1.4 For [RLHF-V-Dataset](https://huggingface.co/datasets/openbmb/RLHF-V-Dataset/tree/main):
+Download the image, the dataset is loaded directly from the code
 
 
-2.生成单个数据集可以分别运行
-python build/src/process_mathv_360k.py,
-python build/src/process_geo_170k.py,
-python build/src/process_mhal_dataset.py,
-python build/src/process_rlhfv_dataset.py,
+2.You can run the following scripts to generate single dataset:
+```
+python build/src/process_mathv_360k.py
+```
+```
+python build/src/process_geo_170k.py
+```
+```
+python build/src/process_mhal_dataset.py
+```
+```
+python build/src/process_rlhfv_dataset.py
+```
 
-后面可以添加生成样本数量的参数 只需要在代码后面加 --num_samples 1000,
-例如 python build/src/process_geo_170k.py --num_samples 1000
+You can add the parameter to generate the number of samples, just add --num_samples 1000 after the code,
+for example:
 
-3.运行build/src/build_dataset.py,生成带幻觉的数据集
+```
+python build/src/process_geo_170k.py --num_samples 1000
+```
+
 
 
 ## 评测使用方法

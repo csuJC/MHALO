@@ -6,4 +6,9 @@
 .env.*
 .DS_Store
 
-__pycache__/
+/evaluate/src/__pycache__/
+
+/build/src/__pycache__/
+
+
+
